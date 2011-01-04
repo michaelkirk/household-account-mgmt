@@ -1,0 +1,43 @@
+<%= form_for(@member) do |f| %>
+  <% if @member.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@member.errors.count, "error") %> prohibited this member from being saved:</h2>
+
+      <ul>
+      <% @member.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <b>Household:</b><br />
+    <% if @member.household %>
+      <ol>
+      <% @member.household.members.each do |m| %>
+        <li><%= link_to m.name, m %></li>
+      <% end %>
+      </ol>
+    <% end %>
+
+
+    <%= f.label :housemate_id, "Move this member to a different household?" %><br />
+    <%= f.collection_select(:housemate_id, Member.all, :id, :name,{:include_blank => 'Leave in current household'} ) %>
+
+    <br />
+
+    <b>Move this member to a new household</b>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

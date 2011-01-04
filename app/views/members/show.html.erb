@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Last name:</b>
+  <%= @member.last_name %>
+</p>
+
+<p>
+  <b>First name:</b>
+  <%= @member.first_name %>
+</p>
+
+<p>
+  <b>Balance:</b>
+  <%= @member.household.balance %>
+</p>
+
+<p>
+<b>Household:</b>
+<ol>
+  <% @member.household.members.each do |m| %>
+    <li><%= m.name %></li>  
+  <% end %>
+</ol>
+</p>
+
+
+<%= link_to 'Edit', edit_member_path(@member) %> |
+<%= link_to 'Back', members_path %>
