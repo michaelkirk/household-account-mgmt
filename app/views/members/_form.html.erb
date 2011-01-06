@@ -29,13 +29,23 @@
       </ol>
     <% end %>
 
+    <% if @member.new_record? %>
+      <%= f.label :housemate_id, "Add this member to an existing household?" %><br />
+      <%= f.collection_select(:housemate_id, Member.all, :id, :name, {:include_blank => 'No, create a new household below.'} ) %>
+    <% else %>
+      <%= f.label :housemate_id, "Move this member to a different existing household?" %><br />
+      <%= f.collection_select(:housemate_id, Member.all, :id, :name,{:include_blank => 'Leave in current household'} ) %>
+    <% end %>
+    <br /><br />
 
-    <%= f.label :housemate_id, "Move this member to a different household?" %><br />
-    <%= f.collection_select(:housemate_id, Member.all, :id, :name,{:include_blank => 'Leave in current household'} ) %>
+    <% if @member.new_record? %>
+      <%= f.label :household_id, "Add this member to a new household?" %><br />
 
-    <br />
+    <% else %>
+      <%= f.label :household_id, "Move this member to a new household?" %><br />
+    <% end %>
+    Todo!
 
-    <b>Move this member to a new household</b>
   </div>
   <div class="actions">
     <%= f.submit %>

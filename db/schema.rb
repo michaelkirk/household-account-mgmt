@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110104184033) do
+ActiveRecord::Schema.define(:version => 20110106183545) do
 
   create_table "households", :force => true do |t|
     t.string   "name"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(:version => 20110104184033) do
     t.string   "last_name"
     t.string   "first_name"
     t.integer  "household_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "transactions", :force => true do |t|
+    t.decimal  "amount",       :precision => 8, :scale => 2, :null => false
+    t.boolean  "credit",                                     :null => false
+    t.string   "message"
+    t.integer  "household_id",                               :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

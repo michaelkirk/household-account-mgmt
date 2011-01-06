@@ -19,7 +19,7 @@
 <b>Household:</b>
 <ol>
   <% @member.household.members.each do |m| %>
-    <li><%= m.name %></li>  
+    <li><%= link_to m.name, m %></li>  
   <% end %>
 </ol>
 </p>
