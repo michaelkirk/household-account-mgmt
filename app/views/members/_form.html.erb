@@ -30,21 +30,16 @@
     <% end %>
 
     <% if @member.new_record? %>
-      <%= f.label :housemate_id, "Add this member to an existing household?" %><br />
-      <%= f.collection_select(:housemate_id, Member.all, :id, :name, {:include_blank => 'No, create a new household below.'} ) %>
+      <%= f.label :household_id, "Add this member to an existing household?" %><br />
+      <%= f.collection_select(:household_id, Member.all, :household_id, :name, {:include_blank => 'No, create a new household.'} ) %>
     <% else %>
-      <%= f.label :housemate_id, "Move this member to a different existing household?" %><br />
-      <%= f.collection_select(:housemate_id, Member.all, :id, :name,{:include_blank => 'Leave in current household'} ) %>
+      <%= f.label :household_id, "Move this member to a different existing household?" %><br />
+      <%= f.collection_select(:household_id, Member.all, :household_id, :name, {:include_blank => 'Leave in current household'} ) %>
+
+      <h2>Todo: move this member to a new household</h2>
+
     <% end %>
     <br /><br />
-
-    <% if @member.new_record? %>
-      <%= f.label :household_id, "Add this member to a new household?" %><br />
-
-    <% else %>
-      <%= f.label :household_id, "Move this member to a new household?" %><br />
-    <% end %>
-    Todo!
 
   </div>
   <div class="actions">

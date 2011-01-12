@@ -1,8 +1,6 @@
 class Household < ActiveRecord::Base
-  has_many(:members)
-  has_many(:transactions)
-  
-  
+  has_many :members
+  has_many :transactions
   
   def do_credit (amount)
     Transaction.create!(
