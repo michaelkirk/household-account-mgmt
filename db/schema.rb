@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(:version => 20110106183545) do
 
   create_table "households", :force => true do |t|
     t.string   "name"
-    t.decimal  "balance",    :precision => 8, :scale => 2
+    t.decimal  "balance",    :precision => 8, :scale => 2, :default => 0.0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
