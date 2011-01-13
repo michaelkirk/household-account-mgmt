@@ -22,4 +22,20 @@ describe MembersController do
       assigns[:member].household.should == Household.first
     end
   end
+
+  describe "#update " do
+    it "should move the member to the specified household" do
+      post 'create', {:member => {:household_id => Household.first.id}}
+
+      #the new member should be the only one in their new household
+      assigns[:member].household.should == Household.first
+    end
+
+    it "should put the member in a new household if the specified household id is empty" do
+      post 'create', {:member => {:household_id => nil}}
+
+      #the new member should be the only one in their new household
+      assigns[:member].household.members.should == [assigns[:member]]
+    end
+  end
 end

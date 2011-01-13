@@ -34,10 +34,7 @@
       <%= f.collection_select(:household_id, Member.all, :household_id, :name, {:include_blank => 'No, create a new household.'} ) %>
     <% else %>
       <%= f.label :household_id, "Move this member to a different existing household?" %><br />
-      <%= f.collection_select(:household_id, Member.all, :household_id, :name, {:include_blank => 'Leave in current household'} ) %>
-
-      <h2>Todo: move this member to a new household</h2>
-
+      <%= f.collection_select(:household_id, Member.all, :household_id, :name, {:include_blank => 'Put this member in a new household'} ) %>
     <% end %>
     <br /><br />
 
