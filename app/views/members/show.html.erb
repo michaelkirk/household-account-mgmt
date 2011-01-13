@@ -1,10 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 
-<h1>Member:
-  <%= @member.first_name %>
-
-  <%= @member.last_name %>
+<h1>
+  <%= @member.name %>
+  [<%= link_to 'Edit', edit_member_path(@member) %>]
 </h1>
 
 <!-- TODO: add optional display to all lines -->
@@ -28,5 +27,4 @@
 </div>
 
 
-<%= link_to 'Edit', edit_member_path(@member) %> |
 <%= link_to 'Back', members_path %>
