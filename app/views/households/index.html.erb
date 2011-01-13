@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <th>Name</th>
+    <th>Members</th>
     <th>Balance</th>
     <th></th>
     <th></th>
@@ -11,8 +11,8 @@
 
 <% @households.each do |household| %>
   <tr>
-    <td><%= household.name %></td>
-    <td><%= household.balance %></td>
+    <td><%= household.members.inject {|a, b| "#{a}, #{b}" } %></td>
+    <td><%= sprintf("$%.2f", household.balance) %></td>
     <td><%= link_to 'Show', household %></td>
     <td><%= link_to 'Edit', edit_household_path(household) %></td>
     <td><%= link_to 'Destroy', household, :confirm => 'Are you sure?', :method => :delete %></td>
