@@ -1,4 +1,6 @@
 Foodlobby::Application.routes.draw do
+  resources :transactions
+
   resources :members
 
   resources :households

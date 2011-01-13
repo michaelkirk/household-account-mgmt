@@ -1,28 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Last name:</b>
-  <%= @member.last_name %>
-</p>
 
-<p>
-  <b>First name:</b>
+<h1>Member:
   <%= @member.first_name %>
-</p>
 
-<p>
-  <b>Balance:</b>
-  <%= @member.household.balance %>
-</p>
+  <%= @member.last_name %>
+</h1>
 
-<p>
-<b>Household:</b>
-<ol>
-  <% @member.household.members.each do |m| %>
-    <li><%= link_to m.name, m %></li>  
-  <% end %>
-</ol>
-</p>
+<!-- TODO: add optional display to all lines -->
+<div>
+<b>Member phone 1:</b> <%= @member.phone1 %><br />
+<b>Member phone 2:</b> <%= @member.phone2 %><br />
+<b>Member address: (If household members have different addresses)</b><br />
+<%= @member.address1 %><br />
+<% if @member.address2 != '' %>
+  <%= @member.address2 %><br />
+<% end %>
+<%= "#{@member.city}, #{@member.state} #{@member.zip}" %><br />
+
+</div>
+
+
+
+<div style="background-color: #bbb">
+  <h2>Household</h2>
+  <%= render @member.household %>
+</div>
 
 
 <%= link_to 'Edit', edit_member_path(@member) %> |

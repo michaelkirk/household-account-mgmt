@@ -1,13 +1,8 @@
 <p id="notice"><%= notice %></p>
-<p>
-  <b>Name:</b>
-  <%= @household.name %>
-</p>
 
-<p>
-  <b>Balance:</b>
-  <%= sprintf("$%.2f", @household.balance) %>
-</p>
+
+<%= render @household %>
+
 
 
 <%= link_to 'Edit', edit_household_path(@household) %> |
