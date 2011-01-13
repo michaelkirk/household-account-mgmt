@@ -24,7 +24,7 @@
 
 <div style="background-color: #999">
 <b>Make an investment or purchase</b>
-<%= form_for(Transaction.new(:household_id => household.id)) do |f| %>
+<%= form_for(Transaction.new(:household => household)) do |f| %>
   <div class="field">
     <%= f.radio_button :credit, :true %>
     <%= f.label :credit_true, "Investment (or credit adjustment)" %>
@@ -43,7 +43,7 @@
     <%= f.text_field :message %>
   </div>
   <div class="field">
-    <%= hidden_field :transaction, :household_id%>
+    <%= f.hidden_field :household_id%>
   </div>
   <div class="actions">
     <%= f.submit %>

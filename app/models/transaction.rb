@@ -5,5 +5,14 @@ class Transaction < ActiveRecord::Base
   validates_presence_of :household_id
   validates_presence_of :amount
   validates_numericality_of :amount
-  
+ 
+  after_create do |t|
+    if(t.credit?)
+      t.household.update_attribute(:balance, t.household.balance + t.amount)
+    else
+      t.household.update_attribute(:balance, t.household.balance - t.amount)
+    end
+    t.save!
+  end
+
 end

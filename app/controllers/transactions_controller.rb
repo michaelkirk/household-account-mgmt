@@ -44,7 +44,7 @@ class TransactionsController < ApplicationController
 
     respond_to do |format|
       if @transaction.save
-        format.html { redirect_to(@transaction, :notice => 'Transaction was successfully created.') }
+        format.html { redirect_to(@transaction.household, :notice => 'Transaction was successfully created.') }
         format.xml  { render :xml => @transaction, :status => :created, :location => @transaction }
       else
         format.html { render :action => "new" }
