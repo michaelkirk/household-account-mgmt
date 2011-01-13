@@ -3,7 +3,7 @@
 <table>
   <tr>
     <th>Amount</th>
-    <th>Credit</th>
+    <th>Credit/Debit</th>
     <th>Message</th>
     <th>Household</th>
     <th></th>
@@ -14,12 +14,11 @@
 <% @transactions.each do |transaction| %>
   <tr>
     <td><%= transaction.amount %></td>
-    <td><%= transaction.credit %></td>
+    <td><%= transaction.credit ? 'credit' : 'debit' %></td>
     <td><%= transaction.message %></td>
-    <td><%= transaction.household_id %></td>
+    <td><%= link_to transaction.household.to_s, transaction.household %></td>
     <td><%= link_to 'Show', transaction %></td>
     <td><%= link_to 'Edit', edit_transaction_path(transaction) %></td>
-    <td><%= link_to 'Destroy', transaction, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
