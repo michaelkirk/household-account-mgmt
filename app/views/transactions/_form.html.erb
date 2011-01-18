@@ -11,18 +11,9 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :amount %><br />
-    <%= f.text_field :amount %>
-  </div>
-  <div class="field">
-    <%= f.label :credit, "credit or debit?" %><br />
-    <%= f.radio_button :credit, :true %>
-    <%= f.label :credit_true, "credit" %>
-    <br />
-    <%= f.radio_button :credit, :false %>
-    <%= f.label :credit_false, "debit" %>
-  </div>
+    <b>Amount:</b><%= sprintf("$%.2f", @transaction.amount) %>
+
+    <%= @transaction.credit ? 'investment' : 'purchase' %>
   <div class="field">
     <%= f.label :message %><br />
     <%= f.text_field :message %>

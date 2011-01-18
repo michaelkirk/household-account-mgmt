@@ -6,16 +6,20 @@
     <th>Balance</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @households.each do |household| %>
-  <tr>
-    <td><%= household.members.inject {|a, b| "#{a}, #{b}" } %></td>
+  <tr class="<%= cycle("even", "odd") %>">
+    <td>
+      <ol style="padding-top: 0px; padding-bottom: 0px; margin: 0px;">
+      <% household.members.each do |member| %>
+	<li><%= member.name %></li>
+      <% end %>
+      </ol>
+    </td>
     <td><%= sprintf("$%.2f", household.balance) %></td>
     <td><%= link_to 'Show', household %></td>
     <td><%= link_to 'Edit', edit_household_path(household) %></td>
-    <td><%= link_to 'Destroy', household, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

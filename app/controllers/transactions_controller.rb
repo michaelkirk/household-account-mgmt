@@ -48,7 +48,7 @@ class TransactionsController < ApplicationController
 
     respond_to do |format|
       if @transaction.save
-        format.html { redirect_to([@household, @transaction], :notice => 'Household transaction was successfully created.') }
+        format.html { redirect_to(@household, :notice => 'Household transaction was successfully created.') }
         format.xml  { render :xml => @transaction, :status => :created, :location => @transaction }
       else
         format.html { render :action => "new" }
@@ -65,7 +65,7 @@ class TransactionsController < ApplicationController
 
     respond_to do |format|
       if @transaction.update_attributes(params[:transaction])
-        format.html { redirect_to([@household, @transaction], :notice => 'Household transaction was successfully updated.') }
+        format.html { redirect_to(household_transactions_path(@household), :notice => 'Household transaction was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

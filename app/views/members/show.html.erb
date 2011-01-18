@@ -3,8 +3,31 @@
 
 <h1>
   <%= @member.name %>
-  [<%= link_to 'Edit', edit_member_path(@member) %>]
 </h1>
+
+<style type="text/css">
+  .action {
+    padding: 3px;
+    border: solid black 2px;
+    border-top: 0px;
+    background-color: #eee;
+    position: absolute;
+    top: 0;
+    right: 200px
+  }
+</style>
+
+<div class="action">
+  <%= link_to 'Edit member info', edit_member_path(@member) %>
+</div>
+
+<p>
+<% if @member.active  %>
+Active Member
+<% else %>
+Inactive Member
+<% end %>
+</p>
 
 <!-- TODO: add optional display to all lines -->
 <div>

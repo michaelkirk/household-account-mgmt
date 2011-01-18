@@ -1,4 +1,4 @@
-<h3>Household Members</h3>
+<h3>Household Members</h3> [<%= link_to 'add member', new_member_path %>]
 <ol>
   <% household.members.each do |m| %>
     <li><%= link_to m, m %></li>  
@@ -20,7 +20,9 @@
 
 </div>
 <hr />
-<b>Balance:</b> <%= sprintf("$%.2f", household.balance) %><br />
+<b>Balance:</b> <%= sprintf("$%.2f", household.balance) %>
+[ <%= link_to 'View previous transactions', household_transactions_path(household) %>]
+<br />
 
 <div style="background-color: #999">
 <b>Make an investment or purchase</b>

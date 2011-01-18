@@ -1,5 +1,5 @@
-<h1>Editing transaction</h1>
-
+<h1>Editing transaction memo</h1>
+<b>Created:</b><%= @transaction.created_at.strftime("%m/%d/%y %I:%M%p") %>
 <%= render 'form' %>
 
 <%= link_to 'Show', household_transaction_path(@household, @transaction) %> |

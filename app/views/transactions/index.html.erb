@@ -1,11 +1,11 @@
-<h1>Listing transactions</h1>
-
+<h1>Household transactions</h1>
+<%= link_to @household.to_s, @household %>
 <table>
   <tr>
-    <th>Amount</th>
+    <th>Date</th>
     <th>Credit/Debit</th>
+    <th>Amount</th>
     <th>Message</th>
-    <th>Household</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,16 +13,40 @@
 
 <% @transactions.each do |transaction| %>
   <tr>
-    <td><%= transaction.amount %></td>
-    <td><%= transaction.credit ? 'credit' : 'debit' %></td>
+    <td><%= transaction.created_at.strftime("%m/%d/%y %I:%M%p") %></td>
+    <td><%= transaction.credit ? 'investment' : 'purchase' %></td>
+    <td class="money"><%= sprintf("$%.2f", transaction.amount) %></td>
     <td><%= transaction.message %></td>
-    <td><%= link_to @household.to_s, @household %></td>
     <td><%= link_to 'Show', household_transaction_path(@household, transaction) %></td>
     <td><%= link_to 'Edit', edit_household_transaction_path(@household, transaction) %></td>
   </tr>
 <% end %>
+
+  <style type="text/css">
+    .total {
+      border-top: solid black 1px;
+    }
+    
+    th.total {
+      text-align: left;
+    }
+        
+    td.money {
+      text-align: right;
+    }
+    
+  </style>
+
+  <tr>
+    <td></td>
+    <th class="total">balance</th>
+    <td class="total money"><%= sprintf("$%.2f", @household.balance) %></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
 </table>
 
 <br />
 
-<%= link_to 'New Transaction', new_household_transaction_path(@household) %>
+<%= link_to 'Back to household', @household %>
