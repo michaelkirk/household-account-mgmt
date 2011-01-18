@@ -1,9 +1,9 @@
 Foodlobby::Application.routes.draw do
-  resources :transactions
-
   resources :members
 
-  resources :households
+  resources :households do
+    resources :transactions
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

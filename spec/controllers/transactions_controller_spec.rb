@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 describe TransactionsController do
+  before do
+    @household = assign(:household, stub_model(Household, {:id => 1}))
+  end
 
   def mock_transaction(stubs={})
     (@mock_transaction ||= mock_model(Transaction).as_null_object).tap do |transaction|

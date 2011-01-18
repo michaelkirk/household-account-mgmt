@@ -17,9 +17,9 @@
 
 <p>
   <b>Household:</b>
-  <%= @transaction.household_id %>
+  <%= @household %>
 </p>
 
 
-<%= link_to 'Edit', edit_transaction_path(@transaction) %> |
-<%= link_to 'Back', transactions_path %>
+<%= link_to 'Edit', edit_household_transaction_path(@household, @transaction) %> |
+<%= link_to 'Back', household_transactions_path(@household) %>

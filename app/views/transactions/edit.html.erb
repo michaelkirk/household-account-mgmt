@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @transaction %> |
-<%= link_to 'Back', transactions_path %>
+<%= link_to 'Show', household_transaction_path(@household, @transaction) %> |
+<%= link_to 'Back', household_transactions_path(@household) %>

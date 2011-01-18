@@ -5,6 +5,8 @@ class Transaction < ActiveRecord::Base
   validates_presence_of :household_id
   validates_presence_of :amount
   validates_numericality_of :amount
+
+  scope :for_household, (lambda do |h| {:conditions => {:household_id => h}} end)
  
   after_create do |t|
     if(t.credit?)

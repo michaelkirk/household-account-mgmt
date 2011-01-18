@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe "transactions/index.html.erb" do
   before(:each) do
+    @household = assign(:household, stub_model(Household, {:id => 1}))
+
     assign(:transactions, [
       stub_model(Transaction,
         :amount => "9.99",
