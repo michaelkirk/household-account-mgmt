@@ -17,9 +17,7 @@ describe "transactions/edit.html.erb" do
 
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "form", :action => household_transaction_path(@household, @transaction), :method => "post" do
-      assert_select "input#transaction_amount", :name => "transaction[amount]"
-      assert_select "input#transaction_credit_true", :name => "transaction[credit]"
-      assert_select "input#transaction_credit_false", :name => "transaction[credit]"
+      #should only be able to edit the message, transactions are otherwise write-once.
       assert_select "input#transaction_message", :name => "transaction[message]"
     end
   end

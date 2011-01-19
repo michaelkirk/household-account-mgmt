@@ -2,7 +2,8 @@ require 'spec_helper'
 
 describe TransactionsController do
   before do
-    @household = assign(:household, stub_model(Household, {:id => 1}))
+    @household = stub_model(Household, {:id => 1})
+    Household.stub(:find) { @household }
   end
 
   def mock_transaction(stubs={})
@@ -14,7 +15,7 @@ describe TransactionsController do
   describe "GET index" do
     it "assigns all transactions as @transactions" do
       Transaction.stub(:all) { [mock_transaction] }
-      get :index
+      get :index, {:household_id => 1}
       assigns(:transactions).should eq([mock_transaction])
     end
   end
@@ -22,7 +23,7 @@ describe TransactionsController do
   describe "GET show" do
     it "assigns the requested transaction as @transaction" do
       Transaction.stub(:find).with("37") { mock_transaction }
-      get :show, :id => "37"
+      get :show, {:household_id => 1, :id => "37"}
       assigns(:transaction).should be(mock_transaction)
     end
   end
@@ -112,19 +113,4 @@ describe TransactionsController do
     end
 
   end
-
-  describe "DELETE destroy" do
-    it "destroys the requested transaction" do
-      Transaction.should_receive(:find).with("37") { mock_transaction }
-      mock_transaction.should_receive(:destroy)
-      delete :destroy, :id => "37"
-    end
-
-    it "redirects to the transactions list" do
-      Transaction.stub(:find) { mock_transaction }
-      delete :destroy, :id => "1"
-      response.should redirect_to(transactions_url)
-    end
-  end
-
 end
