@@ -13,7 +13,7 @@
 
 <% @transactions.each do |transaction| %>
   <tr>
-    <td><%= transaction.created_at.strftime("%m/%d/%y %I:%M%p") %></td>
+    <td><%= transaction.created_at %></td>
     <td><%= transaction.credit ? 'investment' : 'purchase' %></td>
     <td class="money"><%= sprintf("$%.2f", transaction.amount) %></td>
     <td><%= transaction.message %></td>
