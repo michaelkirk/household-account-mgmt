@@ -5,7 +5,9 @@
     <%= submit_tag "Search", :name => nil %>
   </p>
 <% end %>
-
+<% if @households.empty? %>
+ <p>There are no households matching your criteria.</p>
+<% else %>
 <table>
   <tr>
     <th>Members</th>
@@ -29,7 +31,7 @@
   </tr>
 <% end %>
 </table>
-
+<% end %>
 <br />
 
 <%= link_to 'New Household', new_household_path %>

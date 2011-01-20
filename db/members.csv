@@ -1,0 +1,200 @@
+member#?,inactive?,cell,coordinator?,first-name,last name,join date,household#,email,phone1,phone2,address,city,state,zip
+106,no,Cell H,no,Shelby ,Eidson ,7/23/2008,58,ste206@nyu.edu,,,"850 south catalina street, #6",Los Angeles,CA.,90005
+107,no,Cell C,no,Gretchen,Heidemann,7/23/2008,15,heidemg@yahoo.com,(818) 640-1913,,4058 1/2 Brunswick Ave.,Los Angeles,CA.,90039
+108,no,Cell J,no,Yuki,Kidokoro,7/23/2008,63,ykid@igc.org,(213) 381-5652,,117 bimini pl #215,Los Angeles,CA.,90004
+109,no,Cell A,yes,Andrea,de Cleyre,7/23/2008,4,velorucion@gmail.com,(909) 282-0974,,117 bimini pl ,Los Angeles,CA.,90004
+110,no,,no,Thiago,Winterstein  ,7/23/2008,0,thago_w@hotmail.com,(310) 592-5704,,,,,
+111,no,Cell D,no,Lois,Arkin,7/23/2008,43,crsp@igc.org,(213) 738-1254,,117 bimini pl #221,Los Angeles,CA.,90004
+112,no,Cell C,yes,Jeremy,Drake,7/23/2008,21,j_drake@sbcglobal.net,(213) 413-5553,,801 N Occidental Blvd,Los Angeles,CA.,90026
+113,no,Cell C,no,Brenna ,Griffin,7/23/2008,6,Brennastar@mac.com,(213) 389-9131,,2524 Ocean view avenue,Los Angeles,CA.,90057
+114,no,Cell D,no,Amy,Hagemeier,7/23/2008,3,amy_in_mx@yahoo.com,(213) 949-4876,,109 S Commonwealth Av #4,Los Angeles,CA.,90004
+115,no,,no,Matt, Ruscigno,7/23/2008,49,mattruscigno@gmail.com,(323) 992-8598,,,Los Angeles,CA.,
+116,no,,no,Joe,Linton,7/23/2008,0,,(213) 220-1608,,,,,
+117,no,Cell N,no,Rebecca,Elswit,7/23/2008,55,rebeccathebandit@gmail.com,(310) 804-9135,,,Los Angeles,CA.,
+118,no,,no,Mahyar,Nilli,7/23/2008,46,mahyarnili@yahoo.com,(310) 795-8111,,,,,
+119,no,Cell G,yes,Randy,Metz,7/23/2008,54,astronovazz@hotmail.com,(213) 380-5096,,,,,
+120,no,Cell H,yes,Lara,Morrison,7/23/2008,40,laraeco@hotmail.com,(213) 383-8684,,117 bimini pl ,Los Angeles,CA.,
+121,no,Cell B,no,Jessica,Hoffmann,7/23/2008,22,jessicahoffmann@gmail.com,(213) 949-3713,,,,,
+122,no,Cell B,yes,Hilary,Goldberg,7/23/2008,18,hilarygoldberg@gmail.com,(323) 804-5228,,,,,
+123,no,,no,Kelly,Martin,7/23/2008,36,kellym43@gmail.com,(213) 210-5631,,229 N. Union,Los Angeles,Ca.,90026
+124,no,,no,Virginia,Newcomb,7/23/2008,0,vevlyn@sbcglobal.net,(818) 915-0636,,,,,
+125,no,Cell I,no,,,7/23/2008,10,dave.auerbach@gmail.com,(310) 954-7102,,117 Bimini Pl #121,Los Angeles,CA,90004
+126,no,Cell F,yes,Ron,Milam,8/14/2008,56,rpm@ronmilam.com,(323) 793-0591,,"117 Bimini Pl., #220",LA,CA,90004
+127,no,Cell B,no,Somer,Waters,10/1/2008,59,somerset.waters@gmail.com,(213) 725-7085,,127 Bimini Pl.,Los Angeles,CA,90004
+128,no,Cell H,no,Becca,Louisell,10/1/2008,5,be_outside@yahoo.com,(916) 956-6625,,,,,
+129,no,,no,Daria,Yudacufski,10/1/2008,8,dyudacufski@gmail.com,(323) 697-2779,,,,,
+130,no,Cell D,no,Kate,Dollenmayer,10/1/2008,32,javan@javan.us dollenmayer@gmail.com,(323) 842-5173,(661) 755-0089,,,,
+131,no,Cell B,no,Heather,Lockie,10/1/2008,17,hlockie@yahoo.com,(213) 250-9399,,,,,
+132,no,,no,Katherine,Zelada,10/1/2008,33,,(323) 666-4681,(323) 365-3578,,,,
+133,no,Cell E,no,Janalynn,Bliss,10/1/2008,19,,(310) 497-8078,,,,,
+134,no,Cell J,no,Jocelyn ,Graf,10/1/2008,24,jocelyngraf@proficia.seoul.kr,(213) 718-7301,,,,,
+135,no,,no,Julia,Lovan,10/1/2008,0,jlovan@bresee.org,(213) 387-2827,,,,,
+136,no,Cell E,no,Kyle,Gleason,10/1/2008,39,,(831) 419-7093,,,,,
+137,no,Cell Bulk B,no,Kat,Lohr,10/1/2008,31,,(916) 899-8065,,,,,
+138,no,Cell C,no,Michelle,Wong,10/1/2008,51,mellowmouse@ca.rr.com,(424) 210-0303,(310) 801-1303,,,,
+139,no,Cell D,no,Marcus,,10/1/2008,47,kimonabike@gmail.com,(213) 482-7662,,,,,
+142,no,Cell D,no,Raeanna,Gleason,10/1/2008,53,rgleason@usc.edu,(323) 841-7867,,,,,
+143,no,Cell C,no,Darryl,Molina,10/3/2008,9,darryl.molina@gmail.com,(909) 576-6268,(310) 403-7064,5927 1/2 Great Oak Circle,Highland Park,CA ,90042
+144,no,Cell A,no,Maeve,Johnston,10/3/2008,45,maevejo@gmail.com,(415) 517-3709,(510) 306-5769,138 N Beaudry Ave #266,Los Angeles,CA,90012
+145,no,,no,Kiran,Pun,10/3/2008,0,kiranp42@gmail.com,(714) 664-8299,,,,,
+146,no,Cell J,no,Jonathan,Green,10/10/2008,26,jonatgree@gmail.com,(917) 520-4647,,,,,
+147,no,Cell I,no,Kathy ,Hill,10/10/2008,35,kathill777@gmail.com,(310) 741-2331,,,,,
+148,no,Cell E,no,Lindsey,Mysse,10/10/2008,41,lmysse@gmail.com,(323) 684-1536,,,,,
+149,no,Cell D,yes,Alexis,Lothian,10/12/2008,2,alexislothian@gmail.com,(310) 436-5727,,,,,
+150,no,Cell E,yes,Alex,Kenefick,10/21/2008,64,alexkenefick@gmail.com,(213) 280-4214,,,,,
+151,no,Cell E,no,Kelsey,Farris,10/21/2008,37,farriskelsey@yahoo.com,(310) 892-5367,,,,,
+153,no,,no,Mark,Marren,10/22/2008,48,,,,,,,
+155,no,Cell Bulk A,no,Nichole,Schwab,10/22/2008,52,schwab.nichole@gmail.com,(310) 968-4811,,5916 El Mio Dr.,Los Angeles,CA,90042
+156,no,,no,Drew,Bird,10/22/2008,0,dreambird2001@hotmail.com,(323) 203-4333,,,,,
+158,no,,no,Melba,Thorn,10/23/2008,50,melbathorn@yahoo.com,,,,,,
+159,no,,no,Jennifer,Barager,11/5/2008,20,,,,,,,
+160,no,Cell A,no,Kathleen,Guinses,11/5/2008,34,stayingalive06@yahoo.com,(323) 445-6778,(310) 725-8452,,,,
+161,no,,no,Karen,short stay,11/5/2008,30,,,,,,,
+162,no,Cell H,no,George,Patton,11/5/2008,14,,(818) 784-6842,,,,,
+163,no,,no,Linnea,Svahn,11/5/2008,42,,(310) 954-7102,(310) 954-7102,,,,
+165,no,,no,Casey,MacGregor,11/6/2008,0,casey.macgregor@gmail.com,(917) 964-3009,,,,,
+166,no,,no,Shannon,Walter,11/12/2008,0,walter.shannon@gmail.com,(614) 598-3623,(323) 634-8999,,,,
+167,no,,no,Svetlana,Shevtsovc,11/12/2008,0,la4lana@gmail.com,(323) 317-6043,,,,,
+168,no,,no,Lois,,11/12/2008,44,,,,,,,
+169,no,,no,Emily,Hands,11/19/2008,0,emilyhands@gmail.com,(323) 839-9187,,,,,
+170,no,,no,Hazel,Hartman,11/27/2008,16,Hazel.hair@gmail.com,(323) 640-1018,(940) 395-0035,988 Hyperion Ave,Los Angeles,CA,90029
+171,no,,no,Jessica ,Catron,12/16/2008,21,jessicacatron@yahoo.com,(213) 413-5553,(323) 365-0506,801 N Occidental Blvd,Los Angeles,CA.,90026
+172,no,,no,Jonathan,Arentsen,12/26/2008,0,jonathan.arentsen@gmail.com,(310) 696-6837,,,,,
+173,no,,no,Julia,Eksner,12/30/2008,0,beauty.aroundme@gmail.com,,,,,,
+175,no,,no,Emily,Ramsey,1/8/2009,13,emilyramsey@gmail.com,(310) 702-7832,,4146 Normal Ave.,Los Angeles,CA,90029
+177,no,Cell C,no,Michael,Sarmiento,1/19/2009,9,,,,5927 1/2 Great Oak Circle,Highland Park,CA ,90042
+178,no,Cell F,no,Ann,Finkelstein,1/19/2009,10,albatros@tentacle.net,(323) 632-8916,,117 Bimini Pl #121,Los Angeles,CA,90004
+179,no,,no,Fernando,Marcheseli,1/20/2009,16,fmarcheselli@gmail.com,,,988 Hyperion Ave,Los Angeles,CA,90029
+180,no,,no,Kwanwu,Yu,1/20/2009,24,,,,,,,
+181,no,,no,Javan,M,1/20/2009,32,javan@javan.us,,,,,,
+182,no,Cell F,no,Ben,Guzman,1/20/2009,36,ben.guzman23@gmail.com,(213) 820-0136,,229 N. Union,Los Angeles,Ca.,90026
+183,no,Cell J,no,Megan,Davis,1/20/2009,45,MeganDavis13@gmail.com,(970) 819-0376,,138 N Beaudry Ave #266,Los Angeles,CA,90012
+184,no,Cell B,no,Aurisha,Smolarski,1/20/2009,59,aurishash@gmail.com,(213) 725-7085,,127 Bimini Pl.,Los Angeles,CA,90004
+185,no,,no,Robert,Chalala,1/22/2009,74,cfyo.development@gmail.com,(213) 610-3062,,,,,
+189,no,Cell J,no,Sarah,Zanolini,2/19/2009,80,sarazulu@gmail.com,(415) 515-6206,,,,,
+190,no,Cell J,no,Meredith,Hackleman,2/25/2009,77,mb.generator@gmail.com,(323) 697-4482,,,,,
+191,no,Cell Bulk B,no,Moira,Smiley,2/25/2009,78,andrewtabb@mac.com,(415) 412-3642,,,,,
+192,no,,no,Rodney,Gardiner,2/26/2009,0,gardnier@hotmail.com,(917) 371-7629,,,,,
+193,no,Cell A,no,Leslie,Koch,3/5/2009,73,cobaltblu@dsl.com,(323) 542-1101,,,,,
+194,no,Cell B,no,David,Auerbach,3/5/2009,69,themarshymarsh@gmail.com,(407) 579-6691,,,,,
+195,no,Cell A,no,Jim,Bledsoe,3/5/2009,71,,,,,,,
+198,no,,no,Jesse,Moorman,3/25/2009,0,moorman.jesse@gmail.com,(213) 479-9741,,,,,
+199,no,Cell C,no,Sarah,Aumentado,3/31/2009,81,sjaumentado@gmail.com,(818) 653-0773,,,,,
+200,no,Cell Bulk E,yes,Polly ,MacNicol,3/31/2009,79,mmacnicol2008@att.net,,(818) 764-1357,,,,
+201,no,,no,Justin,Montrie,3/31/2009,0,JustinMontrie@gmail.com,(224) 622-0174,,,,,
+202,no,Cell Bulk D,no,Beau,Baldock,4/4/2009,67,beau.baldock@gmail.com,(307) 690-8845,,,,,
+203,no,Cell A,no,Adonia,Lugo,4/4/2009,65,adonia.lugo@gmail.com,(949) 547-3686,,117 Bimini Pl Apt 210,Los Angeles,CA,90004
+204,no,,no,Sophia,Lin,4/8/2009,0,sophia@khanashiro.com,(310) 990-4497,,,,,
+205,no,,no,Tania,Amador,4/20/2009,83,tania9@myhelio.com,(818) 421-7573,,,,,
+206,no,Cell B,no,Autumn,Rooney,4/20/2009,66,autumnrooney@mac.com,(213) 220-0295,,,,,
+207,no,Cell Bulk A,no,Corey,Fogel,5/1/2009,68,coreyfogel@gmail.com,(661) 803-0488,,,,,
+208,no,Cell D,no,Muriel,Bartol,5/1/2009,76,muriel@swervecycling.com,(213) 448-8782,,,,,
+211,no,Cell Bulk C,yes,Bobby,Gadda,5/10/2009,65,bgadda@gmail.com,(503) 341-9567,,117 Bimini Pl Apt 210,Los Angeles,CA,90004
+212,no,Cell D,no,Matt,,5/10/2009,76,,,,,,,
+213,no,,no,Christian,Bugay,5/10/2009,81,,,,,,,
+214,no,,no,Andrew,Tabb,5/10/2009,78,,,,,,,
+215,no,,no,Doug,,5/10/2009,0,,,,,,,
+216,no,,no,Enrique,Peregrino,5/10/2009,58,,,,"850 south catalina street, #6",Los Angeles,CA.,90005
+217,,,no,Arlen,Jones,5/11/2009,13,arlenjones@gmail.com,(818) 477-7367,,4146 Normal Ave.,Los Angeles,CA,90029
+218,no,,no,Hop,Hopkins,5/20/2009,86,hop1972@yahoo.com,(213) 308-5104,,850 S. Catalina St. #2,Los Angeles,CA,90005
+219,,,no,Adalila,Zelada-Garcia,5/20/2009,86,,(213) 308-5108,,850 S. Catalina St. #2,Los Angeles,CA,90005
+220,no,,no,Paolo,Filipplini,5/20/2009,0,Paolo@CondosAndHouses.com,(213) 924-5685,,,,,
+221,no,Cell Bulk E,no,Nancy,Morie,5/26/2009,88,nancyk70@yahoo.com,(213) 447-5987,,2036 S. Oxford Ave.,Los Angeles,CA,90018
+222,no,,no,Zoe,Rawson,5/29/2009,89,zoe.rawson@gmail.com,,,,,,
+223,no,,no,Van,Nguyen,6/16/2009,0,vannie@gmail.com,(310) 694-4490,,,,,
+224,,Cell D,no,Trevor,Stephenson,6/16/2009,90,trevor.stephenson@gmail.com,(805) 402-2965,,4563 Cleland Ave.,Los Angeles,CA,90065
+225,yes,Cell C,no,Christopher,Grounds,6/24/2009,91,grounds.christopher@gmail.com,(310) 707-5485,,"1929 Echo Park Ave., 301",Los Angeles,CA,90026
+226,yes,,no,Colin,Kohler,6/24/2009,92,colinkohler@gmail.com,(360) 303-7686,,960 S. Oxford Ave.,Los Angeles,CA,90006
+227,,,no,,,6/24/2009,92,,,,960 S. Oxford Ave.,Los Angeles,CA,90006
+228,yes,Cell Bulk C,no,Marcel,Porras,6/24/2009,93,angelmarcel@gmail.com,(213) 280-6922,,"1141 Echo Park Ave., 209",Los Angeles,CA,90026
+229,no,,no,Rebecca,Trotsky-Sirr,6/25/2009,94,rebexxx@gmail.com,(612) 817-3822,,117 Bimini Pl. #111,Los Angeles,CA,90004
+230,yes,,no,Jessica,Richmond,6/25/2009,0,jessica.l.rich@gmail.com,(818) 497-0961,,,,,
+231,,,no,Kevin,Lacey,6/25/2009,95,,,,"707 N. Ridgewood, #210",Los Angeles,CA,90038
+232,yes,Cell C,no,Mike,Scerrsunowicz,6/30/2009,96,snaksquid@gmail.com,(774) 573-7913,,957 N. Oxford Ave.,Los Angeles,CA ,90029
+233,yes,Cell A,no,Bryan,Santamaria,7/3/2009,97,BryanSantaMaria@yahoo.com,(310) 469-2869,,"715 S Normandie Ave., Apt. 717",Los Angeles,CA,90005
+234,no,,no,Ariana ,Roe,7/8/2009,98,arianaey@gmail.com,(310) 773-6272,,1238 N. El Centro Ave.,Los Angeles,CA,90038
+235,,,no,Martin,Roe,7/9/2009,98,martinroe@hotmail.com,,,1238 N. El Centro Ave.,Los Angeles,CA,90038
+236,,,no,,,7/12/2009,94,gohm@nwhealth.edu,,,117 Bimini Pl. #111,Los Angeles,CA,90004
+237,yes,,no,Mike,Derrer,7/14/2009,99,stone.balzac@gmail.com,(323) 557-0178,,2918 Reservoir St.,Los Angeles,CA,90002
+238,,,no,graciela,geyer,7/14/2009,99,,(323) 681-5607,,2918 Reservoir St.,Los Angeles,CA,90002
+239,yes,,no,Elizabeth,Hastings,9/1/2009,100,lizhastings@yahoo.com,(216) 534-9345,,"630 S. Kenmore Ave., #601",Los Angeles,CA,90005
+240,yes,Cell D,no,Kathryna,Hancock,9/1/2009,101,hi@kathrynahancock.com,(213) 309-4850,,"2505 W. 6th Street, #602",Los Angeles,CA,90057
+241,yes,,no,Alex,Lewin,9/1/2009,102,schmalex227@gmail.com,(310) 490-6414,,4501 Berenice Ave.,Los Angeles,CA ,90031
+242,yes,Cell Bulk B,no,Erin,Gabrielson,9/16/2009,103,erin.gabrielson@gmail.com,(805) 268-1115,,3198 W. 7th St. #509,Los Angeles,CA,90005
+243,yes,Cell Bulk D,no,Daisy,Lin,9/16/2009,104,shaplin1@yahoo.com,(310) 487-4483,,2621 Scott Ave,Los Angeles,CA,90026
+244,no,Cell Bulk A,no,Catherine,Campion,9/21/2009,105,cat@catherinecampion.com,(612) 990-0046,,121 N Rampart Blvd,Los Angeles,CA,90026
+245,no,Cell D,no,Richard,Gonzalez,10/14/2009,106,peart320@yahoo.com,(818) 913-2341,,290North Coolidge Ave,Los Angeles ,CA,90039
+246,no,,no,Samantha,Baker,10/21/2009,107,Samantha.J.Baker@gmail.com,(714) 686-0500,,1303 Lucile Ave,Los Angeles,CA,90026
+247,no,,no,Erin,Sternstein,10/21/2009,108,ehs252@gmail.com,(305) 926-0539,,Lanssadr,Los Angeles,CA,90026
+248,no,,no,Maeve,Johnston,11/8/2009,109,maevejo@gmail.com,(415) 517-3709,(510) 306-5769,,,,
+249,yes,,no,Lisa,Fadali,11/11/2009,110,Luisehermann@aol.com,(323) 664-3918,,2586 Aberdeen Ave,Los Angeles,CA,90027
+250,no,,no,Vivian,Robledo,11/11/2009,111,vivforpeta@yahoo.com,(213) 820-3248,(323) 443-4731,806 Laguna Ave,Los Angeles,CA,90026
+251,no,,no,Elma,Lopez,11/11/2009,112,,(213) 924-1370,,1225 W 57th St. #09,Los Angeles,CA,90037
+252,yes,,no,Joe,Patridge,11/25/2009,113,joe.patridge@yahoo.com,(310) 904-3084,,1216 Cole Ave,Los Angeles,CA,90038
+253,yes,,no,Julio,Orellana,11/25/2009,114,kruxone@yahoo.com,(323) 606-2939,(323) 240-0069,2017 6th Ave,Los Angeles,CA,90018
+254,yes,,no,Blanca ,Orellana,11/25/2009,114,,,,2017 6th Ave,Los Angeles,CA,90018
+255,no,,no,Marina,Gabriel,12/1/2009,115,gabriel.marina@gmail.com,(410) 591-3582,,,,,
+256,no,,no,David,Kahn,12/9/2009,116,info@edendalefarm.com,,,2131 Moreno Dr.,Los Angeles,CA,90039
+257,yes,Cell E,no,Amanda,Mullins,12/23/2009,117,a1975@sbcglobal.net,(213) 321-5063,,121 N Rampart Blvd #2,Los Angeles,CA,90026
+258,no,,no,Nisha,Parekh,12/24/2009,118,nparekh85@gmail.com,(626) 319-7785,,,,,
+259,,,no,Moneim,Fadali,12/30/2009,110,,(323) 664-3918,,2586 Aberdeen Ave,Los Angeles,CA,90027
+260,no,,no,Rodney,Hewitt,1/17/2010,119,rodhewitt7@yahoo.com,(323) 856-4217,,4714 West 1st St,Los Angeles,CA,90004
+261,no,Cell B,no,Sun,Yu,1/19/2010,120,yusun@yahoo.com,(213) 268-7737,,5332 Monroe St.,Los Angeles,CA,90038
+262,no,,no,Brit,Manor,1/19/2010,121,hiccup16@hotmail.com,(646) 784-3282,,560 S. Main St. #95,Los Angeles,CA,90013
+263,yes,Cell E,no,Lauren,Mackler,2/4/2010,122,lmackler@gmail.com,(917) 593-4579,,2122 Santa Ynez St,Los Angeles,CA,90026
+264,no,,no,L,M,2/24/2010,0,,,,,,,
+265,yes,,no,Erika,Wilder,3/10/2010,124,e_wilder@yahoo.com,(323) 333-8023,,,,,
+266,,Cell Bulk E,no,Josh,May,3/22/2010,89,joshmay@ucla.edu,(707) 363-5232,,,,,
+267,no,Cell I,no,Jessica,Cowley,3/25/2010,125,heytherejessica@gmail.com,(415) 572-3764,,730 Kensington,Los Angeles,CA,90026
+268,no,,no,Robert,Cabrales,3/25/2010,126,robert.cabrales@gmail.com,(323) 439-2098,,3303 E. Gage Ave,Huntington Park,CA,90255
+269,no,,no,Karin,McClellan,3/25/2010,127,hotpinkmailbox@gmail.com,(310) 745-6661,,3504 White House Pl,Los Angeles,CA,90004
+270,no,,no,Kris,Barberg,4/14/2010,128,krisbarberg@yahoo.com,(612) 719-0555,,,,,
+271,no,,no,Julie,Pilat,4/21/2010,129,juliepilat@clearchannel.com,(206) 226-4131,,716 Maltman Ave #13 ,Los Angeles,CA,90026
+272,no,,no,Rachel,Carlson,5/5/2010,130,rachelleappelle@gmail.com,(952) 484-3013,,2517 Pasadena Ave #201,Los Angeles,CA,90031
+273,no,,no,Tanya,Rubbak,5/20/2010,131,tanyarubbak@gmail.com,(696) 334-5028,,,,,
+274,yes,,no,Robert,Rootenberg,5/26/2010,132,Robert@RobertRootenberg.com,(323) 620-1832,,1301 Price St.,Los Angeles,CA,90027
+275,no,,no,,,5/31/2010,133,,,,,,,
+276,,,no,Kalil,Cohen,5/31/2010,127,reelboi@gmail.com,(314) 960-4660,,3504 White House Pl,Los Angeles,CA,90004
+277,no,,no,,,5/31/2010,134,,,,,,,
+278,no,,no,Edith,Abeyta,6/1/2010,135,edithabeyta@gmail.com,(213) 999-1958,,1873 Echo Park Ave.,LA,CA,90026
+279,,,no,Bob,Tower,6/1/2010,135,bob@constructtower.com,(213) 999-1981,,1873 Echo Park Ave.,LA,CA,90026
+280,,,no,Emily,Maguire,6/1/2010,129,eboogie112@hotmail.com,(619) 921-2182,,716 Maltman Ave #13 ,Los Angeles,CA,90026
+281,,,no,Raoul La Vogue,,6/1/2010,132,,(323) 620-1841,,1301 Price St.,Los Angeles,CA,90027
+282,no,,no,Erika,Backberg,6/16/2010,136,erika@technologypower.org,(651) 470-4868,,1955 N. Tamarind Ave.,Los Angeles,CA,90068
+283,,,no,Eric,Nigg,6/16/2010,136,,,,1955 N. Tamarind Ave.,Los Angeles,CA,90068
+284,no,,no,Emily,Moseley,6/19/2010,137,motownangel@gmail.com,(310) 593-9882,,1656 N Alvarado St,Los Angeles,CA,90026
+285,no,,no,,,6/22/2010,138,,,,,,,
+286,no,,no,Allison,Fussell-Louie,7/7/2010,139,allison.fussell.louie@gmail.com,(213) 926-4411,,1861 1/2 Echo Park Ave,Los Angeles,CA,90026
+287,,,no,,,7/7/2010,139,,,,1861 1/2 Echo Park Ave,Los Angeles,CA,90026
+288,no,,no,Angeline,Brown,7/8/2010,140,tvforfood@aol.com,(213) 675-5373,,691 S Irolo St Apt 1212,Los Angeles,CA,90005
+289,no,,no,Greg,Garrison,7/10/2010,141,bonsaikill@yahoo.com,(818) 836-2933,,334 S. Catalina St,Los Angeles,CA,90020
+290,,,no,Lorenzo,Castillo,7/10/2010,141,oring2003@sbcglobal.net,(818) 640-9524,,334 S. Catalina St,Los Angeles,CA,90020
+291,no,,no,,,7/10/2010,142,,,,,,,
+292,no,,no,Eric,Nigg,7/10/2010,143,eric_nigg@yahoo.com,(612) 501-9647,,,,,
+293,no,,no,Stane,Hubert,7/24/2010,144,isomereggplant@yahoo.com,(310) 691-9139,,4037 Barrett Rd.,Los Angeles,CA,90032
+294,no,,no,Alice,Tseng-Planas,7/28/2010,145,aplanas@gseis.ucla.edu,(714) 801-4512,(310) 475-5622,435 South Alexandria #201,Los Angeles,CA,90020
+295,no,,no,Sonia ,Pineda,7/28/2010,146,sonia.abi@gmail.com,(323) 574-9050,,1170 Crenshaw Blvd Apt 9,Los Angeles,CA,90019
+296,,,no,Jeremy,Rotsztian,7/28/2010,145,jeremy@mantissa.ca,(917) 676-0348,,435 South Alexandria #201,Los Angeles,CA,90020
+297,yes,,no,Kas,Chmielinski,8/18/2010,147,kasia@thekasia.com,(617) 326-7227,,,,,
+298,no,,no,Ren-yo,Hwang,8/25/2010,148,renyolk@gmail.com,(917) 334-9091,,"630 S. Kenmore, #509",Los Angeles,CA,90005
+299,no,,no,Beth ,Reddy,9/8/2010,149,beth.reddy@gmail.com,(503) 810-2267,,630 Robinson St. #302,Los Angeles,CA,
+300,no,,no,Julio,Santizo,9/15/2010,150,ecomaya@azteca.net,(323) 377-0973,,,,,
+301,yes,,no,Sarah,Mark,9/23/2010,151,thesarahmark@gmail.com,(323) 359-2172,,,,,
+302,,,no,Billy,Mark,9/23/2010,151,,,,,,,
+303,no,,no,Dave,Auerbach,9/29/2010,152,,(310) 954-7102,,,,,
+304,no,,no,Lucia,Lin,10/6/2010,153,nocivilized@gmail.com,(323) 706-8320,,,,,
+305,no,,no,Suzi,Nielson,10/20/2010,154,suzinielsen@yahoo.com,(424) 901-9572,,,,,
+306,no,,no,Lailye,,10/27/2010,155,lailye@ucla.edu,(774) 994-0253,,117 Bimini Pl 205,LA,CA,90004
+307,no,,no,Suzi,P,10/27/2010,156,,,,,,,
+308,no,,no,Marcus,visitor,11/3/2010,157,marcus.andreas@gmx.net,,,,,,
+309,no,,no,Spencer,Seibert,11/17/2010,158,seibe101@mail.chapman.edu,,,2418 Cabot St,Los Angeles,CA,90031
+310,no,,no,Allison,Manuor,11/20/2010,159,nocivilized@gmail.com,(323) 662-7228,,,,,
+311,no,,no,Sofia,,12/9/2010,160,samm.lyon@gmail.com,(310) 795-5912,,,,,
+312,,,no,Sammy,,12/9/2010,160,,,,,,,
+313,no,,no,Sean,McWilliams,12/15/2010,161,sgmcwilliams@gmail.com,(949) 683-3734,,1005 W Bay Ave,Newport Beach,CA,92661
+314,no,,no,Jimmy,Lizama,12/22/2010,162,tairil3@yahoo.com,(213) 608-2389,,,,,
+315,no,,no,,,12/22/2010,163,,,,,,,
+316,no,,no,Jeremy,Rotsztain,12/22/2010,164,mantissa@gmail.com,(917) 676-0348,,,,,
+317,no,,no,Paula,Arnett,1/5/2011,165,paulaarnett2005@yahoo.com,(909) 961-4798,,,,,
+318,no,,no,Garrick,Staples,1/19/2011,166,garrick.staples@gmail.com,(213) 359-7919,,,,,
+

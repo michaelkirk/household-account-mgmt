@@ -13,16 +13,22 @@
 
   <div class="field">
     <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
+    <%= f.text_field :first_name, :size => 20 %>
+    
+    <span style="margin-right: 1em;"></span>
+    
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name, :size => 20 %>
   </div>
   
   <div class="field">
   <%= f.label :active, "Active Member" %>
   <%= f.check_box :active %><br />
+  </div>
+
+  <div class="field">
+    <%= f.label :email, "Email" %>
+    <%= f.text_field :email, :size=>25 %>
   </div>
 
   <div class="field">
@@ -42,7 +48,7 @@
   </div>
     <div class="field">
     <%= f.label :city, "City" %>
-    <%= f.text_field :city, :size=>24 %>,
+    <%= f.text_field :city, :size=>20 %>,
     <%= f.label :state, "State" %>
     <%= f.text_field :state, :size=>2 %>
     <%= f.label :zip, "Zip" %>

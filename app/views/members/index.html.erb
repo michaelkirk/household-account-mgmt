@@ -11,7 +11,7 @@
   </tr>
 
 <% @members.each do |member| %>
-  <tr>
+  <tr class="<%= cycle("even", "odd") %>">
     <td><%= member.last_name %></td>
     <td><%= member.first_name %></td>
     <td><%= link_to member.household.to_s, member.household %></td>
