@@ -1,4 +1,6 @@
 Foodlobby::Application.routes.draw do
+  devise_for :users
+
   resources :members
 
   resources :households do

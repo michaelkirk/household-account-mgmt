@@ -8,6 +8,9 @@ gem 'rails', '3.0.3'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'mysql2'
 
+# for authentication 
+gem 'devise'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
