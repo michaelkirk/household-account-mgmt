@@ -1,0 +1,32 @@
+td {
+  padding: 5px;
+}
+
+tr.odd {
+  background-color: #ddd;
+}
+
+body {
+  background-color: #ada;
+}
+
+#content {
+  background-color: white;
+  width: 700px;
+  margin: 0px auto;
+  text-align: left;
+  padding: 15px 50px;
+  
+  border: solid black 1px;
+  border-width: 0 1px 1px 0; 
+}
+
+
+form#new_transaction {
+  padding: 0px 15px;
+  border: solid black 1px;
+}
+
+form#new_transaction h3 {
+  border-bottom: dotted black 1px;
+}

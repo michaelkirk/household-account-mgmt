@@ -6,30 +6,6 @@ body, p, ol, ul, td {
   line-height: 22px;
 }
 
-td {
-  padding: 5px;
-}
-
-tr.odd {
-  background-color: #ddd;
-}
-
-body {
-  background-color: #ada;
-}
-
-#content {
-  background-color: white;
-  width: 700px;
-  margin: 0px auto;
-  text-align: left;
-  padding: 15px 50px;
-  
-  border: solid black 1px;
-  border-width: 0 1px 1px 0;
-  
-}
-
 pre {
   background-color: #eee;
   padding: 10px;

@@ -1,35 +1,10 @@
-<h2>Members</h2> 
-<ul>
-  <% household.members.each do |m| %>
-    <li><%= link_to m, m %></li>  
-  <% end %>
-  <li>[<%= link_to 'add new member', new_member_path %>]</li>
-</ul>
-
-<h3>Household Contact Info [<%= link_to 'edit', edit_household_path(household) %>]</h3>
-
-<!-- TODO: add optional display to all lines -->
-
-<div>
-  <b>Household phone 1:</b> <%= household.phone1 %><br />
-  <b>Household phone 2:</b> <%= household.phone2 %><br />
-  <b>Household address:</b><br />
-  <%= household.address1 %><br />
-  <% if household.address2 != '' %>
-    <%= household.address2 %><br />
-  <% end %>
-  <%= "#{household.city}, #{household.state} #{household.zip}" %><br />
-</div>
-
-<hr />
 <h2>Financial</h2>
 <b>Balance:</b> <%= sprintf("$%.2f", household.balance) %>
 [ <%= link_to 'View previous transactions', household_transactions_path(household) %>]
 <br />
 
-<div style="padding: 10px; width: 50%; background-color: #999">
-<b>Make an investment or purchase</b>
 <%= form_for([household, Transaction.new(:household => household)]) do |f| %>
+  <h3>Make an investment or purchase</h3>
   <div class="field">
     <%= f.radio_button :credit, :true %>
     <%= f.label :credit_true, "Investment (or credit adjustment)" %>
@@ -51,7 +26,52 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<hr />
+
+<h2>Members</h2> 
+<ul>
+  <% household.members.each do |m| %>
+    <li><%= link_to m, m %></li>  
+  <% end %>
+  <li>[<%= link_to 'add new member', new_member_path %>]</li>
+</ul>
+
+<h3>Household Contact Info [<%= link_to 'edit', edit_household_path(household) %>]</h3>
+
+<!-- TODO: add optional display to all lines -->
+
+<div>
+  <% unless household.phone1 == nil %>
+    <b>Household phone:</b> <%= household.phone1 %><br />
+  <% end %>
+  
+  <% unless household.phone2 == nil %>
+    <b>Household phone (secondary):</b> <%= household.phone2 %><br />
+  <% end %>
+  
+  <% unless(household.address1 == nil and
+      household.address2 == nil and
+      household.phone1 == nil and
+      household.phone2 == nil and
+      household.city == nil and
+      household.state == nil and
+      household.zip == nil)
+  %>
+  <b>Household address:</b><br />
+  
+  <% unless household.address1 == nil %>
+    <%= household.address1 %><br />
+  <% end %>
+  <% unless household.address2 == nil %>
+    <%= household.address2 %><br />
+  <% end %>
+  <%= "#{household.city}, #{household.state} #{household.zip}" %><br />
+  <% else %>
+    <p>No contact info for this household. Try looking at the individual members.</p>
+  <% end %>
 </div>
+
 
 
 
