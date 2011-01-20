@@ -1,6 +1,31 @@
-<h1>Editing transaction memo</h1>
-<b>Created:</b><%= @transaction.created_at %>
-<%= render 'form' %>
+<h1>Editing transaction message</h1>
 
-<%= link_to 'Show', household_transaction_path(@household, @transaction) %> |
+<%= form_for([@household, @transaction]) do |f| %>
+  <% if @transaction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+
+      <ul>
+      <% @transaction.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <p>
+  <b>Created:</b> <%= @transaction.created_at %> <br />
+  <b>Amount:</b> <%= sprintf("$%.2f", @transaction.amount) %>
+  <%= @transaction.credit ? 'investment' : 'purchase' %>
+  </p>
+  
+  <div class="field">
+    <%= f.label :message %><br />
+    <%= f.text_field :message %>
+  </div>
+  <div class="actions">
+    <%= f.submit "update message" %>
+  </div>
+<% end %>
+
 <%= link_to 'Back', household_transactions_path(@household) %>

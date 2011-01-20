@@ -1,7 +1,7 @@
 class Transaction < ActiveRecord::Base
   belongs_to :household
 
-  validates_inclusion_of :credit, :in => [true, false]
+  validates_inclusion_of :credit, :in => [true, false], :message => "must be an investment (credit) or purchase (debit)"
   validates_presence_of :household_id
   validates_presence_of :amount
   validates_numericality_of :amount
