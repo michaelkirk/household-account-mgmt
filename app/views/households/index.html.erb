@@ -1,4 +1,10 @@
 <h1>Listing households</h1>
+<%= form_tag households_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
 
 <table>
   <tr>

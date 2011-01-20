@@ -1,30 +1,33 @@
-<h3>Household Members</h3> [<%= link_to 'add member', new_member_path %>]
-<ol>
+<h2>Members</h2> 
+<ul>
   <% household.members.each do |m| %>
     <li><%= link_to m, m %></li>  
   <% end %>
-</ol>
+  <li>[<%= link_to 'add new member', new_member_path %>]</li>
+</ul>
 
 <h3>Household Contact Info [<%= link_to 'edit', edit_household_path(household) %>]</h3>
 
 <!-- TODO: add optional display to all lines -->
-<div>
-<b>Household phone 1:</b> <%= household.phone1 %><br />
-<b>Household phone 2:</b> <%= household.phone2 %><br />
-<b>Household address:</b><br />
-<%= household.address1 %><br />
-<% if household.address2 != '' %>
-  <%= household.address2 %><br />
-<% end %>
-<%= "#{household.city}, #{household.state} #{household.zip}" %><br />
 
+<div>
+  <b>Household phone 1:</b> <%= household.phone1 %><br />
+  <b>Household phone 2:</b> <%= household.phone2 %><br />
+  <b>Household address:</b><br />
+  <%= household.address1 %><br />
+  <% if household.address2 != '' %>
+    <%= household.address2 %><br />
+  <% end %>
+  <%= "#{household.city}, #{household.state} #{household.zip}" %><br />
 </div>
+
 <hr />
+<h2>Financial</h2>
 <b>Balance:</b> <%= sprintf("$%.2f", household.balance) %>
 [ <%= link_to 'View previous transactions', household_transactions_path(household) %>]
 <br />
 
-<div style="background-color: #999">
+<div style="padding: 10px; width: 50%; background-color: #999">
 <b>Make an investment or purchase</b>
 <%= form_for([household, Transaction.new(:household => household)]) do |f| %>
   <div class="field">

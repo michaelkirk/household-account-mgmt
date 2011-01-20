@@ -2,6 +2,19 @@ class Household < ActiveRecord::Base
   has_many :members
   has_many :transactions
 
+  #BUG this only matches if the submitted keywords are matched to a single user.
+  # if I had a household with members "Alonzo Church" and "Edsger Dijktstra" I couldn't
+  # search for Alonzo Edsger. I _think_ I should be able to.
+  # perhaps I'm misunderstanding the type algebra.
+  scope :find_by_keywords, lambda {|query|
+    query.split.inject(find_by_member_name("")) {|accumulated_scope, word|
+      accumulated_scope.find_by_member_name(word)}}
+  scope :find_by_member_name, lambda { |name| 
+    {:joins => :members, 
+     :conditions => "members.first_name LIKE '%#{name}%' OR members.last_name LIKE '%#{name}%'"}
+    #TODO protect from injection.
+  }
+
   def to_s
     if members.empty?
       "empty household"

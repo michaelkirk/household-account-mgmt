@@ -2,7 +2,11 @@ class HouseholdsController < ApplicationController
   # GET /households
   # GET /households.xml
   def index
-    @households = Household.all
+    if params[:search]
+      @households = Household.find_by_keywords(params[:search])
+    else
+      @households = Household.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
