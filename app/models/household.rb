@@ -11,7 +11,7 @@ class Household < ActiveRecord::Base
       accumulated_scope.find_by_member_name(word)}}
   scope :find_by_member_name, lambda { |name| 
     {:joins => :members, 
-     :conditions => "members.first_name LIKE '%#{name}%' OR members.last_name LIKE '%#{name}%'"}
+     :conditions => "UPPER(members.first_name) LIKE UPPER('%#{name}%') OR UPPER(members.last_name) LIKE UPPER('%#{name}%')"}
     #TODO protect from injection.
   }
 
