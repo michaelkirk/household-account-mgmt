@@ -16,13 +16,14 @@ namespace :foodlobby do
     
     member_rows=member_rows[1..-1]
 
+    # accumulate households, indexed by fm_id (filemaker id)
     member_rows.each do |row|
-      Member.create!(:id=>row[0], 
+      Member.create!(:fm_id=>row[0], 
                      :active=> (row[1]=='no' ? true : false), 
                      :first_name => row[4], 
                      :last_name => row[5], 
                      :created_at=> DateTime.parse(row[6]), 
-                     :household_id=> row[7], 
+                     :household => Household.find_or_create_by_fm_id(row[7]), 
                      :email=>row[8], 
                      :phone1=> row[9], 
                      :phone2=> row[10], 
