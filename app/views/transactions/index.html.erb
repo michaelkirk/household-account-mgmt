@@ -1,5 +1,12 @@
 <h1>Transactions</h1>
 <p>for the <%= link_to "household of #{@household.to_s}", @household %></p>
+
+<% if @transactions.empty? %>
+  <p>
+  There are no transactions for this household yet.
+  </p>
+<% else %>
+
 <table>
   <tr>
     <th>Date</th>
@@ -45,6 +52,7 @@
   </tr>
 </table>
 
+<% end %>
 <br />
 
 <%= link_to 'Back to household', @household %>
