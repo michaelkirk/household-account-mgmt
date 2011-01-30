@@ -1,16 +1,10 @@
-td {
-  padding: 5px;
-}
-
-tr.odd {
-  background-color: #ddd;
-}
-
 body {
   background-color: #ada;
 }
 
 #content {
+  position: relative;
+  clear: both;
   background-color: white;
   width: 700px;
   margin: 0px auto;
@@ -19,6 +13,31 @@ body {
   
   border: solid black 1px;
   border-width: 0 1px 1px 0; 
+}
+
+#navigation {
+  padding: 0;
+  margin: 0 0 0 10px;
+}
+
+#navigation li {
+  float: left;
+  display: inline;
+  list-style-type: none;
+
+  margin: 5px;
+  padding: 3px;
+  border: solid black 2px;
+  background-color: white;
+  border-radius: 4px;
+}
+
+td {
+  padding: 5px;
+}
+
+tr.odd {
+  background-color: #ddd;
 }
 
 
@@ -30,3 +49,5 @@ form#new_transaction {
 form#new_transaction h3 {
   border-bottom: dotted black 1px;
 }
+
+
