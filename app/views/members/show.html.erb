@@ -1,32 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 
-<h1>
+<h1 style="float: left;">
   <%= @member.name %>
 </h1>
 
-<style type="text/css">
-  .action {
-    padding: 3px;
-    border: solid black 2px;
-    border-top: 0px;
-    background-color: #eee;
-    position: absolute;
-    top: 0;
-    right: 200px
-  }
-</style>
+<ul class="navigation actions">
+  <li>
+  (<%= link_to 'Edit member info', edit_member_path(@member) %>)
+  </li>
+</ul>
 
-<div class="action">
-  <%= link_to 'Edit member info', edit_member_path(@member) %>
-</div>
+<br style="clear: both;" />
 
 <p>
-<% if @member.active  %>
-Active Member
-<% else %>
-Inactive Member
-<% end %>
+<%= @member.active ? "Active" : "Inactive" %> Member
 </p>
 
 <!-- TODO: add optional display to all lines -->
