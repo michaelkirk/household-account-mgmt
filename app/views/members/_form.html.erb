@@ -66,12 +66,11 @@
     <% end %>
 
     <% if @member.new_record? %>
-      <%= f.label :household_id, "Add this member to an existing household?" %><br />
-      <%= f.collection_select(:household_id, Member.all, :household_id, :name, {:include_blank => 'No, create a new household.'} ) %>
+      <%= f.label :household_id, "Add this member to which household?" %><br />
     <% else %>
-      <%= f.label :household_id, "Move this member to a different existing household?" %><br />
-      <%= f.collection_select(:household_id, Member.all, :household_id, :name, {:include_blank => 'Put this member in a new household'} ) %>
+      <%= f.label :household_id, "Move this member to a different household?" %><br />
     <% end %>
+      <%= f.collection_select(:household_id, Member.all, :household_id, :name, {:include_blank => 'Put this member in a new household'} ) %>
     <br /><br />
 
   </div>
