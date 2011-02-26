@@ -1,4 +1,14 @@
 class TransactionsController < ApplicationController
+
+  def all_households
+    @transactions = Transaction.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @transactions }
+    end
+  end
+
   # GET /households/:id/transactions
   # GET /households/:id/transactions.xml
   def index

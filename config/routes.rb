@@ -1,7 +1,10 @@
 Foodlobby::Application.routes.draw do
   devise_for :users
+  devise_for :admins
 
   resources :members
+
+  match 'transactions', :controller => :transactions, :action => :all_households
 
   resources :households do
     resources :transactions

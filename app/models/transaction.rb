@@ -17,4 +17,9 @@ class Transaction < ActiveRecord::Base
     t.save!
   end
 
+  def self.total_balance
+    #TODO do this arithmetic in the DB to avoid instantiating a bazillion objects
+    all.inject(0) {|running_sum, t| t.credit? ? running_sum + t.amount : running_sum - t.amount }
+  end
+
 end
