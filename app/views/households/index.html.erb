@@ -1,4 +1,5 @@
 <h1>Listing households</h1>
+Search by member names, then make an investment or purchase.
 <%= form_tag households_path, :method => 'get' do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
@@ -26,8 +27,8 @@
       </ol>
     </td>
     <td><%= sprintf("$%.2f", household.balance) %></td>
-    <td><%= link_to 'Show', household %></td>
-    <td><%= link_to 'Edit', edit_household_path(household) %></td>
+    <td><%= link_to 'Investment/Purchase', household %></td>
+    <td><%= link_to 'Edit contact info', edit_household_path(household) %></td>
   </tr>
 <% end %>
 </table>
