@@ -6,4 +6,7 @@ describe Household do
   it "should default to a $0.00 balance" do
     Household.create!.balance.should == 0
   end
+
+  pending "should be impossible to change balance without creating a transaction"
+    
 end
