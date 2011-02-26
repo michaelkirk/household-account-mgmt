@@ -70,7 +70,7 @@
     <% else %>
       <%= f.label :household_id, "Move this member to a different household?" %><br />
     <% end %>
-      <%= f.collection_select(:household_id, Member.all, :household_id, :name, {:include_blank => 'Put this member in a new household'} ) %>
+      <%= f.collection_select(:household_id, Member.all, :household_id, :to_s, {:include_blank => 'Put this member in a new household'} ) %>
     <br /><br />
 
   </div>
