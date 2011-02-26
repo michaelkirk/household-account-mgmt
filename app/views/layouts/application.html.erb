@@ -9,11 +9,17 @@
 </head>
 <body>
 
+  <% if current_user %>
+  <ul class="navigation" style="float: right">
+    <li><%= link_to 'sign out', destroy_user_session_url %></li>
+  </ul>
   <ul class="navigation">
     <li><%= link_to_unless_current "members", members_url %></li>
     <li><%= link_to_unless_current "households", households_url %></li>
     <li><%= link_to_unless_current "all transactions", transactions_url %></li>
   </ul>
+  <% end %>
+
 <div id="content">
   <%= yield %>
 </content>
