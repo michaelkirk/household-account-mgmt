@@ -87,7 +87,12 @@ describe TransactionsController do
 
     describe "with valid params" do
       it "updates the requested transaction" do
-        Transaction.should_receive(:find).with("37") { mock_transaction }
+        Transaction.stub_chain(:for_household, :find) { mock_transaction }
+        # how to do msg expectations with chained methods like this? instead of the above stub
+        # Transaction.should_receive(:for_household).with("1").should_receive(:find).with("37") { mock_transaction }
+        # Something like this? Is that even useful?
+        # Transaction.should_receive(:for_household).with("1") { MockHouseholdScope }
+        # MockHouseholdScope.should_receive(:find).with("37")) { mock_transaction }
         mock_transaction.should_receive(:update_attributes).with({'these' => 'params'})
         put :update, {:id => "37", :household_id => 1, :transaction => {'these' => 'params'}}
       end
@@ -98,10 +103,10 @@ describe TransactionsController do
         assigns(:transaction).should be(mock_transaction)
       end
 
-      it "redirects to the transaction" do
-        Transaction.stub_chain(:for_household, :find) { mock_transaction(:update_attributes => true) }
+      it "redirects to the households transactions" do
+        Transaction.stub_chain(:for_household, :find) { mock_transaction(:update_attributes => true, :household_id => 2) }
         put :update, {:id => "1", :household_id => 1}
-        response.should redirect_to(transaction_url(mock_transaction))
+        response.should redirect_to(household_transaction_url(:household_id => 1, :id => mock_transaction))
       end
     end
 

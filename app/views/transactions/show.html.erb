@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Amount:</b>
-  <%= @transaction.amount %>
+  <b>Household:</b>
+  <%= @household %>
 </p>
 
 <p>
-  <b>Credit:</b>
-  <%= @transaction.credit %>
+  <b>Amount:</b>
+  <%= @transaction.amount %> <%= @transaction.credit? ? "credit" : "debit" %>
 </p>
 
 <p>
@@ -15,10 +15,6 @@
   <%= @transaction.message %>
 </p>
 
-<p>
-  <b>Household:</b>
-  <%= @household %>
-</p>
 
 
 <%= link_to 'Edit', edit_household_transaction_path(@household, @transaction) %> |
