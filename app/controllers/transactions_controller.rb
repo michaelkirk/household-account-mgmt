@@ -13,7 +13,7 @@ class TransactionsController < ApplicationController
   # GET /households/:id/transactions.xml
   def index
     @household = Household.find(params[:household_id])
-    @transactions = Transaction.for_household(params[:household_id])
+    @transactions = Transaction.for_household(params[:household_id]).all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -62,10 +62,9 @@ class TransactionsController < ApplicationController
         format.xml  { render :xml => @transaction, :status => :created, :location => @transaction }
       else
         format.html { 
-	  redirect_to(@household, 
-	    :notice => "Error creating transaction: " + @transaction.errors.full_messages.inject {|a,b| "#{a}, #{b}" }
-	  )} #TODO use proper form error handling, instead of this cludge.
-      
+      	  redirect_to(@household, 
+                      #TODO use proper form error handling, instead of this cludge.
+          	          :notice => "Error creating transaction: " + @transaction.errors.full_messages.join(", "))}       
         format.xml  { render :xml => @transaction.errors, :status => :unprocessable_entity }
       end
     end
