@@ -21,32 +21,26 @@ describe TransactionsController do
 
   describe "GET index" do
     it "assigns all transactions as @transactions" do
-      Transaction.stub(:all) { [mock_transaction] }
-      get :index, {:household_id => 1}
+      Transaction.stub(:for_household).with("1") { Transaction.stub(:all) { [mock_transaction] }; Transaction }
+      get :index, {:household_id => "1"}
       assigns(:transactions).should eq([mock_transaction])
     end
   end
 
   describe "GET show" do
     it "assigns the requested transaction as @transaction" do
-      Transaction.stub(:find).with("37") { mock_transaction }
-      get :show, {:household_id => 1, :id => "37"}
-      assigns(:transaction).should be(mock_transaction)
-    end
-  end
-
-  describe "GET new" do
-    it "assigns a new transaction as @transaction" do
-      Transaction.stub(:new) { mock_transaction }
-      get :new
+      # setting up chained expectations (Transaction.for_household(1).find(37) => mock_transaction
+      Transaction.stub(:for_household).with("1") { Transaction.stub(:find).with("37") { mock_transaction }; Transaction }
+      get :show, {:household_id => "1", :id => "37"}
       assigns(:transaction).should be(mock_transaction)
     end
   end
 
   describe "GET edit" do
     it "assigns the requested transaction as @transaction" do
-      Transaction.stub(:find).with("37") { mock_transaction }
-      get :edit, {:id => "37", :household_id => 1}
+      # setting up chained expectations (Transaction.for_household(1).find(37) => mock_transaction
+      Transaction.stub(:for_household).with("1") { Transaction.stub(:find).with("37") { mock_transaction }; Transaction }
+      get :edit, {:id => "37", :household_id => "1"}
       assigns(:transaction).should be(mock_transaction)
     end
   end
@@ -63,21 +57,21 @@ describe TransactionsController do
       it "redirects to the created transaction" do
         Transaction.stub(:new) { mock_transaction(:save => true) }
         post :create, {:household_id => 1, :transaction => {}}
-        response.should redirect_to(transaction_url(mock_transaction))
+        response.should redirect_to(household_url(1))
       end
     end
 
     describe "with invalid params" do
       it "assigns a newly created but unsaved transaction as @transaction" do
         Transaction.stub(:new).with({'these' => 'params'}) { mock_transaction(:save => false) }
-        post :create, :transaction => {'these' => 'params'}
+        post :create, {:household_id => 1, :transaction => {'these' => 'params'}}
         assigns(:transaction).should be(mock_transaction)
       end
 
-      it "re-renders the 'new' template" do
-        Transaction.stub(:new) { mock_transaction(:save => false) }
-        post :create, :transaction => {}
-        response.should render_template("new")
+      it "re-renders the show household template" do
+        Transaction.stub(:new).with({'these' => 'params'}) { mock_transaction(:save => false) }
+        post :create, {:household_id => 1, :transaction => {'these' => 'params'}}
+        response.should redirect_to(household_url(1))
       end
     end
 
