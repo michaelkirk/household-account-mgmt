@@ -11,6 +11,9 @@ gem 'mysql2'
 # for authentication 
 gem 'devise'
 
+# for authorization
+gem 'cancan'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

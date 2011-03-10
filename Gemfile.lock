@@ -31,6 +31,7 @@ GEM
     arel (2.0.6)
     bcrypt-ruby (2.1.2)
     builder (2.1.2)
+    cancan (1.5.1)
     columnize (0.3.2)
     devise (1.1.5)
       bcrypt-ruby (~> 2.1.2)
@@ -103,6 +104,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  cancan
   devise
   factory_girl_rails
   mocha
