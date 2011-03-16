@@ -4,7 +4,7 @@ describe TransactionsController do
   before do
     @household = stub_model(Household, {:id => 1})
     Household.stub(:find) { @household }
-    controller.stub(:authenticate_user!) { true }
+    controller.class.skip_before_filter :authenticate_user!
   end
 
   def mock_user(stubs={})

@@ -4,16 +4,23 @@ describe "Transactions" do
   before do
     @household = stub_model(Household, {:id => 1})
     Household.create!(:id=>1)
-    def current_user
-      mock_model(User)
-    end
+
+    TransactionsController.skip_before_filter :authenticate_user!
   end
 
   describe "GET /transactions" do
-    it "works! (now write some real specs)" do
+    it "works!" do
       # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
       get all_transactions_url
       response.status.should be(200)
     end
   end
+  describe "GET /household/1/transactions" do
+    it "works!" do
+      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
+      get household_transactions_url(:household_id => 1)
+      response.status.should be(200)
+    end
+  end
+
 end
