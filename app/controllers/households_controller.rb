@@ -3,9 +3,9 @@ class HouseholdsController < ApplicationController
   # GET /households.xml
   def index
     if params[:search]
-      @households = Household.find_by_keywords(params[:search])
+      @households = Household.find_by_keywords(params[:search]).all(:include => :members)
     else
-      @households = Household.all
+      @households = Household.all(:include => :members)
     end
 
     respond_to do |format|
