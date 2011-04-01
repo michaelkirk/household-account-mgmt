@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "transactions/index.html.erb" do
   before(:each) do
     @household = assign(:household, stub_model(Household, {:id => 1}))
-    @created_date = DateTime.now.utc
+    @created_date = DateTime.now
     assign(:transactions, [
       stub_model(Transaction,
         :amount => "9.99",
