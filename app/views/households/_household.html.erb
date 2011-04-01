@@ -37,6 +37,8 @@
   <li>[<%= link_to 'add new member', new_member_path %>]</li>
 </ul>
 
+<%= render :partial => 'households/history', :locals => {:household => household }%>
+
 <h3>Household Contact Info [<%= link_to 'edit', edit_household_path(household) %>]</h3>
 
 <!-- TODO: add optional display to all lines -->

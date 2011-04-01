@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110123230006) do
+ActiveRecord::Schema.define(:version => 20110401205202) do
+
+  create_table "household_membership_audits", :force => true do |t|
+    t.integer  "household_id"
+    t.integer  "member_id"
+    t.string   "event"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "households", :force => true do |t|
     t.decimal  "balance",    :precision => 8, :scale => 2, :default => 0.0

@@ -40,7 +40,6 @@ class MembersController < ApplicationController
   # POST /members
   # POST /members.xml
   def create
-    #TODO move household assignment into member model
     @member = Member.new(params[:member])
 
     respond_to do |format|

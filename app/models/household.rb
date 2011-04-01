@@ -1,6 +1,7 @@
 class Household < ActiveRecord::Base
   has_many :members
   has_many :transactions
+  has_many :household_membership_audits
 
   #BUG this only matches if the submitted keywords are matched to a single user.
   # if I had a household with members "Alonzo Church" and "Edsger Dijktstra" I couldn't
@@ -14,6 +15,9 @@ class Household < ActiveRecord::Base
      :conditions => "UPPER(members.first_name) LIKE UPPER('%#{name}%') OR UPPER(members.last_name) LIKE UPPER('%#{name}%')"}
     #TODO protect from injection.
   }
+
+  # All households with no members
+  scope :empty, joins('left outer join members on members.household_id = households.id').select('households.*').where('members.id is null')
 
   def to_s
     if members.empty?
@@ -36,5 +40,5 @@ class Household < ActiveRecord::Base
     self.balance = self.balance - amount
     self.save
   end
-  
+
 end
