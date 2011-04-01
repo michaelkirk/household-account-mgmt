@@ -2,7 +2,7 @@
 <ul>
   <% household.household_membership_audits.each do |audit| %>
   <li>
-    <%= audit.member %> <%= audit.event %> on <%= audit.created_at %>
+    <%= audit.member %> <%= audit.event %> the household on <%= audit.created_at %>
   </li>
 <% end %>
 </ul>
