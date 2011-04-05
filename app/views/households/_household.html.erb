@@ -37,7 +37,14 @@
   <li>[<%= link_to 'add new member', new_member_path %>]</li>
 </ul>
 
-<%= render :partial => 'households/history', :locals => {:household => household }%>
+<h3>History</h3>
+<ul>
+  <% household.household_membership_audits.each do |audit| %>
+  <li>
+    <%= audit.member %> <%= audit.event %> the household on <%= audit.created_at %>
+  </li>
+<% end %>
+</ul>
 
 <h3>Household Contact Info [<%= link_to 'edit', edit_household_path(household) %>]</h3>
 
