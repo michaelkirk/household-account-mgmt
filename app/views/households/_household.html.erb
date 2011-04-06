@@ -3,29 +3,7 @@
 [ <%= link_to 'View previous transactions', household_transactions_path(household) %>]
 <br />
 
-<%= form_for([household, Transaction.new(:household => household)]) do |f| %>
-  <h3>Make an investment or purchase</h3>
-  <div class="field">
-    <%= f.radio_button :credit, :true %>
-    <%= f.label :credit_true, "Investment (or credit adjustment)" %>
-    <br />
-    <%= f.radio_button :credit, :false %>
-    <%= f.label :credit_false, "Purchase (or debit adjustment)" %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :amount %><br />
-    $<%= f.text_field :amount, :size => 6 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :message, "Optional message"%><br />
-    <%= f.text_field :message %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<%= render :partial => 'transactions/create', :locals => {:household => household, :transaction => Transaction.new }%>
 
 <hr />
 
