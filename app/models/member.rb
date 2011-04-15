@@ -2,6 +2,24 @@ class Member < ActiveRecord::Base
   belongs_to :household
   has_many :household_membership_audits
 
+  # The last member can't leave a household which has a non-zero balance, ensuring all money is accessible.
+  validate do
+    if(not new_record? and household_id_changed?)
+      if(household_was.members == [self] and household_was.balance != 0)
+        errors.add(:household, "You must transfer the old household's balance before removing it's last member.")
+      end
+    end
+  end
+
+  def household_was
+    if( household_id_was )
+      Household.find(household_id_was)
+    else
+      nil
+    end
+  end
+
+
   before_validation do |member|
     # a member must always belong to a household. 
     # If they aren't currently in a household, make a new one for them.

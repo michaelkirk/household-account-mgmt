@@ -3,6 +3,7 @@ class Household < ActiveRecord::Base
   has_many :transactions
   has_many :household_membership_audits
 
+  
   #BUG this only matches if the submitted keywords are matched to a single user.
   # if I had a household with members "Alonzo Church" and "Edsger Dijktstra" I couldn't
   # search for Alonzo Edsger. I _think_ I should be able to.
@@ -30,15 +31,13 @@ class Household < ActiveRecord::Base
   def do_credit (amount)
     Transaction.create!(
       :credit => true, :amount => amount, :household_id => self.id)
-    self.balance = self.balance + amount
-    self.save
+    self.update_attribute(:balance, self.balance + amount)
   end
   
   def do_debit (amount)
     Transaction.create!(
       :credit => false, :amount => amount, :household_id => self.id)
-    self.balance = self.balance - amount
-    self.save
+    self.update_attribute(:balance, self.balance - amount)
   end
 
 end
