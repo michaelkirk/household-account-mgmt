@@ -90,7 +90,7 @@ class TransactionsController < ApplicationController
   # DELETE /households/:id/transactions/1
   # DELETE /households/:id/transactions/1.xml
   def destroy
-    raise Exception.new("deleting transaction's is not allowed")
+    raise Exception.new("deleting transactions is not allowed")
     @household = Household.find(params[:household_id])
     @transaction = Transaction.for_household(params[:household_id]).find(params[:id])
     @transaction.destroy
