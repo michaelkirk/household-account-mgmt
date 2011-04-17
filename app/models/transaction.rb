@@ -6,6 +6,7 @@ class Transaction < ActiveRecord::Base
   validates_presence_of :amount
   validates_numericality_of :amount, :greater_than => 0
 
+  default_scope :order => 'created_at'
   scope :for_household, (lambda do |h| {:conditions => {:household_id => h}} end)
 
   # attr_readonly allows you to change attr values of the model, but these changes won't be saved to the DB
