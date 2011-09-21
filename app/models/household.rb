@@ -28,13 +28,13 @@ class Household < ActiveRecord::Base
     end
   end
   
-  def do_credit (amount)
+  def credit! (amount)
     Transaction.create!(
       :credit => true, :amount => amount, :household_id => self.id)
     self.update_attribute(:balance, self.balance + amount)
   end
   
-  def do_debit (amount)
+  def debit! (amount)
     Transaction.create!(
       :credit => false, :amount => amount, :household_id => self.id)
     self.update_attribute(:balance, self.balance - amount)

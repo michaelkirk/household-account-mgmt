@@ -27,15 +27,15 @@ describe Member do
 
       it "should not allow last member to leave household with outstanding balance" do
         m= Member.create!
-        m.household.do_credit(5)
+        m.household.credit!(5)
         m.household= @household
         m.should_not be_valid
       end
 
-      it "should allow last memeber to leave household with no outstanding balance" do
+      it "should allow last member to leave household with no outstanding balance" do
         m= Member.create!
-        m.household.do_credit(5)
-        m.household.do_debit(5)
+        m.household.credit!(5)
+        m.household.debit!(5)
         m.household= @household
         m.should be_valid
       end
