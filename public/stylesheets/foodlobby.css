@@ -2,6 +2,10 @@ body {
   background-color: #ada;
 }
 
+#flash_notice {
+    background-color: #4f4;
+}
+
 #content {
   position: relative;
   clear: both;
@@ -54,7 +58,12 @@ form#new_transaction h3 {
 .field .help {
   color: #999;
   font-size: 16px;
-  margin: 0 0 5px 25px;
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+
+#new_transaction .field .help {
+  margin-left: 25px;
 }
 
 

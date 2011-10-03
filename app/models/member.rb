@@ -11,6 +11,8 @@ class Member < ActiveRecord::Base
     end
   end
 
+  validates_presence_of :first_name, :last_name
+
   def household_was
     if( household_id_was )
       Household.find(household_id_was)

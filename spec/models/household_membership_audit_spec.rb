@@ -5,7 +5,7 @@ describe HouseholdMembershipAudit do
   before do
     @original_household = Household.create
     @new_houshold = Household.create
-    @member = Member.create(:household => @original_household)
+    @member = Factory(:member, :household => @original_household)
   end
 
   it "should create an initial 'join' audit for new household membership " do

@@ -20,6 +20,9 @@ module NavigationHelpers
     when 'the list of all transactions'
       all_transactions_path
 
+    when 'the add member form'
+      new_member_path
+
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

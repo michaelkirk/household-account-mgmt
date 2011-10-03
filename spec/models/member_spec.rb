@@ -9,7 +9,9 @@ describe Member do
   describe "#household" do
 
     it "should belong to the assigned household if one was specified on creation" do
-      m= Member.create!(:household => household)
+      m = Factory.build(:member)
+      m.household = household
+      m.save!
       m.household.should == household
       
       #reload household to verify relation persisted in DB
@@ -18,22 +20,22 @@ describe Member do
     end
 
     it "should have a new household assigned on creation if one wasn't specified" do
-      m= Member.create!
+      m = Factory.build(:member)
+      m.save!
       m.household.should_not be_nil
       m.household.members.should == [m]
     end
 
     describe "changing households" do
+      let(:m) { Factory(:member) }
 
       it "should not allow last member to leave household with outstanding balance" do
-        m= Member.create!
         m.household.credit!(5)
         m.household= @household
         m.should_not be_valid
       end
 
       it "should allow last member to leave household with no outstanding balance" do
-        m= Member.create!
         m.household.credit!(5)
         m.household.debit!(5)
         m.household= @household

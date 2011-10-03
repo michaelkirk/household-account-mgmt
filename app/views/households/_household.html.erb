@@ -5,13 +5,13 @@
 
 <%= render :partial => 'transactions/create', :locals => {:household => household, :transaction => Transaction.new }%>
 
-<h2>Members</h2> 
-<ul>
+<h2>Members</h2>
+<ul id="members">
   <% household.members.each do |m| %>
     <li><%= link_to m, m %></li>  
   <% end %>
-  <li>[<%= link_to 'add new member', new_member_path %>]</li>
 </ul>
+<%= link_to 'add new member', new_member_path %>
 
 <h3>History</h3>
 <ul>

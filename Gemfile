@@ -36,7 +36,6 @@ gem 'ruby-debug19'
  group :development, :test do
    gem 'heroku'
    gem 'rspec-rails'
-   gem 'mocha'
    gem 'factory_girl_rails'
    gem 'cucumber-rails'
    gem 'database_cleaner'

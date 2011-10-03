@@ -56,7 +56,7 @@
   </div>
 
   <div class="field">
-    <b>Household:</b><br />
+    <%= f.label :household_id %>
     <% if @member.household %>
       <ol>
       <% @member.household.members.each do |m| %>
@@ -64,15 +64,12 @@
       <% end %>
       </ol>
     <% end %>
-
+    <%= f.collection_select(:household_id, Member.all, :household_id, :to_s, {:include_blank => 'Put this member in a new household'} ) %>
     <% if @member.new_record? %>
-      <%= f.label :household_id, "Add this member to which household?" %><br />
+      <p class="help">Add this member to which household?</p>
     <% else %>
-      <%= f.label :household_id, "Move this member to a different household?" %><br />
+      <p class="help">Move this member to a different household?</p>
     <% end %>
-      <%= f.collection_select(:household_id, Member.all, :household_id, :to_s, {:include_blank => 'Put this member in a new household'} ) %>
-    <br /><br />
-
   </div>
   <div class="actions">
     <%= f.submit %>
