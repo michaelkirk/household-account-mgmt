@@ -9,8 +9,8 @@ Feature: Credit a household
 
   Scenario: Credit a household
     Given a household with a $50 balance
-    When I view that household
-    And I choose "Credit"
+    And I view that household
+    When I choose "Credit"
     And I fill in "30.50" for "Amount"
     And I press "Create Transaction"
     Then I should see "Household transaction was successfully created"
@@ -18,8 +18,8 @@ Feature: Credit a household
 
   Scenario: Submit empty form
     Given a household with a $50 balance
-    When I view that household
-    And I press "Create Transaction"
+    And I view that household
+    When I press "Create Transaction"
     Then I should see "Error creating transaction"
     And I should see "Balance: $50"
 
