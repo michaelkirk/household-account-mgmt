@@ -40,5 +40,5 @@ gem 'ruby-debug19'
    gem 'factory_girl_rails'
    gem 'cucumber-rails'
    gem 'database_cleaner'
-#   gem 'webrat'
+   gem 'capybara'
  end
