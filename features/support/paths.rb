@@ -11,11 +11,22 @@ module NavigationHelpers
     when /^the home\s?page$/
       '/'
 
+    when 'the list of households'
+      households_path
+
+    when 'the sign in page'
+      new_user_session_path
+
+    when 'the list of all transactions'
+      all_transactions_path
+
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
     #   when /^(.*)'s profile page$/i
     #     user_profile_path(User.find_by_login($1))
+
 
     else
       begin
