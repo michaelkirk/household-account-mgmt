@@ -43,12 +43,18 @@ tr.odd {
 
 
 form#new_transaction {
-  padding: 0px 15px;
+  padding: 5px;
   border: solid black 1px;
 }
 
 form#new_transaction h3 {
   border-bottom: dotted black 1px;
+}
+
+.field .help {
+  color: #999;
+  font-size: 16px;
+  margin: 0 0 5px 25px;
 }
 
 

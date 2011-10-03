@@ -11,7 +11,7 @@ When /^I view that household$/ do
 end
 
 When /^I credit the household \$(\d+)$/ do |amount|
-  check "credit"
-  fill_in "amount", :with => amount
+  choose "Credit"
+  fill_in "Amount", :with => amount
   click_button "Save"
 end

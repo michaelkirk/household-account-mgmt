@@ -5,8 +5,6 @@
 
 <%= render :partial => 'transactions/create', :locals => {:household => household, :transaction => Transaction.new }%>
 
-<hr />
-
 <h2>Members</h2> 
 <ul>
   <% household.members.each do |m| %>

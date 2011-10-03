@@ -14,6 +14,11 @@ Feature: authentication
     And I press "Sign in"
     Then I should see "Listing households"
 
+  Scenario: view page when logged in
+    Given I am logged in
+    When I go to the list of households
+    Then I should see "Listing households"
+
   Scenario: failed log in
     Given I am not logged in
     And I am on the sign in page
@@ -41,5 +46,4 @@ Feature: authentication
     And I press "Sign in"
     Then I should see "All transactions"
     But I should not see "Listing households"
-
 

@@ -12,12 +12,19 @@
     </div>
   <% end %> 
 
-  <div class="field">
+  <style type="text/css">
+    #new_transaction input[type="submit"] {
+      margin-top: 10px;
+      margin-left: 285px;
+    }
+  </style>
+  <div style="float: left; margin-right: 40px;" class="field">
     <%= f.radio_button :credit, :true %>
-    <%= f.label :credit_true, "Investment (or credit adjustment)" %>
-    <br />
+    <%= f.label :credit_true, "Credit" %>
+    <p class="help">investment, or credit adjustment</p>
     <%= f.radio_button :credit, :false %>
-    <%= f.label :credit_false, "Purchase (or debit adjustment)" %>
+    <%= f.label :credit_false, "Debit" %>
+    <p class="help">purchase, or debit adjustment</p>
   </div>
   
   <div class="field">
@@ -26,9 +33,10 @@
   </div>
 
   <div class="field">
-    <%= f.label :message, "Optional message"%><br />
-    <%= f.text_field :message %>
+    <%= f.label :message, "Notes" %><br />
+    <%= f.text_area :message, :rows => 4 %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
