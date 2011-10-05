@@ -14,7 +14,6 @@ Search by member names, then make an investment or purchase.
     <th>Members</th>
     <th>Balance</th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @households.each do |household| %>
@@ -28,7 +27,6 @@ Search by member names, then make an investment or purchase.
     </td>
     <td><%= sprintf("$%.2f", household.balance) %></td>
     <td><%= link_to 'Investment/Purchase', household %></td>
-    <td><%= link_to 'Edit contact info', edit_household_path(household) %></td>
   </tr>
 <% end %>
 </table>
