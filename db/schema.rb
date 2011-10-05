@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110401205202) do
+ActiveRecord::Schema.define(:version => 20111005071728) do
 
   create_table "household_membership_audits", :force => true do |t|
     t.integer  "household_id"
@@ -24,13 +25,6 @@ ActiveRecord::Schema.define(:version => 20110401205202) do
     t.decimal  "balance",    :precision => 8, :scale => 2, :default => 0.0
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "phone1"
-    t.string   "phone2"
-    t.string   "address1"
-    t.string   "address2"
-    t.string   "city"
-    t.string   "state"
-    t.string   "zip"
     t.text     "notes"
     t.integer  "fm_id"
   end

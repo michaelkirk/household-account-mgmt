@@ -8,7 +8,7 @@
 <h2>Members</h2>
 <ul id="members">
   <% household.members.each do |m| %>
-    <li><%= link_to m, m %></li>  
+    <li><%= link_to m, m %></li>
   <% end %>
 </ul>
 <%= link_to 'add new member', new_member_path %>
@@ -21,41 +21,6 @@
   </li>
 <% end %>
 </ul>
-
-<h3>Household Contact Info [<%= link_to 'edit', edit_household_path(household) %>]</h3>
-
-<!-- TODO: add optional display to all lines -->
-
-<div>
-  <% unless household.phone1 == nil %>
-    <b>Household phone:</b> <%= household.phone1 %><br />
-  <% end %>
-  
-  <% unless household.phone2 == nil %>
-    <b>Household phone (secondary):</b> <%= household.phone2 %><br />
-  <% end %>
-  
-  <% unless(household.address1 == nil and
-      household.address2 == nil and
-      household.phone1 == nil and
-      household.phone2 == nil and
-      household.city == nil and
-      household.state == nil and
-      household.zip == nil)
-  %>
-  <b>Household address:</b><br />
-  
-  <% unless household.address1 == nil %>
-    <%= household.address1 %><br />
-  <% end %>
-  <% unless household.address2 == nil %>
-    <%= household.address2 %><br />
-  <% end %>
-  <%= "#{household.city}, #{household.state} #{household.zip}" %><br />
-  <% else %>
-    <p>No contact info for this household. Try looking at the individual members.</p>
-  <% end %>
-</div>
 
 
 

@@ -16,10 +16,19 @@
 
 <!-- TODO: add optional display to all lines -->
 <div>
-<b>Member email:</b> <%= @member.email %><br />
-<b>Member phone 1:</b> <%= @member.phone1 %><br />
-<b>Member phone 2:</b> <%= @member.phone2 %><br />
-<b>Member address: (If household members have different addresses)</b><br />
+<% if @member.email.present? %>
+  <b>Email:</b> <%= @member.email %><br />
+<% end %>
+
+<% if @member.phone1.present? %>
+  <b>Primary phone:</b> <%= @member.phone1 %><br />
+<% end %>
+
+<% if @member.phone2.present? %>
+  <b>Secondary phone:</b> <%= @member.phone2 %><br />
+<% end %>
+
+<b>Address</b></br>
 <%= @member.address1 %><br />
 <% if @member.address2 != '' %>
   <%= @member.address2 %><br />

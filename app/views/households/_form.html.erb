@@ -11,37 +11,12 @@
     </div>
   <% end %>
   
-<h3>Household Members</h3>
-<ol>
-  <% @household.members.each do |m| %>
-    <li><%= link_to m, m %></li>  
-  <% end %>
-</ol>
-  
-  <div class="field">
-    <%= f.label :phone1, "Phone 1" %>
-    <%= f.text_field :phone1, :size=>15 %>
-
-    <%= f.label :phone2, "Phone 2" %>
-    <%= f.text_field :phone2, :size=>15 %>
-  </div>
-    <div class="field">
-    <%= f.label :address1, "Address Line 1" %><br />
-    <%= f.text_field :address1, :size=>50 %>
-  </div>
-    <div class="field">
-    <%= f.label :address2, "Address Line 2" %><br />
-    <%= f.text_field :address2, :size=>50 %>
-  </div>
-    <div class="field">
-    <%= f.label :city, "City" %>
-    <%= f.text_field :city, :size=>24 %>,
-    <%= f.label :state, "State" %>
-    <%= f.text_field :state, :size=>2 %>
-    <%= f.label :zip, "Zip" %>
-    <%= f.text_field :zip, :size=>9 %>
-  </div>
-  
+  <h3>Household Members</h3>
+  <ol>
+    <% @household.members.each do |m| %>
+      <li><%= link_to m, m %></li>
+    <% end %>
+  </ol>
 
   <div class="actions">
     <%= f.submit %>
