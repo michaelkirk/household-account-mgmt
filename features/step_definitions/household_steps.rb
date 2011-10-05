@@ -25,9 +25,13 @@ Then /^I should not see any members besides "([^"]*)"$/ do |member_names|
   end
 end
 
-Given /^a household with "([^"]*)" as a member$/ do |member_name|
-  first_name, last_name = member_name.split
-  member = Factory(:member, :first_name => first_name, :last_name => last_name)
+Given /^a household with "([^"]*)" as a? ?members?$/ do |member_names|
+  members_names = member_names.split(" and ")
+
+  members = members_names.map do |member_name|
+    first_name, last_name = member_name.split
+    Factory(:member, :first_name => first_name, :last_name => last_name)
+  end
   
-  @household = Household.create(:members => [member])
+  @household = Household.create!(:members => members)
 end

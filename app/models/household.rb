@@ -3,19 +3,18 @@ class Household < ActiveRecord::Base
   has_many :transactions
   has_many :household_membership_audits
 
-  
-  #BUG this only matches if the submitted keywords are matched to a single user.
-  # if I had a household with members "Alonzo Church" and "Edsger Dijktstra" I couldn't
-  # search for Alonzo Edsger. I _think_ I should be able to.
-  # perhaps I'm misunderstanding the type algebra.
-  scope :find_by_keywords, lambda {|query|
-    query.split.inject(find_by_member_name("")) {|accumulated_scope, word|
-      accumulated_scope.find_by_member_name(word)}}
-  scope :find_by_member_name, lambda { |name| 
-    {:joins => :members, 
-     :conditions => "UPPER(members.first_name) LIKE UPPER('%#{name}%') OR UPPER(members.last_name) LIKE UPPER('%#{name}%')"}
-    #TODO protect from injection.
-  }
+  #OPTIMIZE this horse shit.
+  def self.find_by_keywords(words)
+    return self.all if(words.strip.empty?)
+    
+    words.split.inject([]) do |members, word|
+      #Get all members who's first or last name matches
+      members | Member.where(:first_name => word) | Member.where(:last_name => word)
+    end.map do |member|
+      #Get their households
+      member.household
+    end.uniq #remove dupes.
+  end
 
   # All households with no members
   scope :empty, joins('left outer join members on members.household_id = households.id').select('households.*').where('members.id is null')
