@@ -3,7 +3,6 @@ require 'spec_helper'
 describe "Transactions" do
   before do
     @household = stub_model(Household, {:id => 1})
-    Household.create!(:id=>1)
 
     TransactionsController.skip_before_filter :authenticate_user!
   end
@@ -17,6 +16,8 @@ describe "Transactions" do
   end
   describe "GET /household/1/transactions" do
     it "works!" do
+      household = Factory(:household)
+      Household.should_receive(:find).with("1").and_return { household }
       # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
       get household_transactions_url(:household_id => 1)
       response.status.should be(200)

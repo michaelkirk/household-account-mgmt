@@ -9,7 +9,7 @@ class Household < ActiveRecord::Base
 
     words.split.inject(Set.new()) do |members, word|
       #Get all members who's first or last name matches
-      members + Member.where('first_name LIKE UPPER(?) OR last_name LIKE UPPER(?)' , "%#{word}%", "%#{word}%")
+      members + Member.where('UPPER(first_name) LIKE UPPER(?) OR UPPER(last_name) LIKE UPPER(?)' , "%#{word}%", "%#{word}%")
     end.map do |member|
       #Get their households
       member.household
