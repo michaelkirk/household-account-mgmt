@@ -4,4 +4,8 @@ FactoryGirl.define do
     last_name "Member"
   end
 
+  factory :household do
+
+  end
 end
+

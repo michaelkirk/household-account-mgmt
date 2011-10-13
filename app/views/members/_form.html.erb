@@ -11,51 +11,51 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name, :size => 20 %>
-    
-    <span style="margin-right: 1em;"></span>
-    
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name, :size => 20 %>
-  </div>
-  
-  <div class="field">
-  <%= f.label :active, "Active Member" %>
-  <%= f.check_box :active %><br />
-  </div>
-
-  <div class="field">
-    <%= f.label :email, "Email" %>
-    <%= f.text_field :email, :size=>25 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :phone1, "Phone 1" %>
-    <%= f.text_field :phone1, :size=>15 %>
-
-    <%= f.label :phone2, "Phone 2" %>
-    <%= f.text_field :phone2, :size=>15 %>
-  </div>
+  <fieldset>
     <div class="field">
-    <%= f.label :address1, "Address Line 1" %><br />
-    <%= f.text_field :address1, :size=>50 %>
-  </div>
-    <div class="field">
-    <%= f.label :address2, "Address Line 2" %><br />
-    <%= f.text_field :address2, :size=>50 %>
-  </div>
-    <div class="field">
-    <%= f.label :city, "City" %>
-    <%= f.text_field :city, :size=>20 %>,
-    <%= f.label :state, "State" %>
-    <%= f.text_field :state, :size=>2 %>
-    <%= f.label :zip, "Zip" %>
-    <%= f.text_field :zip, :size=>9 %>
-  </div>
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name, :size => 20 %>
 
-  <div class="field">
+      <span style="margin-right: 1em;"></span>
+
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name, :size => 20 %>
+    </div>
+
+    <div class="field">
+      <%= f.label :active, "Active Member" %>
+      <%= f.check_box :active %><br />
+    </div>
+
+    <div class="field">
+      <%= f.label :email, "Email" %>
+      <%= f.text_field :email, :size=>25 %>
+    </div>
+
+    <div class="field">
+      <%= f.label :phone1, "Phone 1" %>
+      <%= f.text_field :phone1, :size=>15 %>
+
+      <%= f.label :phone2, "Phone 2" %>
+      <%= f.text_field :phone2, :size=>15 %>
+    </div>
+    <div class="field">
+      <%= f.label :address1, "Address Line 1" %><br />
+      <%= f.text_field :address1, :size=>50 %>
+    </div>
+    <div class="field">
+      <%= f.label :address2, "Address Line 2" %><br />
+      <%= f.text_field :address2, :size=>50 %>
+    </div>
+    <div class="field">
+      <%= f.label :city, "City" %>
+      <%= f.text_field :city, :size=>20 %>,
+      <%= f.label :state, "State" %>
+      <%= f.text_field :state, :size=>2 %>
+      <%= f.label :zip, "Zip" %>
+      <%= f.text_field :zip, :size=>9 %>
+    </div>
+
     <%= f.label :household_id %>
     <% if @member.household %>
       <ol>
@@ -70,8 +70,8 @@
     <% else %>
       <p class="help">Move this member to a different household?</p>
     <% end %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  </fieldset>
 <% end %>

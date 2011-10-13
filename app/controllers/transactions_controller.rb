@@ -26,7 +26,7 @@ class TransactionsController < ApplicationController
   def show
     @household = Household.find(params[:household_id])
     @transaction = Transaction.for_household(params[:household_id]).find(params[:id])
-  
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @transaction }
@@ -61,10 +61,9 @@ class TransactionsController < ApplicationController
         format.html { redirect_to(@household, :notice => 'Household transaction was successfully created.') }
         format.xml  { render :xml => @transaction, :status => :created, :location => @transaction }
       else
-        format.html { 
-      	  redirect_to(@household, 
-                      #TODO use proper form error handling, instead of this cludge.
-          	          :notice => "Error creating transaction: " + @transaction.errors.full_messages.join(", "))}       
+        format.html {redirect_to(@household,
+                                 #TODO use proper form error handling, instead of this cludge.
+                                 :notice => "Error creating transaction: " + @transaction.errors.full_messages.join(", "))}
         format.xml  { render :xml => @transaction.errors, :status => :unprocessable_entity }
       end
     end

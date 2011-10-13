@@ -1,16 +1,16 @@
 <h3>Make an investment or purchase</h3>
 <%= form_for([household, transaction]) do |f| %>
-  <% if transaction.errors.any? %> 
+  <% if transaction.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(transaction.errors.count, "error") %> prohibited this household from being saved:</h2>
 
       <ul>
-      <% transaction.errors.full_messages.each do |msg| %> 
+      <% transaction.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
-      <% end %> 
+      <% end %>
       </ul>
     </div>
-  <% end %> 
+  <% end %>
 
   <style type="text/css">
     #new_transaction input[type="submit"] {
@@ -18,15 +18,15 @@
       margin-left: 285px;
     }
   </style>
-  <div style="float: left; margin-right: 40px;" class="field">
+  <fieldset style="float: left; margin-right: 40px;" class="field">
     <%= f.radio_button :credit, :true %>
     <%= f.label :credit_true, "Credit" %>
     <p class="help">investment, or credit adjustment</p>
     <%= f.radio_button :credit, :false %>
     <%= f.label :credit_false, "Debit" %>
     <p class="help">purchase, or debit adjustment</p>
-  </div>
-  
+  </fieldset>
+
   <div class="field">
     <%= f.label :amount %><br />
     $<%= f.text_field :amount, :size => 6 %>

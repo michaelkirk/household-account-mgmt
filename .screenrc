@@ -1,0 +1,8 @@
+screen -t server
+stuff "rails server \015"
+screen -t rake
+stuff "rake \015"
+screen -t console
+stuff "rails console \015"
+screen -t vim
+stuff "vim \015"

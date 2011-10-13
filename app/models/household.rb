@@ -6,10 +6,10 @@ class Household < ActiveRecord::Base
   #OPTIMIZE this horse shit.
   def self.find_by_keywords(words)
     return self.all if(words.strip.empty?)
-    
-    words.split.inject([]) do |members, word|
+
+    words.split.inject(Set.new()) do |members, word|
       #Get all members who's first or last name matches
-      members | Member.where(:first_name => word) | Member.where(:last_name => word)
+      members + Member.where('first_name LIKE UPPER(?) OR last_name LIKE UPPER(?)' , "%#{word}%", "%#{word}%")
     end.map do |member|
       #Get their households
       member.household
@@ -26,13 +26,13 @@ class Household < ActiveRecord::Base
       members.inject { |a,b| "#{a}, #{b}"}
     end
   end
-  
+
   def credit! (amount)
     Transaction.create!(
       :credit => true, :amount => amount, :household_id => self.id)
     self.update_attribute(:balance, self.balance + amount)
   end
-  
+
   def debit! (amount)
     Transaction.create!(
       :credit => false, :amount => amount, :household_id => self.id)
