@@ -27,6 +27,13 @@ describe TransactionsController do
     end
   end
 
+  describe "GET all_households" do
+    it "should offer csv" do
+      get :all_households, :format => :csv
+      response.should be_success
+    end
+  end
+
   describe "GET show" do
     it "assigns the requested transaction as @transaction" do
       # setting up chained expectations (Transaction.for_household(1).find(37) => mock_transaction

@@ -3,7 +3,6 @@ mark all members who haven't made a purchase yet as inactive
 paginate household
 paginate members
 export households to tsv
-export transactions to tsv
 paginate transactions
 filter transactions by date
 remove legacy filemake id (fm_id)
@@ -11,6 +10,7 @@ remove legacy filemake id (fm_id)
 ===
 # DONE
 ===
+# export transactions to csv
 # export members to csv
 # make search case insensitive
 # make search match partial words

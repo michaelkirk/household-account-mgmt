@@ -12,7 +12,7 @@ class Transaction < ActiveRecord::Base
   # attr_readonly allows you to change attr values of the model, but these changes won't be saved to the DB
   # https://rails.lighthouseapp.com/projects/8994-ruby-on-rails/tickets/2132-confusing-behavior-with-attr_readonly#ticket-2132-14
   attr_readonly :amount, :credit, :household_id
- 
+
   after_create do |t|
     if(t.credit?)
       t.household.update_attribute(:balance, t.household.balance + t.amount)
@@ -25,6 +25,16 @@ class Transaction < ActiveRecord::Base
   def self.total_balance
     #TODO do this arithmetic in the DB to avoid instantiating a bazillion objects
     all.inject(0) {|running_sum, t| t.credit? ? running_sum + t.amount : running_sum - t.amount }
+  end
+
+  comma do
+    id
+    amount
+    credit
+    message
+    household_id
+    created_at
+    updated_at
   end
 
 end

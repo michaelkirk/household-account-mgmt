@@ -3,7 +3,7 @@ Foodlobby::Application.routes.draw do
 
   resources :members
 
-  match 'transactions', :controller => :transactions, :action => :all_households, :as => :all_transactions
+  match 'transactions(.:format)', :controller => :transactions, :action => :all_households, :as => :all_transactions
 
   resources :households do
     resources :transactions
