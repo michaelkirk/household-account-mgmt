@@ -6,6 +6,16 @@ body {
     background-color: #4f4;
 }
 
+#footer {
+  margin-top: 30px;
+  height: 200px;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url('/images/tomato.png');
+  background-repeat: no-repeat;
+}
+
 #content {
   position: relative;
   clear: both;
@@ -15,8 +25,7 @@ body {
   text-align: left;
   padding: 15px 50px;
 
-  border: solid black 1px;
-  border-width: 0 1px 1px 0;
+  box-shadow: 5px 5px 10px #555;
 }
 
 .navigation {
