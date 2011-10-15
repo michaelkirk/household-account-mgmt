@@ -37,3 +37,16 @@ describe HouseholdMembershipAudit do
   end
 
 end
+
+# == Schema Information
+#
+# Table name: household_membership_audits
+#
+#  id           :integer(4)      not null, primary key
+#  household_id :integer(4)
+#  member_id    :integer(4)
+#  event        :string(255)
+#  created_at   :datetime
+#  updated_at   :datetime
+#
+

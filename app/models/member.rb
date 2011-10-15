@@ -63,3 +63,27 @@ class Member < ActiveRecord::Base
     "#{first_name} #{last_name}".strip
   end
 end
+
+# == Schema Information
+#
+# Table name: members
+#
+#  id           :integer(4)      not null, primary key
+#  last_name    :string(255)
+#  first_name   :string(255)
+#  household_id :integer(4)
+#  created_at   :datetime
+#  updated_at   :datetime
+#  phone1       :string(255)
+#  phone2       :string(255)
+#  address1     :string(255)
+#  address2     :string(255)
+#  city         :string(255)
+#  state        :string(255)
+#  zip          :string(255)
+#  notes        :text
+#  active       :boolean(1)      default(TRUE)
+#  email        :string(255)
+#  fm_id        :integer(4)
+#
+

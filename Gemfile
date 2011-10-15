@@ -15,6 +15,9 @@ gem 'devise'
 # for authorization
 gem 'cancan'
 
+# helper to annotate model files with schema
+gem 'annotate'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

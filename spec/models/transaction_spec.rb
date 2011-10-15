@@ -67,3 +67,17 @@ describe Transaction do
   end
 
 end
+
+# == Schema Information
+#
+# Table name: transactions
+#
+#  id           :integer(4)      not null, primary key
+#  amount       :decimal(8, 2)   not null
+#  credit       :boolean(1)      not null
+#  message      :string(255)
+#  household_id :integer(4)      not null
+#  created_at   :datetime
+#  updated_at   :datetime
+#
+
