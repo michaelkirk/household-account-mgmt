@@ -18,6 +18,9 @@ gem 'cancan'
 # helper to annotate model files with schema
 gem 'annotate'
 
+#csv export support
+gem 'comma', :git => "https://github.com/michaelkirk/comma.git"
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
@@ -37,7 +40,7 @@ gem 'annotate'
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
 group :development, :test do
-#  gem 'ruby-debug19'
+  gem 'ruby-debug19'
   gem 'heroku'
   gem 'rspec-rails'
   gem 'factory_girl_rails'

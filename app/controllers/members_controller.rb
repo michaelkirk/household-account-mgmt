@@ -7,6 +7,7 @@ class MembersController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @members }
+      format.csv { render :csv => @members }
     end
   end
 

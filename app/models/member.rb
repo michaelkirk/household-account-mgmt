@@ -23,7 +23,7 @@ class Member < ActiveRecord::Base
 
 
   before_validation do |member|
-    # a member must always belong to a household. 
+    # a member must always belong to a household.
     # If they aren't currently in a household, make a new one for them.
     member.build_household if member.household.nil?
   end
@@ -35,10 +35,10 @@ class Member < ActiveRecord::Base
   end
 
   before_save do |member|
-    # new record handled differently, in after_create, 
+    # new record handled differently, in after_create,
     # because the member doesn't have an id before_create.
     # we can't generalize to "after_save" because the "member.household_was" is reset
-    unless member.new_record? 
+    unless member.new_record?
       if member.household_id_changed?
         HouseholdMembershipAudit.create!(:event => 'joined', :household_id => member.household_id, :member_id => member.id)
 
@@ -61,6 +61,27 @@ class Member < ActiveRecord::Base
 
   def name
     "#{first_name} #{last_name}".strip
+  end
+
+  #csv output
+  comma do
+    id
+    last_name
+    first_name
+    household_id
+    created_at
+    updated_at
+    phone1
+    phone2
+    address1
+    address2
+    city
+    state
+    zip
+    notes
+    active
+    email
+    fm_id
   end
 end
 

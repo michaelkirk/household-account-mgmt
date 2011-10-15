@@ -1,11 +1,16 @@
-make search case insensitive
-make search match partial words
 include active? filter in search
 mark all members who haven't made a purchase yet as inactive
 paginate household
 paginate members
 export households to tsv
-export members to tsv
 export transactions to tsv
 paginate transactions
 filter transactions by date
+remove legacy filemake id (fm_id)
+
+===
+# DONE
+===
+# export members to csv
+# make search case insensitive
+# make search match partial words
