@@ -46,4 +46,10 @@ Foodlobby::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+  config.middleware.use ExceptionNotifier,
+    :email_prefix => "[foodlobby] ",
+    :sender_address => %{"exception notifier" <notifier@foodlobby.heroku.com>},
+    :exception_recipients => %w{michael.john.kirk@gmail.com}
+
 end

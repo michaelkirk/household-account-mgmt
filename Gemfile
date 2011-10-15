@@ -21,6 +21,9 @@ gem 'annotate'
 #csv export support
 gem 'comma', :git => "https://github.com/michaelkirk/comma.git"
 
+# send email when an exception occurs
+gem 'exception_notification'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
