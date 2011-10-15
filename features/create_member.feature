@@ -15,7 +15,8 @@ Feature: Create a member
     And I press "Create Member"
     Then I should see "Member was successfully created"
     And I should see "Tye Johnson"
-    And I should not see any members besides "Tye Johnson"
+    When I follow "view household"
+    Then I should not see any members besides "Tye Johnson"
 
   Scenario: add member to household
     Given a household with "Jared Noem" as a member
@@ -25,7 +26,8 @@ Feature: Create a member
     And I select "Jared Noem" from "Household"
     And I press "Create Member"
     Then I should see "Member was successfully created"
-    And I should not see any members besides "Jared Noem and Tye Johnson"
+    When I view that household
+    Then I should not see any members besides "Jared Noem and Tye Johnson"
 
   Scenario: browse to creation form
     Given I am on the homepage
