@@ -1,3 +1,8 @@
+<div id="stats" class="help">
+  We've spent <span class="amount"><%= sprintf("$%d", @amount_purchased_this_week) %></span> on yummy food this week
+  <%= " =(" if @amount_purchased_this_week == 0 %>
+</div>
+
 <h1>Listing households</h1>
 Search by member names, then make an investment or purchase.
 <%= form_tag households_path, :method => 'get' do %>

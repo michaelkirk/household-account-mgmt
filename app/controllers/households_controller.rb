@@ -8,6 +8,8 @@ class HouseholdsController < ApplicationController
       @households = Household.all(:include => :members)
     end
 
+    @amount_purchased_this_week = Transaction.amount_purchased_this_week
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @households }

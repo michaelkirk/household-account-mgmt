@@ -8,6 +8,8 @@ class Transaction < ActiveRecord::Base
 
   default_scope :order => 'created_at'
   scope :for_household, (lambda do |h| {:conditions => {:household_id => h}} end)
+  scope :investments, :conditions => { :credit => true }
+  scope :purchases, :conditions => { :credit => false }
 
   # attr_readonly allows you to change attr values of the model, but these changes won't be saved to the DB
   # https://rails.lighthouseapp.com/projects/8994-ruby-on-rails/tickets/2132-confusing-behavior-with-attr_readonly#ticket-2132-14
@@ -25,6 +27,16 @@ class Transaction < ActiveRecord::Base
   def self.total_balance
     #TODO do this arithmetic in the DB to avoid instantiating a bazillion objects
     all.inject(0) {|running_sum, t| t.credit? ? running_sum + t.amount : running_sum - t.amount }
+  end
+
+  def self.purchases_this_week
+    #TODO look up how to do time query in SQL and make this a scope once the internets are back.
+    purchases.select {|purchase| purchase.created_at > 7.days.ago }
+  end
+
+  def self.amount_purchased_this_week
+    #TODO this in the DB USING AGGREGATION!
+    purchases_this_week.inject(0) {|accum, purchase| accum + purchase.amount }
   end
 
   comma do

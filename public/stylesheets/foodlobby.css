@@ -2,6 +2,15 @@ body {
   background-color: #ada;
 }
 
+#stats {
+  position: absolute;
+  right: 15px;
+}
+
+#stats .amount {
+  font-size: 26px;
+}
+
 #flash_notice {
     background-color: #4f4;
 }
@@ -70,7 +79,7 @@ fieldset {
   border: none;
 }
 
-fieldset .help {
+.help {
   color: #999;
   font-size: 16px;
   margin-bottom: 5px;

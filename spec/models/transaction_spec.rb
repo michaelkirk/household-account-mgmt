@@ -66,6 +66,42 @@ describe Transaction do
     end
   end
 
+  describe ".purchases_this_week" do
+    subject { Transaction.amount_purchased_this_week }
+
+    context "when there have been no transactions" do
+      it { should == 0 }
+    end
+
+    context "when there have been some purchases" do
+      before do
+        Factory(:purchase, :amount => 20)
+        Factory(:purchase, :amount => 30)
+      end
+      
+      it { should == 50 }
+    end
+
+    context "when there have been some purchases and some investments" do
+      before do
+        Factory(:purchase, :amount => 20)
+        Factory(:investment, :amount => 30)
+      end
+
+      it { should == 20 }
+    end
+
+    context "when there are purchases older than a week" do
+      before do
+        Factory(:purchase, :amount => 10, :created_at => 7.days.ago)
+        Factory(:purchase, :amount => 20, :created_at => Date.today)
+      end
+      
+      it { should == 20 }
+    end
+
+  end
+
 end
 
 # == Schema Information
