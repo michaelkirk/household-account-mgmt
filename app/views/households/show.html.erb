@@ -1,3 +1,25 @@
-<%= render @household %>
+<h3>Financial</h3>
+<b>Balance:</b> <%= sprintf("$%.2f", @household.balance) %>
+[ <%= link_to 'View previous transactions', household_transactions_path(@household) %>]
+<br />
+
+<%= render :partial => 'transactions/create', :locals => {:household => @household, :transaction => @transaction }%>
+
+<h3>Members</h3>
+<ul id="members">
+  <% @household.members.each do |m| %>
+    <li><%= link_to m, m %></li>
+  <% end %>
+</ul>
+<%= link_to 'add new member', new_member_path %>
+
+<h3>History</h3>
+<ul>
+  <% @household.household_membership_audits.each do |audit| %>
+  <li>
+    <%= audit.member %> <%= audit.event %> the household on <%= audit.created_at %>
+  </li>
+<% end %>
+</ul>
 
 <%= link_to 'Back', households_path %>

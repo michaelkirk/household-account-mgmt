@@ -20,6 +20,8 @@ class HouseholdsController < ApplicationController
   # GET /households/1.xml
   def show
     @household = Household.find(params[:id])
+    @transaction = @household.transactions.new
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @household }

@@ -20,6 +20,6 @@ Feature: Credit a household
     Given a household with a $50 balance
     And I view that household
     When I press "Create Transaction"
-    Then I should see "Error creating transaction"
+    Then I should see "errors prohibited"
     And I should see "Balance: $50"
 

@@ -62,9 +62,7 @@ class TransactionsController < ApplicationController
         format.html { redirect_to(@household, :notice => 'Household transaction was successfully created.') }
         format.xml  { render :xml => @transaction, :status => :created, :location => @transaction }
       else
-        format.html {redirect_to(@household,
-                                 #TODO use proper form error handling, instead of this cludge.
-                                 :notice => "Error creating transaction: " + @transaction.errors.full_messages.join(", "))}
+        format.html { render :template => 'households/show' }
         format.xml  { render :xml => @transaction.errors, :status => :unprocessable_entity }
       end
     end

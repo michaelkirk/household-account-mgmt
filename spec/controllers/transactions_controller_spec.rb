@@ -78,7 +78,7 @@ describe TransactionsController do
       it "re-renders the show household template" do
         Transaction.stub(:new).with({'these' => 'params'}) { mock_transaction(:save => false) }
         post :create, {:household_id => 1, :transaction => {'these' => 'params'}}
-        response.should redirect_to(household_url(1))
+        response.should render_template('households/show')
       end
     end
 
