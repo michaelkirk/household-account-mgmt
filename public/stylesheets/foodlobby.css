@@ -90,4 +90,16 @@ fieldset {
   margin-left: 25px;
 }
 
+.total {
+  border-top: solid black 1px;
+}
+
+th.total {
+  text-align: left;
+}
+
+td.money {
+  text-align: right;
+}
+
 
