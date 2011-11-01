@@ -2,6 +2,8 @@ class Member < ActiveRecord::Base
   belongs_to :household
   has_many :household_membership_audits
 
+  scope :with_households, :include => [{:household => :members}]
+
   # The last member can't leave a household which has a non-zero balance, ensuring all money is accessible.
   validate do
     if(not new_record? and household_id_changed?)
@@ -81,7 +83,6 @@ class Member < ActiveRecord::Base
     notes
     active
     email
-    fm_id
   end
 end
 
