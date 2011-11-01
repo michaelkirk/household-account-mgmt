@@ -39,6 +39,14 @@ class Household < ActiveRecord::Base
     self.update_attribute(:balance, self.balance - amount)
   end
 
+  comma do
+    id
+    balance
+    created_at
+    updated_at
+    notes
+  end
+
 end
 
 # == Schema Information
