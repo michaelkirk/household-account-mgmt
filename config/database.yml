@@ -1,9 +1,10 @@
 # SQLite version 3.x
 #   gem install sqlite3-ruby (not necessary on OS X Leopard)
 development:
-  adapter: mysql2
+  adapter: postgresql
   database: foodlobby
-  username: root
+  username: postgres
+  port: 5433
   pool: 5
   timeout: 5000
 
@@ -11,9 +12,10 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test: &test
-  adapter: mysql2
+  adapter: postgresql
   database: foodlobby_test
-  username: root
+  username: postgres
+  port: 5433
   pool: 5
   timeout: 5000
 
