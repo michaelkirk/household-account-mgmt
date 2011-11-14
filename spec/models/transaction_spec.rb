@@ -10,7 +10,7 @@ describe Transaction do
     t.should have(1).error_on(:amount)
   end
 
-  describe "::total_balance" do
+  describe ".total_balance" do
 
     it "should accumulate balance of all transactions" do
       Transaction.total_balance.should == 0

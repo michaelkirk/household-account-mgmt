@@ -9,3 +9,27 @@ end
 Given /^that household spent \$(\d+) a week ago$/ do |amount|
   Factory(:purchase, :household => @household, :amount => amount,:created_at => 7.days.ago )
 end
+
+Given /^there was a "\$([^"]*)" purchase on "([^"]*)"$/ do |amount, date|
+  amount = BigDecimal.new(amount)
+  date = Date.parse(date)
+  Transaction.create!(:amount => amount, :created_at => date, :credit => false, :household => some_household)
+end
+
+Given /^there was a "\$([^"]*)" investment on "([^"]*)"$/ do |amount, date|
+  amount = BigDecimal.new(amount)
+  date = Date.parse(date)
+  Transaction.create!(:amount => amount, :created_at => date, :credit => true, :household => some_household)
+end
+
+Then /^I should see "([^"]*)" of purchases for "([^"]*)"$/ do |amount, month_and_year|
+  Then "I should see #{amount}"
+end
+
+Then /^I should see "([^"]*)" of investments for "([^"]*)"$/ do |amount, month_and_year|
+  Then "I should see #{amount}"
+end
+
+def some_household
+  @some_household ||= Factory.create(:household)
+end

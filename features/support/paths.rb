@@ -23,6 +23,8 @@ module NavigationHelpers
     when 'the add member form'
       new_member_path
 
+    when 'the monthly reports page'
+      monthly_reports_path
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
