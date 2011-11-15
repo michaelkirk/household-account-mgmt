@@ -9,7 +9,7 @@ class CreateMonthlyReports < ActiveRecord::Migration
                 (select id as purchase_id, amount as purchase_amount from transactions where credit = false)
                 as purchases on transactions.id = purchases.purchase_id
               left join
-                (select id investment_id, amount as investment_amount from transactions where credit = true)
+                (select id as investment_id, amount as investment_amount from transactions where credit = true)
                 as investments on transactions.id = investments.investment_id)
               as classified_transactions
           group by year, month
