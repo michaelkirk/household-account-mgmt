@@ -6,8 +6,8 @@ When /^that household spends \$(\d+)$/ do |amount|
   @household.debit!(BigDecimal.new(amount))
 end
 
-Given /^that household spent \$(\d+) a week ago$/ do |amount|
-  Factory(:purchase, :household => @household, :amount => amount,:created_at => 7.days.ago )
+Given /^that household spent \$(\d+) over a week ago$/ do |amount|
+  Factory(:purchase, :household => @household, :amount => amount,:created_at => 7.1.days.ago )
 end
 
 Given /^there was a "\$([^"]*)" purchase on "([^"]*)"$/ do |amount, date|

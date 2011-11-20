@@ -46,7 +46,7 @@ describe Transaction do
       # model attribute will appear updated, but not actually persisted to DB, hence the reload.
       # https://rails.lighthouseapp.com/projects/8994-ruby-on-rails/tickets/2132-confusing-behavior-with-attr_readonly#ticket-2132-14
       @credit.save!
-      @credit.reload.amount.should == 2.01 
+      @credit.reload.amount.should == 2.01
     end
 
     it "should not let you update the household via mass assignment" do
@@ -66,7 +66,7 @@ describe Transaction do
     end
   end
 
-  describe ".purchases_this_week" do
+  describe ".amount_purchased_this_week" do
     subject { Transaction.amount_purchased_this_week }
 
     context "when there have been no transactions" do
@@ -78,7 +78,7 @@ describe Transaction do
         Factory(:purchase, :amount => 20)
         Factory(:purchase, :amount => 30)
       end
-      
+
       it { should == 50 }
     end
 
@@ -93,11 +93,12 @@ describe Transaction do
 
     context "when there are purchases older than a week" do
       before do
-        Factory(:purchase, :amount => 10, :created_at => 7.days.ago)
+        Factory(:purchase, :amount => 10, :created_at => 7.1.days.ago)
+        Factory(:purchase, :amount => 5, :created_at => 6.9.days.ago)
         Factory(:purchase, :amount => 20, :created_at => Date.today)
       end
-      
-      it { should == 20 }
+
+      it { should == 25 }
     end
 
   end

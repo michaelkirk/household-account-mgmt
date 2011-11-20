@@ -18,6 +18,6 @@ Feature: Weekly Throughput
     Then I should see "We've spent $20 on yummy food this week"
 
   Scenario: Don't count sales from last week
-    Given that household spent $20 a week ago
+    Given that household spent $20 over a week ago
     When I am on the homepage
     Then I should see "We've spent $0 on yummy food this week"
