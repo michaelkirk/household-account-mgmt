@@ -26,13 +26,11 @@ class Transaction < ActiveRecord::Base
   end
 
   def self.total_balance
-    #TODO do this arithmetic in the DB to avoid instantiating a bazillion objects
-    all.inject(0) {|running_sum, t| t.credit? ? running_sum + t.amount : running_sum - t.amount }
+    investments.sum(:amount) - purchases.sum(:amount)
   end
 
   def self.amount_purchased_this_week
-    #TODO this in the DB USING AGGREGATION!
-    purchases.this_week.inject(0) {|accum, purchase| accum + purchase.amount }
+    purchases.this_week.sum(:amount)
   end
 
   comma do

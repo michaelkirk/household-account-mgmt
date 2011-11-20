@@ -11,7 +11,6 @@ describe Transaction do
   end
 
   describe ".total_balance" do
-
     it "should accumulate balance of all transactions" do
       Transaction.total_balance.should == 0
       Transaction.create!(:household => @household, :amount => 2.01, :credit => true)
