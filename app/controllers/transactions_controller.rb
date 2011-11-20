@@ -1,7 +1,7 @@
 class TransactionsController < ApplicationController
 
   def all_households
-    @transactions = Transaction.all
+    @transactions = Transaction.all(:include => {:household => [:members]})
 
     respond_to do |format|
       format.html # index.html.erb
