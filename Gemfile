@@ -5,7 +5,7 @@ gem 'rails', '~>3.1.0'
 # postgres
 gem 'pg'
 
-# for authentication 
+# for authentication
 gem 'devise'
 
 # for authorization
