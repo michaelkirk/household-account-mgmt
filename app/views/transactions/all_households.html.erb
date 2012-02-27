@@ -19,7 +19,7 @@
   </tr>
 
 <% @transactions.each do |transaction| %>
-  <tr>
+  <tr class="<%= cycle("even", "odd") %>">
     <td><%= transaction.created_at %></td>
     <td><%= transaction.credit ? 'investment' : 'purchase' %></td>
     <td class="money"><%= sprintf("$%.2f", transaction.amount) %></td>

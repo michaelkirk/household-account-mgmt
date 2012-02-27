@@ -10,7 +10,7 @@
   <% if current_user %>
     <%= link_to "sign out #{current_user}", destroy_user_session_url, :style => "float: right"%>
   <% end %>
-  
+
 <div id="wrapper">
   <% if current_user %>
 
@@ -30,7 +30,19 @@
     <%= yield %>
   </div>
 
-  <div id="footer"></div>
+  <div id="version_banner">
+    Powered by <a href='http://www.ruby-lang.org/'>Ruby</a>, <a href="http://rubyonrails.org">Rails</a>, and <%= link_to 'this code', @revision_url %>.
+  </div>
+
+  <div id="footer">
+  </div>
+  <style type="text/css">
+    #version_banner {
+      margin-top: 10px;
+      font-size: 10px;
+      text-align: right;
+    }
+  </style>
 </div>
 </body>
 </html>

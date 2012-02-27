@@ -15,7 +15,7 @@ gem 'cancan'
 gem 'annotate'
 
 #csv export support
-gem 'comma', :git => "https://github.com/michaelkirk/comma.git"
+gem 'comma'
 
 # send email when an exception occurs
 gem 'exception_notification'
