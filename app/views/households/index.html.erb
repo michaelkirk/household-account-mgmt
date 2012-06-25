@@ -13,7 +13,7 @@
 <table id="households">
   <tr>
     <th>Members</th>
-    <th>Balance</th>
+    <th class="money">Balance</th>
     <th></th>
   </tr>
 
@@ -26,11 +26,10 @@
       <% end %>
       </ol>
     </td>
-    <td><%= sprintf("$%.2f", household.balance) %></td>
+    <td class="money"><%= sprintf("$%.2f", household.balance) %></td>
     <td><%= link_to 'Investment/Purchase', household %></td>
   </tr>
 <% end %>
 </table>
 <% end %>
-<br />
 

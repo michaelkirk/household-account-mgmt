@@ -29,10 +29,11 @@ body {
   clear: both;
   position: relative;
   background-color: white;
+  border-radius: 2px;
 
   text-align: left;
   padding: 15px 50px;
-  box-shadow: 5px 5px 10px #555;
+  box-shadow: 0px 0px 15px #555;
 }
 
 .navigation {

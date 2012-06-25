@@ -15,8 +15,8 @@
     <td><%= member.last_name %></td>
     <td><%= member.first_name %></td>
     <td><%= link_to member.household.to_s, member.household %></td>
-    <td><%= link_to 'Show', member %></td>
-    <td><%= link_to 'Edit', edit_member_path(member) %></td>
+    <td><%= link_to 'Show', member, :class => "action" %></td>
+    <td><%= link_to 'Edit', edit_member_path(member), :class => "action" %></td>
   </tr>
 <% end %>
 </table>
