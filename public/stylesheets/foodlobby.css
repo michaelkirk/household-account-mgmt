@@ -122,6 +122,10 @@ h1 {
   float: right;
 }
 
+#households_filter input[type=text] {
+  width: 120px;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
