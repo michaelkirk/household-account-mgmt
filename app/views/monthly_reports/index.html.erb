@@ -1,17 +1,17 @@
 <h1>Monthly Reports</h1>
-<table>
+<table id="monthly_reports">
   <tr>
     <th>Year</th>
     <th>Month</th>
-    <th>Investments</th>
-    <th>Purchases</th>
+    <th class="money">Investments</th>
+    <th class="money">Purchases</th>
   </tr>
   <% @monthly_reports.each do |monthly_report| %>
     <tr class=<%= cycle("odd", "even") %>>
       <td><%= monthly_report.year %></td>
       <td><%= monthly_report.month %></td>
-      <td><%= number_to_currency(monthly_report.investments_amount) %></td>
-      <td><%= number_to_currency(monthly_report.purchases_amount) %></td>
+      <td class="money"><%= number_to_currency(monthly_report.investments_amount) %></td>
+      <td class="money"><%= number_to_currency(monthly_report.purchases_amount) %></td>
     </tr>
   <% end %>
 </table>

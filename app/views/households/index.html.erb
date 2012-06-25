@@ -1,26 +1,19 @@
-<div id="stats" class="help">
-  We've spent <span class="amount"><%= sprintf("$%d", @amount_purchased_this_week) %></span> on yummy food this week
-  <%= " =(" if @amount_purchased_this_week == 0 %>
-</div>
 
-<h1>Listing households</h1>
-Search by member names, then make an investment or purchase.
-<%= form_tag households_path, :method => 'get' do %>
+<%= form_tag households_path, :method => 'get', :id => 'households_filter' do %>
   <fieldset>
     <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-    <p class="help">
-      match by first, last, or multiple names, e.g. "Juan", "Juan Verde", "Juan Juanita":
-    </p>
+    <%= submit_tag "Filter", :name => nil %>
   </fieldset>
 <% end %>
+
+<h1>Listing households</h1>
 <% if @households.empty? %>
  <p>There are no households matching your criteria.</p>
 <% else %>
 <table id="households">
   <tr>
     <th>Members</th>
-    <th>Balance</th>
+    <th class="money">Balance</th>
     <th></th>
   </tr>
 
@@ -33,11 +26,10 @@ Search by member names, then make an investment or purchase.
       <% end %>
       </ol>
     </td>
-    <td><%= sprintf("$%.2f", household.balance) %></td>
+    <td class="money"><%= sprintf("$%.2f", household.balance) %></td>
     <td><%= link_to 'Investment/Purchase', household %></td>
   </tr>
 <% end %>
 </table>
 <% end %>
-<br />
 

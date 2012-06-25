@@ -2,10 +2,6 @@ body {
   background-color: #ada;
 }
 
-#stats {
-  position: absolute;
-  right: 15px;
-}
 
 #stats .amount {
   font-size: 26px;
@@ -18,7 +14,6 @@ body {
 #footer {
   margin-top: 30px;
   height: 200px;
-  width: 200px;
   margin-left: auto;
   margin-right: auto;
   background-image: url('/images/tomato.png');
@@ -34,10 +29,11 @@ body {
   clear: both;
   position: relative;
   background-color: white;
+  border-radius: 2px;
 
   text-align: left;
   padding: 15px 50px;
-  box-shadow: 5px 5px 10px #555;
+  box-shadow: 0px 0px 15px #555;
 }
 
 .navigation {
@@ -101,9 +97,73 @@ th.total {
   text-align: left;
 }
 
-td.money {
+.money {
   text-align: right;
   white-space: nowrap;
 }
 
+input[type=text], input[type=email], input[type=password] {
+  margin-bottom: 20px;
+}
 
+input[type=submit] {
+  margin: 20px 0;
+}
+
+h2 {
+  margin-bottom: 30px; 
+}
+
+h1 {
+  margin-bottom: 40px;
+}
+
+#households_filter {
+  float: right;
+}
+
+#households_filter input[type=text] {
+  width: 120px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.balloon {
+  margin-left: 250px;
+  font: normal 44px/0.9 Constantia,Palatino,"Palatino Linotype","Palatino LT STD","Times New Roman",serif;
+  width: 10em;
+}
+.balloon > div {
+  background: #222;
+}
+.balloon .content {
+  color: #fff;
+  line-height: 1.2em;
+  padding: 1em;
+  text-align:center;
+  border-radius: 1em;
+  margin-left: 45px;
+}
+.balloon .pointer {
+  height: 1em;
+  float:left;
+  width: 45px;
+  height: 400px;
+}
+.balloon .pointer span {
+  background-color: #ada;
+  width: 100%;
+}
+.balloon .pointer .top {
+  height: 25%;
+  border-bottom-right-radius: 50px;
+  float: left;
+}
+.balloon .pointer .bottom {
+  height: 75%;
+  border-top-right-radius: 1em;
+  float: left;
+}
