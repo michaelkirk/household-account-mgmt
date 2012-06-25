@@ -35,7 +35,19 @@
   </div>
 
   <div id="footer">
+    <div class="balloon">
+      <div class="pointer">
+        <span class="top"></span>
+        <span class="bottom"></span>
+      </div>
+      <div class="content">
+        We've spent <strong><span class="amount"><%= sprintf("$%d", @amount_purchased_this_week) %></span></strong> on <em>yummy</em> food this week
+        <%= @amount_purchased_this_week == 0 ? " =(" : "!" -%>
+      </div>
+    </div>
+
   </div>
+</div>
   <style type="text/css">
     #version_banner {
       margin-top: 10px;
