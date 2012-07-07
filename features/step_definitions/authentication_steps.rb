@@ -1,10 +1,10 @@
 Given /^I am logged in$/ do
-  Given "I am not logged in"
-  Given 'a user with email "somebody@foodlobby.org" and password "secret"'
-  And "I am on the sign in page"
-  When 'I fill in "somebody@foodlobby.org" for "Email"'
-  And 'I fill in "secret" for "Password"'
-  And 'I press "Sign in"'
+  step "I am not logged in"
+  step 'a user with email "somebody@foodlobby.org" and password "secret"'
+  step "I am on the sign in page"
+  step 'I fill in "somebody@foodlobby.org" for "Email"'
+  step 'I fill in "secret" for "Password"'
+  step 'I press "Sign in"'
 end
 
 Given /^I am not logged in$/ do
