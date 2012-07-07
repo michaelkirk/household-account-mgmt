@@ -15,6 +15,19 @@ class Member < ActiveRecord::Base
 
   validates_presence_of :first_name, :last_name
 
+  # Can we do this with something like:
+  # words.split.inject(self.arel_table) do |members, word| 
+  #   members.or(match('UPPER(first_name) LIKE UPPER(?) OR UPPER(last_name) LIKE UPPER(?)' , "%#{word}%", "%#{word}%"))
+  # end
+  def self.find_by_keywords(words)
+    return Member.with_households if(words.strip.empty?)
+
+    words.split.inject(Set.new()) do |matching_members, word|
+      #Get all members who's first or last name matches
+      matching_members + Member.with_households.where('UPPER(first_name) LIKE UPPER(?) OR UPPER(last_name) LIKE UPPER(?)' , "%#{word}%", "%#{word}%")
+    end
+  end
+
   def household_was
     if( household_id_was )
       Household.find(household_id_was)
@@ -22,7 +35,6 @@ class Member < ActiveRecord::Base
       nil
     end
   end
-
 
   before_validation do |member|
     # a member must always belong to a household.

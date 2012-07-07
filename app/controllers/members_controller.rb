@@ -2,7 +2,11 @@ class MembersController < ApplicationController
   # GET /members
   # GET /members.xml
   def index
-    @members = Member.with_households.all
+    if params[:search]
+      @members = Member.find_by_keywords(params[:search])
+    else
+      @members = Member.with_households.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb

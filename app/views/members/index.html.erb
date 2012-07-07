@@ -1,6 +1,15 @@
-<h1>Listing members</h1>
+<%= form_tag members_path, :method => 'get', :id => 'filter' do %>
+  <fieldset>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Filter", :name => nil %>
+  </fieldset>
+<% end %>
 
-<table>
+<h1>Listing members</h1>
+<% if @members.empty? %>
+ <p>There are no members matching your criteria.</p>
+<% else %>
+<table id="members">
   <tr>
     <th>Last name</th>
     <th>First name</th>
@@ -19,7 +28,9 @@
     <td><%= link_to 'Edit', edit_member_path(member), :class => "action" %></td>
   </tr>
 <% end %>
+
 </table>
+<% end %>
 
 <br />
 
