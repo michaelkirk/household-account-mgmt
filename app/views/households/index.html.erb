@@ -1,12 +1,12 @@
 
-<%= form_tag households_path, :method => 'get', :id => 'households_filter' do %>
+<%= form_tag households_path, :method => 'get', :id => 'filter' do %>
   <fieldset>
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Filter", :name => nil %>
   </fieldset>
 <% end %>
 
-<h1>Listing households</h1>
+<h1>Households</h1>
 <% if @households.empty? %>
  <p>There are no households matching your criteria.</p>
 <% else %>

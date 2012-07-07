@@ -118,11 +118,11 @@ h1 {
   margin-bottom: 40px;
 }
 
-#households_filter {
+#filter {
   float: right;
 }
 
-#households_filter input[type=text] {
+#filter input[type=text] {
   width: 120px;
 }
 

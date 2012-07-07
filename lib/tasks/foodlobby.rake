@@ -42,3 +42,4 @@ namespace :foodlobby do
   end
 end
 
+task :default => [:spec, :cucumber]

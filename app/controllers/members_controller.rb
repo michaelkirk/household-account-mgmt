@@ -2,7 +2,13 @@ class MembersController < ApplicationController
   # GET /members
   # GET /members.xml
   def index
-    @members = Member.with_households.all
+    @members = Member.by_activity(:include_active => params[:active], :include_inactive => params[:inactive])
+
+    if params[:search]
+      @members = @members.find_by_keywords(params[:search])
+    else
+      @members = @members.with_households.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb

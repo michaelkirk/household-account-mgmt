@@ -4,6 +4,25 @@ class Member < ActiveRecord::Base
 
   scope :with_households, :include => [{:household => :members}]
 
+  scope :by_activity, lambda { |params|
+    include_active = params[:include_active]
+    include_inactive = params[:include_inactive]
+
+    if include_active
+      if include_inactive
+        where({})
+      else
+        where(:active => true)
+      end
+    else
+      if include_inactive
+        where(:active => false)
+      else
+        where({}) #if both are deselected, assume we want everybody
+      end
+    end
+  }
+
   # The last member can't leave a household which has a non-zero balance, ensuring all money is accessible.
   validate do
     if(not new_record? and household_id_changed?)
@@ -15,6 +34,19 @@ class Member < ActiveRecord::Base
 
   validates_presence_of :first_name, :last_name
 
+  # Can we do this with something like:
+  # words.split.inject(self.arel_table) do |members, word| 
+  #   members.or(match('UPPER(first_name) LIKE UPPER(?) OR UPPER(last_name) LIKE UPPER(?)' , "%#{word}%", "%#{word}%"))
+  # end
+  def self.find_by_keywords(words)
+    return Member.with_households if(words.strip.empty?)
+
+    words.split.inject(Set.new()) do |matching_members, word|
+      #Get all members who's first or last name matches
+      matching_members + Member.with_households.where('UPPER(first_name) LIKE UPPER(?) OR UPPER(last_name) LIKE UPPER(?)' , "%#{word}%", "%#{word}%")
+    end
+  end
+
   def household_was
     if( household_id_was )
       Household.find(household_id_was)
@@ -22,7 +54,6 @@ class Member < ActiveRecord::Base
       nil
     end
   end
-
 
   before_validation do |member|
     # a member must always belong to a household.
