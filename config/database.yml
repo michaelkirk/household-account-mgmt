@@ -16,6 +16,7 @@ test: &test
   port: 5432
   pool: 5
   timeout: 5000
+  min_messages: WARNING
 
 production:
   adapter: sqlite3
@@ -23,5 +24,3 @@ production:
   pool: 5
   timeout: 5000
 
-cucumber:
-  <<: *test
