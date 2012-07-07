@@ -40,13 +40,20 @@ describe Household do
   pending "should be impossible to change balance without creating a transaction"
 
   describe ".find_by_keywords" do
-    before do
-      @joe_and_sams_house = Factory.create(:household)
-      Factory.create(:member, first_name: "Joseph", household: @joe_and_sams_house)
-      Factory.create(:member, first_name: "Sam", household: @joe_and_sams_house)
+    before(:all) do
+      @households = []
+      @members = []
+      @households << @joe_and_sams_house = Factory.create(:household)
+      @members << Factory.create(:member, first_name: "Joseph", household: @joe_and_sams_house)
+      @members << Factory.create(:member, first_name: "Sam", household: @joe_and_sams_house)
 
-      @samanthas_house = Factory.create(:household)
-      Factory.create(:member, first_name: "Samantha", last_name: "Pierce", household: @samanthas_house)
+      @households << @samanthas_house = Factory.create(:household)
+      @members << Factory.create(:member, first_name: "Samantha", last_name: "Pierce", household: @samanthas_house)
+    end
+
+    after(:all) do
+      @households.each &:destroy
+      @members.each &:destroy
     end
 
     describe "when given then empty string" do
