@@ -10,26 +10,8 @@ Feature: Search households
     And a household with "Jessie James" as a member
     And I am on the list of households
 
-  Scenario: search for full name
-    When I search for "Tye Johnson"
-    Then I should see "Tye Johnson" within "#households"
-    And I should see "Jared Noem" within "#households"
-    But I should not see "Jessie James" within "#households"
-
   Scenario: search with first name
     When I search for "Tye"
-    Then I should see "Tye Johnson"
-    And I should see "Jared Noem"
-    But I should not see "Jessie James"
-
-  Scenario: search with last name
-    When I search for "Johnson"
-    Then I should see "Tye Johnson"
-    And I should see "Jared Noem"
-    But I should not see "Jessie James"
-
-  Scenario: search across multiple members
-    When I search for "Tye Jared"
     Then I should see "Tye Johnson"
     And I should see "Jared Noem"
     But I should not see "Jessie James"
@@ -42,12 +24,4 @@ Feature: Search households
   Scenario: search for non existent member
     When I search for "Fake Person"
     Then I should see "There are no households matching your criteria"
-
-  Scenario: search for existant and non existent member
-    When I search for "Fake Noem"
-    Then I should see "Jared Noem"
-
-  Scenario: case insensitve
-    When I search for "james"
-    Then I should see "Jessie James"
 

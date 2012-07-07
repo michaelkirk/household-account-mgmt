@@ -12,12 +12,12 @@ Feature: authentication
     When I fill in "worker@foodlobby.org" for "Email"
     And I fill in "super-secret" for "Password"
     And I press "Sign in"
-    Then I should see "Listing households"
+    Then I should see "Households"
 
   Scenario: view page when logged in
     Given I am logged in
     When I go to the list of households
-    Then I should see "Listing households"
+    Then I should see "Households"
 
   Scenario: failed log in
     Given I am not logged in
@@ -34,7 +34,7 @@ Feature: authentication
     Then I should see "Sign in"
     And I should see "Email"
     And I should see "Password"
-    But I should not see "Listing households"
+    But I should not see "Households"
 
   Scenario: redirect back after login
     Given I am not logged in
@@ -45,5 +45,5 @@ Feature: authentication
     And I fill in "super-secret" for "Password"
     And I press "Sign in"
     Then I should see "All transactions"
-    But I should not see "Listing households"
+    But I should not see "Households"
 

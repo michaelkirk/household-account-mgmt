@@ -4,6 +4,25 @@ class Member < ActiveRecord::Base
 
   scope :with_households, :include => [{:household => :members}]
 
+  scope :by_activity, lambda { |params|
+    include_active = params[:include_active]
+    include_inactive = params[:include_inactive]
+
+    if include_active
+      if include_inactive
+        where({})
+      else
+        where(:active => true)
+      end
+    else
+      if include_inactive
+        where(:active => false)
+      else
+        where({}) #if both are deselected, assume we want everybody
+      end
+    end
+  }
+
   # The last member can't leave a household which has a non-zero balance, ensuring all money is accessible.
   validate do
     if(not new_record? and household_id_changed?)

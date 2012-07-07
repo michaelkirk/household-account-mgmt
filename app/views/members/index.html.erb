@@ -1,11 +1,15 @@
 <%= form_tag members_path, :method => 'get', :id => 'filter' do %>
   <fieldset>
+    <%= label_tag :active %>
+    <%= check_box_tag :active, :active, params[:active] %>
+    <%= label_tag :inactive %>
+    <%= check_box_tag :inactive, :inactive, params[:inactive] %>
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Filter", :name => nil %>
   </fieldset>
 <% end %>
 
-<h1>Listing members</h1>
+<h1>Members</h1>
 <% if @members.empty? %>
  <p>There are no members matching your criteria.</p>
 <% else %>

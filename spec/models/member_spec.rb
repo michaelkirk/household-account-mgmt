@@ -122,6 +122,45 @@ describe Member do
 
   end
 
+  describe ".by_activity" do
+    before(:all) do
+      @active_member = Factory.create(:member, :active => true)
+      @inactive_member = Factory.create(:member, :active => false)
+    end
+
+    after(:all) do
+      @active_member.destroy
+      @inactive_member.destroy
+    end
+  
+    subject { Member.by_activity(:include_active => include_active, :include_inactive => include_inactive) }
+
+    context "when searching for active only" do
+      let(:include_active) { true }
+      let(:include_inactive) { nil }
+      it { should include @active_member }
+      it { should_not include @inactive_member }
+    end
+    context "when searching for inactive only" do
+      let(:include_active) { nil }
+      let(:include_inactive) { true }
+      it { should include @inactive_member }
+      it { should_not include @active_member }
+    end
+    context "when searching for both" do
+      let(:include_active) { true }
+      let(:include_inactive) { true }
+      it { should include @active_member }
+      it { should include @active_member }
+    end
+    context "when searching for neither" do
+      let(:include_active) { nil }
+      let(:include_inactive) { nil }
+      it { should include @active_member }
+      it { should include @active_member }
+    end
+  end
+
 end
 
 # == Schema Information
