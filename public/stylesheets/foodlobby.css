@@ -20,6 +20,12 @@ body {
   background-repeat: no-repeat;
 }
 
+#version_banner {
+  margin-top: 10px;
+  font-size: 10px;
+  text-align: right;
+}
+
 #wrapper {
   width: 700px;
   margin: 0px auto;
