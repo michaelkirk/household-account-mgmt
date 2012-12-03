@@ -1,5 +1,4 @@
 <h1>All transactions</h1>
-<p>These are all the coop's transactions.</p>
 
 <% if @transactions.empty? %>
   <p>
@@ -10,34 +9,23 @@
 <table>
   <tr>
     <th>Date</th>
-    <th>Credit/Debit</th>
+    <th>Type</th>
     <th>Amount</th>
     <th>Message</th>
     <th>Household</th>
     <th></th>
   </tr>
 
-<% @transactions.each do |transaction| %>
-  <tr class="<%= cycle("even", "odd") %>">
-    <td><%= transaction.created_at %></td>
-    <td><%= transaction.credit ? 'investment' : 'purchase' %></td>
-    <td class="money"><%= sprintf("$%.2f", transaction.amount) %></td>
-    <td><%= transaction.message %></td>
-    <td><%= link_to transaction.household.to_s, transaction.household %></td>
-    <td><%= link_to 'Edit message', edit_household_transaction_path(transaction.household, transaction) %></td>
-  </tr>
-<% end %>
-
-  <tr>
-    <td></td>
-    <th class="total">balance</th>
-    <td class="total money"><%= sprintf("$%.2f", Transaction.total_balance) %></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
+  <% @transactions.each do |transaction| %>
+    <tr class="<%= cycle("even", "odd") %>">
+      <td><%= transaction.created_at %></td>
+      <td><%= transaction.credit ? 'credit' : 'debit' %></td>
+      <td class="money"><%= sprintf("$%.2f", transaction.amount) %></td>
+      <td><%= transaction.message %></td>
+      <td><%= link_to transaction.household.to_s, transaction.household %></td>
+      <td><%= link_to 'Edit', edit_household_transaction_path(transaction.household, transaction) %></td>
+    </tr>
+  <% end %>
 </table>
-
+<%= will_paginate @transactions %>
 <% end %>
-<br />
-
