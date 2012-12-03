@@ -15,7 +15,6 @@
     <th>Message</th>
     <th>Household</th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @transactions.each do |transaction| %>
@@ -33,7 +32,6 @@
     <td></td>
     <th class="total">balance</th>
     <td class="total money"><%= sprintf("$%.2f", Transaction.total_balance) %></td>
-    <td></td>
     <td></td>
     <td></td>
     <td></td>
