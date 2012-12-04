@@ -6,7 +6,6 @@ class Transaction < ActiveRecord::Base
   validates_presence_of :amount
   validates_numericality_of :amount, :greater_than => 0
 
-  default_scope :order => 'created_at'
   scope :for_household, (lambda do |h| {:conditions => {:household_id => h}} end)
   scope :investments, :conditions => { :credit => true }
   scope :purchases, :conditions => { :credit => false }
