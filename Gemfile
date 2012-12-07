@@ -41,7 +41,7 @@ gem 'exception_notification'
 # and rake tasks are available in development mode:
 group :development, :test do
 #  gem 'ruby-debug19'
-  gem 'heroku'
+#  gem 'heroku'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'cucumber-rails', :require => false
