@@ -8,7 +8,8 @@
 
 <h1>Households</h1>
 <% if @households.empty? %>
- <p>There are no households matching your criteria.</p>
+  <p>There are no active households matching your criteria.</p>
+  <p>You could check the <%= link_to "members page", :members  %> to see if they exist as an inactive member.</p>
 <% else %>
 <table id="households">
   <tr>
