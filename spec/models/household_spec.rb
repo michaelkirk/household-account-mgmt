@@ -92,6 +92,14 @@ describe Household do
       it { should_not include(@joe_and_sams_house) }
     end
 
+    describe "searching active households" do
+      let(:inactive_member) { FactoryGirl.create(:member, :active => false) }
+      describe "using an inactive household's member name" do
+        let(:scope) { Household.active.find_by_keywords(inactive_member.first_name) }
+        it { scope.should be_empty }
+      end
+    end
+
     describe "with mulitple keywords" do
 
       describe "when we're specifying first and last name" do
