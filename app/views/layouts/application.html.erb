@@ -2,8 +2,7 @@
 <html>
 <head>
   <title>Foodlobby</title>
-  <%= stylesheet_link_tag :all %>
-  <%= stylesheet_link_tag "foodlobby" %>
+  <%= stylesheet_link_tag 'normalize', 'scaffold', 'foodlobby' %>
   <%= csrf_meta_tag %>
   <link href="/images/favicon.png" rel="icon" type="image/x-icon" />
 </head>
@@ -46,7 +45,6 @@
         <%= @amount_purchased_this_week == 0 ? " =(" : "!" -%>
       </div>
     </div>
-
   </div>
 </div>
 </body>

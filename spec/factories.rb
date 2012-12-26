@@ -4,8 +4,14 @@ FactoryGirl.define do
     last_name "Member"
   end
 
-  factory :household do
+  factory :transaction do
+    credit true
+    association :household
+    sequence(:amount) { |n| "#{n}" }
+    sequence(:message) { |n|  "Message #{n}" }
+  end
 
+  factory :household do
   end
 
   factory :purchase, :class => Transaction do
