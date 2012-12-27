@@ -23,5 +23,5 @@ Feature: Search households
 
   Scenario: search for non existent member
     When I search for "Fake Person"
-    Then I should see "There are no households matching your criteria"
+    Then I should see "There are no active households matching your criteria"
 
