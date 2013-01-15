@@ -17,7 +17,7 @@
   </tr>
 
 <% @transactions.each do |transaction| %>
-  <tr class="<%= cycle("even", "odd") %>">
+  <tr class="<%= cycle("even", "odd") %> <%= "void-transaction" if transaction.void? %>">
     <td><%= transaction.created_at %></td>
     <td><%= transaction.credit ? 'investment' : 'purchase' %></td>
     <td class="money"><%= sprintf("$%.2f", transaction.amount) %></td>
