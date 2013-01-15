@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111113205046) do
+ActiveRecord::Schema.define(:version => 20130115005837) do
 
   create_table "household_membership_audits", :force => true do |t|
     t.integer  "household_id"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(:version => 20111113205046) do
     t.integer  "household_id",                               :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "void"
   end
 
   create_table "users", :force => true do |t|

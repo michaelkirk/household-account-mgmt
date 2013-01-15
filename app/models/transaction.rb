@@ -16,12 +16,30 @@ class Transaction < ActiveRecord::Base
   attr_readonly :amount, :credit, :household_id
 
   after_create do |t|
-    if(t.credit?)
-      t.household.update_attribute(:balance, t.household.balance + t.amount)
-    else
-      t.household.update_attribute(:balance, t.household.balance - t.amount)
-    end
+    apply_transaction
+    #todo do we need this 
     t.save!
+  end
+  
+  after_save do |t|
+    void_transaction if t.void? && !t.void_was
+    apply_transaction if !t.void? && t.void_was
+  end
+
+  def void_transaction
+    if(self.credit?)
+      self.household.update_attribute(:balance, self.household.balance - self.amount)
+    else
+      self.household.update_attribute(:balance, self.household.balance + self.amount)
+    end
+  end
+
+  def apply_transaction
+    if(self.credit?)
+      self.household.update_attribute(:balance, self.household.balance + self.amount)
+    else
+      self.household.update_attribute(:balance, self.household.balance - self.amount)
+    end
   end
 
   def self.total_balance

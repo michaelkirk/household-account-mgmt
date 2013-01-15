@@ -23,8 +23,12 @@
     <%= f.label :message %><br />
     <%= f.text_field :message %>
   </div>
+  <div class="field">
+    <%= f.check_box :void %>
+    <%= f.label :void, "Void transaction" %>
+  </div>
   <div class="actions">
-    <%= f.submit "update message" %>
+    <%= f.submit "update" %>
   </div>
 <% end %>
 
