@@ -54,6 +54,7 @@ class Transaction < ActiveRecord::Base
     id
     amount
     credit
+    void
     message
     household_id
     created_at
