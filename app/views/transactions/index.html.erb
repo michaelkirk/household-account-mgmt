@@ -1,56 +1,16 @@
 <h1>Transactions</h1>
 <p>for the <%= link_to "household of #{@household.to_s}", @household %></p>
-
+<p>
+  <strong>balance:</strong>
+  <%= sprintf("$%.2f", @household.balance) %>
+</p>
 <% if @transactions.empty? %>
   <p>
   There are no transactions for this household yet.
   </p>
 <% else %>
 
-<table>
-  <tr>
-    <th>Date</th>
-    <th>Credit/Debit</th>
-    <th>Amount</th>
-    <th>Message</th>
-    <th></th>
-  </tr>
-
-<% @transactions.each do |transaction| %>
-  <tr class="<%= cycle("even", "odd") %> <%= "void-transaction" if transaction.void? %>">
-    <td><%= transaction.created_at %></td>
-    <td>
-    <%= "voided" if transaction.void? %>
-    <%= transaction.credit ? 'investment' : 'purchase' %></td>
-    <td class="money"><%= sprintf("$%.2f", transaction.amount) %></td>
-    <td><%= transaction.message %></td>
-    <td><%= link_to 'Edit message', edit_household_transaction_path(@household, transaction) %></td>
-  </tr>
-<% end %>
-
-  <style type="text/css">
-    .total {
-      border-top: solid black 1px;
-    }
-
-    th.total {
-      text-align: left;
-    }
-
-    td.money {
-      text-align: right;
-    }
-
-  </style>
-
-  <tr>
-    <td></td>
-    <th class="total">balance</th>
-    <td class="total money"><%= sprintf("$%.2f", @household.balance) %></td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
+  <%= render partial: 'list', locals: { transactions: @transactions, print_household: false } %>
 
 <% end %>
 <br />

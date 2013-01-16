@@ -1,0 +1,42 @@
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Type</th>
+    <th>Amount</th>
+    <th>Message</th>
+    <% if(print_household) %><th>Household</th><% end %>
+    <th></th>
+  </tr>
+
+<% @transactions.each do |transaction| %>
+  <tr class="<%= cycle("even", "odd") %> <%= "void-transaction" if transaction.void? %>">
+    <td><%= transaction.created_at %></td>
+    <td>
+    <%= "voided" if transaction.void? %>
+    <%= transaction.credit ? 'investment' : 'purchase' %></td>
+    <td class="money"><%= sprintf("$%.2f", transaction.amount) %></td>
+    <td><%= transaction.message %></td>
+    <% if(print_household) %>
+      <td><%= link_to transaction.household.to_s, transaction.household %></td>
+    <% end %>
+    <td><%= link_to 'Edit message', edit_household_transaction_path(transaction.household, transaction) %></td>
+  </tr>
+<% end %>
+
+  <style type="text/css">
+    .total {
+      border-top: solid black 1px;
+    }
+
+    th.total {
+      text-align: left;
+    }
+
+    td.money {
+      text-align: right;
+    }
+
+  </style>
+</table>
+
+
