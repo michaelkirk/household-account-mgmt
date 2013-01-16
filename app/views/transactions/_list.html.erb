@@ -19,7 +19,7 @@
     <% if(print_household) %>
       <td><%= link_to transaction.household.to_s, transaction.household %></td>
     <% end %>
-    <td><%= link_to 'Edit message', edit_household_transaction_path(transaction.household, transaction) %></td>
+    <td><%= link_to 'Edit', edit_household_transaction_path(transaction.household, transaction) %></td>
   </tr>
 <% end %>
 </table>
