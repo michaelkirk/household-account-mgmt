@@ -15,7 +15,7 @@
   
   <p>
   <b>Created:</b> <%= @transaction.created_at %> <br />
-  <b>Amount:</b> <%= sprintf("$%.2f", @transaction.amount) %>
+  <b>Amount:</b> <%= number_to_currency(@transaction.amount) %>
   <%= @transaction.credit ? 'investment' : 'purchase' %>
   </p>
   

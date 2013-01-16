@@ -1,11 +1,18 @@
 <p>
-  <b>Household:</b>
+  <b>
+  <%= @transaction.credit? ? "Investment" : "Purchase" %>
+  for Household:</b>
   <%= @household %>
 </p>
 
 <p>
+  <b>Date:</b>
+  <%= @household.created_at %>
+
+<p class="<%= "void-transaction" if @transaction.void? %>" >
   <b>Amount:</b>
-  <%= @transaction.amount %> <%= @transaction.credit? ? "credit" : "debit" %>
+  <%= number_to_currency(@transaction.amount) %> 
+  <%= "(voided)" if @transaction.void? %>
 </p>
 
 <p>
