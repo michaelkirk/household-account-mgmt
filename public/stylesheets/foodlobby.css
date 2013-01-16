@@ -103,6 +103,11 @@ th.total {
   text-align: left;
 }
 
+.pagination {
+  text-align: center;
+  word-spacing: 4px;
+}
+
 .money {
   text-align: right;
   white-space: nowrap;
