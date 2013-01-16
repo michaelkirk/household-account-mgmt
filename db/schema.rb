@@ -47,13 +47,13 @@ ActiveRecord::Schema.define(:version => 20130115005837) do
   end
 
   create_table "transactions", :force => true do |t|
-    t.decimal  "amount",       :precision => 8, :scale => 2, :null => false
-    t.boolean  "credit",                                     :null => false
+    t.decimal  "amount",       :precision => 8, :scale => 2,                    :null => false
+    t.boolean  "credit",                                                        :null => false
     t.string   "message"
-    t.integer  "household_id",                               :null => false
+    t.integer  "household_id",                                                  :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "void"
+    t.boolean  "void",                                       :default => false
   end
 
   create_table "users", :force => true do |t|
