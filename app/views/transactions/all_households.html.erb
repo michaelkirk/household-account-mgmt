@@ -5,27 +5,6 @@
   There are no transactions yet.
   </p>
 <% else %>
-
-<table>
-  <tr>
-    <th>Date</th>
-    <th>Type</th>
-    <th>Amount</th>
-    <th>Message</th>
-    <th>Household</th>
-    <th></th>
-  </tr>
-
-  <% @transactions.each do |transaction| %>
-    <tr class="<%= cycle("even", "odd") %>">
-      <td><%= transaction.created_at %></td>
-      <td><%= transaction.credit ? 'credit' : 'debit' %></td>
-      <td class="money"><%= sprintf("$%.2f", transaction.amount) %></td>
-      <td><%= transaction.message %></td>
-      <td><%= link_to transaction.household.to_s, transaction.household %></td>
-      <td><%= link_to 'Edit', edit_household_transaction_path(transaction.household, transaction) %></td>
-    </tr>
-  <% end %>
-</table>
-<%= will_paginate @transactions %>
+  <%= render partial: 'list', locals: { transactions: @transactions, print_household: true } %>
+  <%= will_paginate @transactions %>
 <% end %>
