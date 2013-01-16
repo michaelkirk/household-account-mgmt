@@ -14,7 +14,7 @@
     <td>
     <%= "voided" if transaction.void? %>
     <%= transaction.credit ? 'investment' : 'purchase' %></td>
-    <td class="money"><%= sprintf("$%.2f", transaction.amount) %></td>
+    <td class="money"><%= number_to_currency(transaction.amount) %></td>
     <td><%= transaction.message %></td>
     <% if(print_household) %>
       <td><%= link_to transaction.household.to_s, transaction.household %></td>

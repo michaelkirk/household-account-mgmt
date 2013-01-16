@@ -1,6 +1,6 @@
 <p>
   <b>
-  <%= @transaction.credit? ? "Credit" : "Debit" %>
+  <%= @transaction.credit? ? "Investment" : "Purchase" %>
   for Household:</b>
   <%= @household %>
 </p>
@@ -11,7 +11,7 @@
 
 <p class="<%= "void-transaction" if @transaction.void? %>" >
   <b>Amount:</b>
-  <%= @transaction.amount %> 
+  <%= number_to_currency(@transaction.amount) %> 
   <%= "(voided)" if @transaction.void? %>
 </p>
 
