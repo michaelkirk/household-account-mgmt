@@ -20,6 +20,7 @@ class TransactionsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @transactions }
+      format.csv  { render :csv => @transactions }
     end
   end
 
