@@ -30,14 +30,14 @@ describe Member do
       let(:m) { Factory(:member) }
 
       it "should not allow last member to leave household with outstanding balance" do
-        m.household.credit!(5)
+        m.household.transactions.create(amount: 5, credit: true)
         m.household= @household
         m.should_not be_valid
       end
 
       it "should allow last member to leave household with no outstanding balance" do
-        m.household.credit!(5)
-        m.household.debit!(5)
+        m.household.transactions.create(amount: 5, credit: true)
+        m.household.transactions.create(amount: 5, credit: false)
         m.household= @household
         m.should be_valid
       end

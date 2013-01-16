@@ -1,5 +1,5 @@
 When /^I console$/ do
-  console_for(binding)
+  binding.pry
 end
 
 Given /^"(.*)" made this pending on "(.*)" because "(.*)"$/ do |name, date, message|

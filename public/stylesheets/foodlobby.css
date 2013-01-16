@@ -173,3 +173,6 @@ table {
   border-top-right-radius: 1em;
   float: left;
 }
+.void-transaction {
+  text-decoration:line-through;
+}
