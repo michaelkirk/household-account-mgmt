@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130115005837) do
+ActiveRecord::Schema.define(:version => 20130115205046) do
 
   create_table "household_membership_audits", :force => true do |t|
     t.integer  "household_id"

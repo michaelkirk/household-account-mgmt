@@ -57,10 +57,18 @@ describe MonthlyReport do
 
     context "with 2 investments on the same day" do
       before do
-        Factory.create(:investment, :amount => 50, :created_at => Date.parse("January 1, 2011"))
+        @transaction = Factory.create(:investment, :amount => 50, :created_at => Date.parse("January 1, 2011"))
         Factory.create(:investment, :amount => 50, :created_at => Date.parse("January 1, 2011"))
       end
       it {should == [100]}
+
+      context "when one of those transactions is voided" do
+        before do
+          @transaction.void = true
+          @transaction.save
+        end
+        it { should == [50] }
+      end
     end
 
     context "with 2 investments on different days" do
@@ -86,6 +94,7 @@ describe MonthlyReport do
       end
       it {should == [50,50]}
     end
+
   end
 
 end
