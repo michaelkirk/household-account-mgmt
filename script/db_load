@@ -1,0 +1,16 @@
+#!/bin/sh
+# overwrites local DB with recent dump of remote
+# usage: script/db_pull wlc2013
+# defaults to staging
+
+set -e
+
+APP=${1:-foodlobby}
+DATABASE_NAME=foodlobby
+
+DUMP_NAME=tmp/$APP.dump
+
+echo dumping latest $APP db into local $DATABASE_NAME
+
+dropdb $DATABASE_NAME && createdb $DATABASE_NAME
+pg_restore -d $DATABASE_NAME --no-owner $DUMP_NAME -v
