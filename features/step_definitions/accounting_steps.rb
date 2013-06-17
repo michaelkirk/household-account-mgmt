@@ -1,9 +1,9 @@
 When /^I deposit \$(\d+) into the household's account$/ do |amount|
-  @household.transactions.create(amount: BigDecimal.new(amount), credit: true)
+  @household.credit!(BigDecimal.new(amount))
 end
 
 When /^that household spends \$(\d+)$/ do |amount|
-  @household.transactions.create(amount: BigDecimal.new(amount), credit: false)
+  @household.debit!(BigDecimal.new(amount))
 end
 
 When /^I edit the last transaction$/ do
