@@ -51,7 +51,7 @@ describe Member do
       Member.destroy_all
       @members = []
       @members << @joseph = Factory.create(:member, first_name: "Joseph")
-      @members << @sam = Factory.create(:member, first_name: "Sam")
+      @members << @sam = Factory.create(:member, first_name: "Sam", last_name: "St. John")
       @members << @samantha_pierce = Factory.create(:member, first_name: "Samantha", last_name: "Pierce")
     end
 
@@ -118,6 +118,13 @@ describe Member do
         it { should include(@samantha_pierce) }
         it { should include(@sam) }
         it { should include(@joseph) }
+      end
+
+      describe "when there's a period in it" do
+        subject { Member.find_by_keywords("st. john") }
+        it { should include @sam }
+        it { should_not include @samantha_pierce }
+        it { should_not include @joseph }
       end
     end
 
