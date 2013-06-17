@@ -6,7 +6,7 @@ class Transaction < ActiveRecord::Base
   validates_presence_of :amount
   validates_numericality_of :amount, :greater_than => 0
 
-  scope :for_household, (lambda do |h| {:conditions => {:household_id => h}} end)
+  scope :for_household, lambda { |h| where(:household_id => h).order("id DESC") }
   scope :investments, :conditions => { :credit => true }
   scope :purchases, :conditions => { :credit => false }
   scope :this_week, :conditions => ['created_at > ?', 7.days.ago]

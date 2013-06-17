@@ -1,6 +1,7 @@
 class ExcludeVoidsFromMonthlyReports < ActiveRecord::Migration
   def up
     sql = <<-SQL
+      drop view if exists monthly_reports;
       create view monthly_reports as
         select date_part('year', created_at) as year, date_part('month', created_at) as month, sum(purchase_amount) as purchases_amount, sum(investment_amount) as investments_amount
           from (

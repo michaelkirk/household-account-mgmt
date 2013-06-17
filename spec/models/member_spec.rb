@@ -48,6 +48,7 @@ describe Member do
 
   describe ".find_by_keywords" do
     before(:all) do
+      Member.destroy_all
       @members = []
       @members << @joseph = Factory.create(:member, first_name: "Joseph")
       @members << @sam = Factory.create(:member, first_name: "Sam")

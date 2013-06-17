@@ -21,7 +21,7 @@ describe TransactionsController do
 
   describe "GET index" do
     it "assigns all transactions as @transactions" do
-      Transaction.stub(:for_household).with("1") { Transaction.stub(:all) { [mock_transaction] }; Transaction }
+      Transaction.stub(:for_household).with("1").and_return([mock_transaction])
       get :index, {:household_id => "1"}
       assigns(:transactions).should eq([mock_transaction])
     end
