@@ -15,7 +15,7 @@ class TransactionsController < ApplicationController
   # GET /households/:id/transactions
   # GET /households/:id/transactions.xml
   def index
-     @transactions = Transaction.for_household(params[:household_id]).all
+     @transactions = Transaction.for_household(params[:household_id]).order("id DESC")
 
     respond_to do |format|
       format.html # index.html.erb
