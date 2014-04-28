@@ -41,8 +41,7 @@
         <span class="bottom"></span>
       </div>
       <div class="content">
-        We've spent <strong><span class="amount"><%= sprintf("$%d", @amount_purchased_this_week) %></span></strong> on <em>yummy</em> food this week
-        <%= @amount_purchased_this_week == 0 ? " =(" : "!" -%>
+        We've spent <strong><span class="amount"><%= sprintf("$%d", @amount_purchased_this_week) %></span></strong> on <em>yummy</em> food this week<%= @amount_purchased_this_week == 0 ? " =(" : "!" -%>
       </div>
     </div>
   </div>
