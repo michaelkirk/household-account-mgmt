@@ -37,6 +37,21 @@ describe Household do
     end
   end
 
+  describe ".recent_activity" do
+    before do
+      @old_household = Factory.create(:household)
+      Factory.create(:transaction, household: @old_household, created_at: 7.months.ago)
+
+      @new_household = Factory.create(:household)
+      Factory.create(:transaction, household: @new_household, created_at: 3.months.ago)
+    end
+
+    it "should only include households with recent activity" do
+      Household.recent_activity.should include @new_household
+      Household.recent_activity.should_not include @old_household
+    end
+  end
+
   pending "should be impossible to change balance without creating a transaction"
 
   describe ".find_by_keywords" do
@@ -92,16 +107,7 @@ describe Household do
       it { should_not include(@joe_and_sams_house) }
     end
 
-    describe "searching active households" do
-      let(:inactive_member) { FactoryGirl.create(:member, :active => false) }
-      describe "using an inactive household's member name" do
-        let(:scope) { Household.active.find_by_keywords(inactive_member.first_name) }
-        it { scope.should be_empty }
-      end
-    end
-
     describe "with mulitple keywords" do
-
       describe "when we're specifying first and last name" do
         subject { Household.find_by_keywords("sam pierce") }
         it { should include(@samanthas_house) }

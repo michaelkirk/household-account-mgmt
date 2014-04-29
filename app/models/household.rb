@@ -16,14 +16,13 @@ class Household < ActiveRecord::Base
     end.uniq #remove dupes.
   end
 
-  scope :find_by_keywords, lambda { |words| 
-    where("households.id in (?)", id_by_keywords(words)) 
+  scope :find_by_keywords, lambda { |words|
+    where("households.id in (?)", id_by_keywords(words))
   }
 
   # All households with no members
   scope :empty, joins('left outer join members on members.household_id = households.id').select('households.*').where('members.id is null')
-
-  scope :active, joins(:members).where(:members => { :active => true }).group('households.id')
+  scope :recent_activity, lambda { joins(:transactions).where("transactions.created_at > ?", 6.month.ago).group("households.id") }
 
   def to_s
     if members.empty?
