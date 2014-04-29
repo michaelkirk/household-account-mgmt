@@ -12,7 +12,7 @@ virtual machine. To do that, you first need to install
 
 The virtual machine we're using uses the vagrant-vbguest plugin.
 
-    localhost> vagrant plugin install vagrant-vbguest`
+    localhost> vagrant plugin install vagrant-vbguest
     localhost> vagrant up
 
 This will take a long time, as the virtual machine image downloads and
