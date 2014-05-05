@@ -5,6 +5,21 @@ describe Household do
     Household.create!.balance.should == 0
   end
 
+
+  describe ".recent_activity" do
+    it "should only display households with transactions in the past 6 months" do
+      active_household = Household.create!
+      active_household.credit!(5.00)
+
+      inactive_household = Household.create!
+      old_household = Household.create!
+      Transaction.create!(household:old_household, amount:5.00, created_at:7.months.ago, credit:true)
+
+
+      Household.recent_activity.should == [active_household]
+    end
+  end
+
   describe "#credit!" do
     before do
       @household = Household.create!
@@ -34,21 +49,6 @@ describe Household do
 
     it "should not allow debits <= 0" do
       lambda { @household.debit!(BigDecimal.new("-5")) }.should raise_error(ActiveRecord::RecordInvalid)
-    end
-  end
-
-  describe ".recent_activity" do
-    before do
-      @old_household = Factory.create(:household)
-      Factory.create(:transaction, household: @old_household, created_at: 7.months.ago)
-
-      @new_household = Factory.create(:household)
-      Factory.create(:transaction, household: @new_household, created_at: 3.months.ago)
-    end
-
-    it "should only include households with recent activity" do
-      Household.recent_activity.should include @new_household
-      Household.recent_activity.should_not include @old_household
     end
   end
 
