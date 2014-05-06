@@ -1,0 +1,14 @@
+#!/bin/sh
+# dumps local db in a way usable by db_load
+# usage: script/db_dump my_dump_name
+# defaults to "local"
+
+set -e
+
+DUMP_NAME=${1:-local}
+DATABASE_NAME=foodlobby_development
+DUMP_PATH=tmp/$DUMP_NAME.dump
+
+echo dumping local $DATABASE_NAME to $DUMP_PATH
+
+pg_dump -Fc --no-acl --no-owner $DATABASE_NAME > $DUMP_PATH

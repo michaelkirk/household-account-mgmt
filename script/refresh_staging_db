@@ -1,0 +1,21 @@
+#!/bin/sh
+# Dumps latest production database into staging
+# usage: script/refresh_staging_db
+set -e
+set -x
+
+echo dumping latest production db into staging
+
+STAGING_APP=foodlobbydemo
+PRODUCTION_APP=foodlobby
+STAGING_DB=HEROKU_POSTGRESQL_OLIVE_URL
+
+heroku pgbackups:capture -e --app $PRODUCTION_APP
+
+echo "dumping / refreshing staging"
+heroku pgbackups:capture --app $STAGING_APP --expire
+heroku pg:reset $STAGING_DB --app $STAGING_APP
+heroku pgbackups:restore $STAGING_DB `heroku pgbackups:url --app $PRODUCTION_APP` --app $STAGING_APP
+heroku run rake db:migrate --app $STAGING_APP
+heroku restart --app $STAGING_APP
+

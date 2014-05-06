@@ -6,13 +6,13 @@
 set -e
 
 APP=${1:-foodlobby}
-DATABASE_NAME=foodlobby
-
+DATABASE_NAME=foodlobby_development
 DUMP_NAME=tmp/$APP.dump
+MY_DIR=`dirname $0`
 
 echo dumping latest $APP db into local $DATABASE_NAME
 
 heroku pgbackups:capture -e --app $APP
 curl -o $DUMP_NAME `heroku pgbackups:url --app $APP`
-dropdb $DATABASE_NAME && createdb $DATABASE_NAME
-pg_restore -d $DATABASE_NAME --no-owner $DUMP_NAME -v
+
+$MY_DIR/db_load $APP

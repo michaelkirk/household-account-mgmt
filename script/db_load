@@ -6,7 +6,7 @@
 set -e
 
 APP=${1:-foodlobby}
-DATABASE_NAME=foodlobby
+DATABASE_NAME=foodlobby_development
 
 DUMP_NAME=tmp/$APP.dump
 
@@ -14,3 +14,4 @@ echo dumping latest $APP db into local $DATABASE_NAME
 
 dropdb $DATABASE_NAME && createdb $DATABASE_NAME
 pg_restore -d $DATABASE_NAME --no-owner $DUMP_NAME -v
+
