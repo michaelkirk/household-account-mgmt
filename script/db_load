@@ -14,3 +14,4 @@ echo dumping latest $REMOTE db into local $DATABASE_NAME
 
 dropdb $DATABASE_NAME && createdb $DATABASE_NAME
 pg_restore -d $DATABASE_NAME --no-owner $DUMP_NAME -v
+
