@@ -13,7 +13,7 @@ When /^I edit the last transaction$/ do
 end
 
 Given /^that household spent \$(\d+) over a week ago$/ do |amount|
-  FactoryGirl(:purchase, :household => @household, :amount => amount,:created_at => 7.1.days.ago )
+  FactoryGirl.create(:purchase, :household => @household, :amount => amount,:created_at => 7.1.days.ago )
 end
 
 Given /^there was a "\$([^"]*)" purchase on "([^"]*)"$/ do |amount, date|
