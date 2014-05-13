@@ -23,6 +23,11 @@ class Household < ActiveRecord::Base
   # All households with no members
   scope :empty, joins('left outer join members on members.household_id = households.id').select('households.*').where('members.id is null')
   scope :recent_activity, lambda { joins(:transactions).where("transactions.created_at > ?", 6.month.ago).group("households.id") }
+  scope :old_activity, lambda { joins(:transactions).where("transactions.created_at <= ?", 6.month.ago).group("households.id") }
+  scope :no_activity, lambda { joins("left join transactions on transactions.household_id = households.id").where("transactions.household_id is null").group("households.id") }
+  def self.no_recent_activity
+    old_activity + no_activity  
+  end
 
   def to_s
     if members.empty?

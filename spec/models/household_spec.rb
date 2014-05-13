@@ -4,7 +4,21 @@ describe Household do
   it "should default to a $0.00 balance" do
     Household.create!.balance.should == 0
   end
+  describe ".no_recent_activity" do
+    it "should include households with transactions older than six months and households with no transactions" do
+      active_household = Household.create!
+      active_household.credit!(5.00)
 
+      inactive_household = Household.create!
+      old_household = Household.create!
+      Transaction.create!(household:old_household, amount:5.00, created_at:7.months.ago, credit:true)
+
+      
+      Household.no_recent_activity.should include inactive_household
+      Household.no_recent_activity.should include old_household
+      Household.no_recent_activity.length.should == 2
+    end
+  end
 
   describe ".recent_activity" do
     it "should only display households with transactions in the past 6 months" do
