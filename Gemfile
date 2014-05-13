@@ -9,6 +9,7 @@ gem 'pg'
 
 # for authentication
 gem 'devise'
+gem 'devise-encryptable'
 
 # for authorization
 gem 'cancan'
