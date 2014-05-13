@@ -74,8 +74,8 @@ describe Transaction do
 
     context "when there have been some purchases" do
       before do
-        Factory(:purchase, :amount => 20)
-        Factory(:purchase, :amount => 30)
+        FactoryGirl.create(:purchase, :amount => 20)
+        FactoryGirl.create(:purchase, :amount => 30)
       end
 
       it { should == 50 }
@@ -83,8 +83,8 @@ describe Transaction do
 
     context "when there have been some purchases and some investments" do
       before do
-        Factory(:purchase, :amount => 20)
-        Factory(:investment, :amount => 30)
+        FactoryGirl.create(:purchase, :amount => 20)
+        FactoryGirl.create(:investment, :amount => 30)
       end
 
       it { should == 20 }
@@ -92,9 +92,9 @@ describe Transaction do
 
     context "when there are purchases older than a week" do
       before do
-        Factory(:purchase, :amount => 10, :created_at => 7.1.days.ago)
-        Factory(:purchase, :amount => 5, :created_at => 6.9.days.ago)
-        Factory(:purchase, :amount => 20, :created_at => Date.today)
+        FactoryGirl.create(:purchase, :amount => 10, :created_at => 7.1.days.ago)
+        FactoryGirl.create(:purchase, :amount => 5, :created_at => 6.9.days.ago)
+        FactoryGirl.create(:purchase, :amount => 20, :created_at => Date.today)
       end
 
       it { should == 25 }
