@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   def set_revision_url
     @revision_url = 'https://github.com/michaelkirk/household-account-mgmt/'
-    @revision += "tree/#{ENV['commit_hash']}" unless ENV['commit_hash'].nil?
+    @revision += "tree/#{ENV['COMMIT_HASH']}" unless ENV['commit_hash'].nil?
   end
 
   def set_amount_purchased_this_week

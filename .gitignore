@@ -7,3 +7,5 @@ tmp/**/*
 \.idea
 tags
 .redcar/
+*.dump
+.vagrant

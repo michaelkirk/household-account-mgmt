@@ -21,7 +21,7 @@ describe TransactionsController do
 
   describe "GET index" do
     it "assigns all transactions as @transactions" do
-      Transaction.stub(:for_household).with("1") { Transaction.stub(:all) { [mock_transaction] }; Transaction }
+      Transaction.stub(:for_household).with("1").and_return([mock_transaction])
       get :index, {:household_id => "1"}
       assigns(:transactions).should eq([mock_transaction])
     end
@@ -49,6 +49,19 @@ describe TransactionsController do
       Transaction.stub(:for_household).with("1") { Transaction.stub(:find).with("37") { mock_transaction }; Transaction }
       get :edit, {:id => "37", :household_id => "1"}
       assigns(:transaction).should be(mock_transaction)
+    end
+  end
+
+  describe "Pagination" do
+    before(:all) do
+      31.times { FactoryGirl.create(:transaction) }
+      visit '/transactions?page=2'
+    end
+
+    after(:all)  { Transaction.delete_all }
+
+    it "should assign 1st transaction to page 2" do
+      page.should have_content('Message 1')
     end
   end
 

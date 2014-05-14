@@ -30,7 +30,7 @@ Given /^a household with "([^"]*)" as a? ?members?$/ do |member_names|
 
   members = members_names.map do |member_name|
     first_name, last_name = member_name.split
-    Factory(:member, :first_name => first_name, :last_name => last_name)
+    FactoryGirl.create(:member, :first_name => first_name, :last_name => last_name)
   end
   
   @household = Household.create!(:members => members)

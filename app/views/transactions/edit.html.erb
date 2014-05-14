@@ -15,7 +15,7 @@
   
   <p>
   <b>Created:</b> <%= @transaction.created_at %> <br />
-  <b>Amount:</b> <%= sprintf("$%.2f", @transaction.amount) %>
+  <b>Amount:</b> <%= number_to_currency(@transaction.amount) %>
   <%= @transaction.credit ? 'investment' : 'purchase' %>
   </p>
   
@@ -23,8 +23,12 @@
     <%= f.label :message %><br />
     <%= f.text_field :message %>
   </div>
+  <div class="field">
+    <%= f.check_box :void %>
+    <%= f.label :void, "Void transaction" %>
+  </div>
   <div class="actions">
-    <%= f.submit "update message" %>
+    <%= f.submit "update" %>
   </div>
 <% end %>
 

@@ -1,12 +1,17 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~>3.1'
+ruby "2.1.2"
 
-# postgres
+gem 'rails', '~>3.2.0'
+gem 'will_paginate'
+gem 'newrelic_rpm'
+
+# for postgres
 gem 'pg'
 
 # for authentication
 gem 'devise'
+gem 'devise-encryptable'
 
 # for authorization
 gem 'cancan'
@@ -44,4 +49,5 @@ group :development, :test do
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
   gem 'capybara'
+  gem 'pry'
 end

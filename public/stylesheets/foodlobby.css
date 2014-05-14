@@ -8,7 +8,7 @@ body {
 }
 
 #flash_notice {
-    background-color: #4f4;
+  background-color: #4f4;
 }
 
 #footer {
@@ -18,6 +18,12 @@ body {
   margin-right: auto;
   background-image: url('/images/tomato.png');
   background-repeat: no-repeat;
+}
+
+#version_banner {
+  margin-top: 10px;
+  font-size: 10px;
+  text-align: right;
 }
 
 #wrapper {
@@ -97,6 +103,11 @@ th.total {
   text-align: left;
 }
 
+.pagination {
+  text-align: center;
+  word-spacing: 4px;
+}
+
 .money {
   text-align: right;
   white-space: nowrap;
@@ -166,4 +177,7 @@ table {
   height: 75%;
   border-top-right-radius: 1em;
   float: left;
+}
+.void-transaction {
+  text-decoration:line-through;
 }

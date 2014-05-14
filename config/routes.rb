@@ -1,4 +1,6 @@
 Foodlobby::Application.routes.draw do
+  root :to => "households#index"
+
   devise_for :users
 
   resources :members
@@ -12,7 +14,5 @@ Foodlobby::Application.routes.draw do
   resources :households do
     resources :transactions
   end
-
-  root :to => "households#index"
 
 end

@@ -16,7 +16,7 @@ describe "Transactions" do
   end
   describe "GET /household/1/transactions" do
     it "works!" do
-      household = Factory(:household)
+      household = FactoryGirl.create(:household)
       Household.should_receive(:find).with("1").and_return { household }
       # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
       get household_transactions_url(:household_id => 1)

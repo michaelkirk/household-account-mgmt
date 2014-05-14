@@ -1,45 +1,10 @@
 <h1>All transactions</h1>
-<p>These are all the coop's transactions.</p>
 
 <% if @transactions.empty? %>
   <p>
   There are no transactions yet.
   </p>
 <% else %>
-
-<table>
-  <tr>
-    <th>Date</th>
-    <th>Credit/Debit</th>
-    <th>Amount</th>
-    <th>Message</th>
-    <th>Household</th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @transactions.each do |transaction| %>
-  <tr class="<%= cycle("even", "odd") %>">
-    <td><%= transaction.created_at %></td>
-    <td><%= transaction.credit ? 'investment' : 'purchase' %></td>
-    <td class="money"><%= sprintf("$%.2f", transaction.amount) %></td>
-    <td><%= transaction.message %></td>
-    <td><%= link_to transaction.household.to_s, transaction.household %></td>
-    <td><%= link_to 'Edit message', edit_household_transaction_path(transaction.household, transaction) %></td>
-  </tr>
+  <%= render partial: 'list', locals: { transactions: @transactions, print_household: true } %>
+  <%= will_paginate @transactions %>
 <% end %>
-
-  <tr>
-    <td></td>
-    <th class="total">balance</th>
-    <td class="total money"><%= sprintf("$%.2f", Transaction.total_balance) %></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
-
-<% end %>
-<br />
-

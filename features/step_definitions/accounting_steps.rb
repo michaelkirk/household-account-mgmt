@@ -6,8 +6,14 @@ When /^that household spends \$(\d+)$/ do |amount|
   @household.debit!(BigDecimal.new(amount))
 end
 
+When /^I edit the last transaction$/ do
+  transaction = Transaction.last
+  household = transaction.household
+  visit edit_household_transaction_path(household, transaction)
+end
+
 Given /^that household spent \$(\d+) over a week ago$/ do |amount|
-  Factory(:purchase, :household => @household, :amount => amount,:created_at => 7.1.days.ago )
+  FactoryGirl.create(:purchase, :household => @household, :amount => amount,:created_at => 7.1.days.ago )
 end
 
 Given /^there was a "\$([^"]*)" purchase on "([^"]*)"$/ do |amount, date|
@@ -31,5 +37,5 @@ Then /^I should see "([^"]*)" of investments for "([^"]*)"$/ do |amount, month_a
 end
 
 def some_household
-  @some_household ||= Factory.create(:household)
+  @some_household ||= FactoryGirl.create(:household)
 end

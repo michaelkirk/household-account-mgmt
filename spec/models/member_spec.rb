@@ -9,35 +9,35 @@ describe Member do
   describe "#household" do
 
     it "should belong to the assigned household if one was specified on creation" do
-      m = Factory.build(:member)
+      m = FactoryGirl.build(:member)
       m.household = household
       m.save!
       m.household.should == household
-      
+
       #reload household to verify relation persisted in DB
       db_household = Household.find(household.id)
       db_household.members.should include m
     end
 
     it "should have a new household assigned on creation if one wasn't specified" do
-      m = Factory.build(:member)
+      m = FactoryGirl.build(:member)
       m.save!
       m.household.should_not be_nil
       m.household.members.should == [m]
     end
 
     describe "changing households" do
-      let(:m) { Factory(:member) }
+      let(:m) { FactoryGirl.create(:member) }
 
       it "should not allow last member to leave household with outstanding balance" do
-        m.household.credit!(5)
+        m.household.transactions.create(amount: 5, credit: true)
         m.household= @household
         m.should_not be_valid
       end
 
       it "should allow last member to leave household with no outstanding balance" do
-        m.household.credit!(5)
-        m.household.debit!(5)
+        m.household.transactions.create(amount: 5, credit: true)
+        m.household.transactions.create(amount: 5, credit: false)
         m.household= @household
         m.should be_valid
       end
@@ -48,10 +48,11 @@ describe Member do
 
   describe ".find_by_keywords" do
     before(:all) do
+      Member.destroy_all
       @members = []
-      @members << @joseph = Factory.create(:member, first_name: "Joseph")
-      @members << @sam = Factory.create(:member, first_name: "Sam", last_name: "St. John")
-      @members << @samantha_pierce = Factory.create(:member, first_name: "Samantha", last_name: "Pierce")
+      @members << @joseph = FactoryGirl.create(:member, first_name: "Joseph")
+      @members << @sam = FactoryGirl.create(:member, first_name: "Sam", last_name: "St. John")
+      @members << @samantha_pierce = FactoryGirl.create(:member, first_name: "Samantha", last_name: "Pierce")
     end
 
     after(:all) do
@@ -131,8 +132,8 @@ describe Member do
 
   describe ".by_activity" do
     before(:all) do
-      @active_member = Factory.create(:member, :active => true)
-      @inactive_member = Factory.create(:member, :active => false)
+      @active_member = FactoryGirl.create(:member, :active => true)
+      @inactive_member = FactoryGirl.create(:member, :active => false)
     end
 
     after(:all) do
