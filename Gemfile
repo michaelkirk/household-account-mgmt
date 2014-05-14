@@ -1,5 +1,7 @@
 source 'http://rubygems.org'
 
+ruby "2.1.2"
+
 gem 'rails', '~>3.2.0'
 gem 'will_paginate'
 gem 'newrelic_rpm'
@@ -9,6 +11,7 @@ gem 'pg'
 
 # for authentication
 gem 'devise'
+gem 'devise-encryptable'
 
 # for authorization
 gem 'cancan'

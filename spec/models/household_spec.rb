@@ -43,12 +43,12 @@ describe Household do
     before(:all) do
       @households = []
       @members = []
-      @households << @joe_and_sams_house = Factory.create(:household)
-      @members << Factory.create(:member, first_name: "Joseph", household: @joe_and_sams_house)
-      @members << Factory.create(:member, first_name: "Sam", household: @joe_and_sams_house)
+      @households << @joe_and_sams_house = FactoryGirl.create(:household)
+      @members << FactoryGirl.create(:member, first_name: "Joseph", household: @joe_and_sams_house)
+      @members << FactoryGirl.create(:member, first_name: "Sam", household: @joe_and_sams_house)
 
-      @households << @samanthas_house = Factory.create(:household)
-      @members << Factory.create(:member, first_name: "Samantha", last_name: "Pierce", household: @samanthas_house)
+      @households << @samanthas_house = FactoryGirl.create(:household)
+      @members << FactoryGirl.create(:member, first_name: "Samantha", last_name: "Pierce", household: @samanthas_house)
     end
 
     after(:all) do

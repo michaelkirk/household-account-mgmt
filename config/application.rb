@@ -38,5 +38,10 @@ module Foodlobby
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+
+    # When I18n.config.enforce_available_locales is true we'll raise an
+    # I18n::InvalidLocale exception if the passed locale is unavailable.
+    config.i18n.enforce_available_locales = true
+
   end
 end
