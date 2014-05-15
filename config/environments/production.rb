@@ -31,6 +31,18 @@ Foodlobby::Application.configure do
   # In production, Apache or nginx will already do this
   config.serve_static_assets = false
 
+  # Choose the compressors to use (if any) config.assets.js_compressor  =
+  # :uglifier config.assets.css_compressor = :yui
+   
+  # Don't fallback to assets pipeline if a precompiled asset is missed
+  config.assets.compile = true
+   
+  # Generate digests for assets URLs. This is planned for deprecation.
+  config.assets.digest = true
+   
+  # Precompile additional assets (application.js, application.css, and all
+  # non-JS/CSS are already added) config.assets.precompile += %w( search.js )
+
   # Enable serving of images, stylesheets, and javascripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"
 

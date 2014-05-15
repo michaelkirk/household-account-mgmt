@@ -22,5 +22,11 @@ Foodlobby::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+
+  # Expands the lines which load the assets
+  config.assets.debug = true
+  
+  # Don't fallback to assets pipeline if a precompiled asset is missed
+  config.assets.compile = true
 end
 
