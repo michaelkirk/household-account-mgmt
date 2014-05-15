@@ -7,6 +7,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-
+$(document).ready(function() {
+    $('.all_households').click(function(e) {
+            $('.old_household').fadeIn('slow');
+            e.preventDefault();       
+    })
+})
 
 

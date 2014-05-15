@@ -30,7 +30,20 @@
     <td><%= link_to 'Investment/Purchase', household %></td>
   </tr>
 <% end %>
-<tr><td colspan="3" style="text-align:center;"><a href="#">Show Inactive Accounts</a></td></tr>
+<% @old_households.each do |household| %>
+ <tr class="<%= cycle("even", "odd") %> old_household">
+    <td>
+      <ol style="padding-top: 0px; padding-bottom: 0px; margin: 0px;">
+      <% household.members.each do |member| %>
+        <li><%= member %></li>
+      <% end %>
+      </ol>
+    </td>
+    <td class="money"><%= sprintf("$%.2f", household.balance) %></td>
+    <td><%= link_to 'Investment/Purchase', household %></td>
+  </tr>
+<% end %>
+<tr><td colspan="3" style="text-align:center;"><a href="#" class="all_households">Show Inactive Accounts</a></td></tr>
 </table>
 <% end %>
 

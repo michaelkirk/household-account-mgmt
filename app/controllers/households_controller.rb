@@ -6,6 +6,7 @@ class HouseholdsController < ApplicationController
       @households = Household.find_by_keywords(params[:search])
     else
       @households = Household.recent_activity
+      @old_households = Household.no_recent_activity
     end
 
     respond_to do |format|
