@@ -53,15 +53,11 @@ describe TransactionsController do
   end
 
   describe "Pagination" do
-    before(:all) do
+    it "should divide results across pages" do
       31.times { FactoryGirl.create(:transaction) }
-      visit '/transactions?page=2'
-    end
-
-    after(:all)  { Transaction.delete_all }
-
-    it "should assign 1st transaction to page 2" do
-      page.should have_content('Message 1')
+      get :all_households, { page: 2 }
+      
+      assigns(:transactions).length.should == 1
     end
   end
 

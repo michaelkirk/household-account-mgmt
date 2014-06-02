@@ -2,22 +2,22 @@ require 'spec_helper'
 
 describe "transactions/index.html.erb" do
   before(:each) do
-    @household = assign(:household, stub_model(Household, {:id => 1}))
+    @household = assign(:household, FactoryGirl.create(:household))
     @created_date = Time.zone.now
     assign(:transactions, [
-      stub_model(Transaction,
+      FactoryGirl.create(:transaction,
         :amount => "9.99",
         :credit => false,
         :message => "Message",
         :created_at => @created_date,
-        :household_id => 1
+        :household_id => @household.id
       ),
-      stub_model(Transaction,
+      FactoryGirl.create(:transaction,
         :amount => "9.99",
         :credit => false,
         :message => "Message",
         :created_at => @created_date,
-        :household_id => 1
+        :household_id => @household.id
       )
     ])
   end
