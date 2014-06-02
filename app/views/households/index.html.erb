@@ -7,7 +7,7 @@
 <% end %>
 
 <h1>Households</h1>
-<% if @households.empty? %>
+<% if @households.empty? && @old_households.empty? %>
   <p>There are no households matching your criteria.</p>
 <% else %>
 <table id="households">
