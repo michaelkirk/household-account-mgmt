@@ -44,7 +44,12 @@
   </tr>
 <% end %>
 <% if !@old_households.empty? %>
-<tr><td colspan="3" style="text-align:center;"><a href="#" class="all_households">Show Inactive Accounts</a></td></tr>
+<tr>
+  <td colspan="3" style="text-align:center;">
+    <a href="#" class="all_households">Show Inactive Accounts</a>
+    <a href="#" class="hide_households" style="display:none;">Hide Inactive Accounts</a>
+  </td>
+</tr>
 <% end %>
 </table>
 <% end %>

@@ -8,10 +8,21 @@
 //= require jquery_ujs
 //= require_tree .
 $(document).ready(function() {
-    $('.all_households').click(function(e) {
-            $('.old_household').fadeIn('slow');
-            e.preventDefault();       
-    })
+  $('.all_households').click(function(e) {
+    $('.all_households').hide();
+    $('.hide_households').show();
+    $('.old_household').fadeIn('slow');
+    e.preventDefault();       
+  })
+})
+
+$(document).ready(function() {
+  $('.hide_households').click(function(e) {
+    $('.hide_households').hide();
+    $('.all_households').show();
+    $('.old_household').fadeOut('slow');
+    e.preventDefault(); 
+  })
 })
 
 
