@@ -43,7 +43,9 @@
     <td><%= link_to 'Investment/Purchase', household %></td>
   </tr>
 <% end %>
+<% if !@old_households.empty? %>
 <tr><td colspan="3" style="text-align:center;"><a href="#" class="all_households">Show Inactive Accounts</a></td></tr>
+<% end %>
 </table>
 <% end %>
 

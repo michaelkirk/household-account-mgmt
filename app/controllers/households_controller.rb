@@ -2,8 +2,9 @@ class HouseholdsController < ApplicationController
   # GET /households
   # GET /households.xml
   def index
-    if params[:search]
+    if params[:search] && !params[:search].empty?
       @households = Household.find_by_keywords(params[:search])
+      @old_households = []
     else
       @households = Household.recent_activity
       @old_households = Household.no_recent_activity
