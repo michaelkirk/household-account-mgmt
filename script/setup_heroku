@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+if [ -z $REMOTE ]
+then
+  echo "must set REMOTE"
+  exit 1
+fi
+
+REMOTE_ARG="--remote $REMOTE"
+
+heroku addons:add heroku-postgresql $REMOTE_ARG
+heroku addons:add newrelic:stark $REMOTE_ARG
+heroku addons:add pgbackups $REMOTE_ARG
+heroku addons:add sendgrid $REMOTE_ARG
+
