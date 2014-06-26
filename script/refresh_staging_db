@@ -1,0 +1,21 @@
+#!/bin/sh
+# Dumps latest production database into staging
+# usage: script/refresh_staging_db
+set -e
+set -x
+
+echo dumping latest production db into staging
+
+TARGET_REMOTE=staging
+SOURCE_REMOTE=production
+TARGET_DB=DATABASE_URL
+
+heroku pgbackups:capture --remote $SOURCE_REMOTE --expire
+
+echo "dumping $SOURCE_REMOTE -> $TARGET_REMOTE"
+heroku pgbackups:capture --remote $TARGET_REMOTE --expire
+heroku pg:reset $TARGET_DB --remote $TARGET_REMOTE
+heroku pgbackups:restore $TARGET_DB `heroku pgbackups:url --remote $SOURCE_REMOTE` --remote $TARGET_REMOTE
+heroku run rake db:migrate --remote $TARGET_REMOTE
+heroku restart --remote $TARGET_REMOTE
+

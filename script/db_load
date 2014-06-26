@@ -5,12 +5,12 @@
 
 set -e
 
-APP=${1:-foodlobby}
+REMOTE=${1:-production}
 DATABASE_NAME=foodlobby
 
-DUMP_NAME=tmp/$APP.dump
+DUMP_NAME=tmp/$REMOTE.dump
 
-echo dumping latest $APP db into local $DATABASE_NAME
+echo dumping latest $REMOTE db into local $DATABASE_NAME
 
 dropdb $DATABASE_NAME && createdb $DATABASE_NAME
 pg_restore -d $DATABASE_NAME --no-owner $DUMP_NAME -v
