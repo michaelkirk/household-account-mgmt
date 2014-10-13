@@ -23,7 +23,7 @@ class Household < ActiveRecord::Base
   # All households with no members
   scope :empty, joins('left outer join members on members.household_id = households.id').select('households.*').where('members.id is null')
 
-  scope :active, joins(:members).where(:members => { :active => true }).group('households.id')
+  scope :active, joins(:members).where(:members => { :active => true }).includes(:members)
 
   def to_s
     if members.empty?

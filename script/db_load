@@ -6,7 +6,7 @@
 set -e
 
 REMOTE=${1:-production}
-DATABASE_NAME=foodlobby
+DATABASE_NAME=foodlobby_development
 
 DUMP_NAME=tmp/$REMOTE.dump
 
