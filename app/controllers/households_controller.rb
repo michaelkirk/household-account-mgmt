@@ -2,10 +2,9 @@ class HouseholdsController < ApplicationController
   # GET /households
   # GET /households.xml
   def index
+    @households = Household.active
     if params[:search]
-      @households = Household.active.find_by_keywords(params[:search])
-    else
-      @households = Household.active(:include => :members)
+      @households = @households.find_by_keywords(params[:search])
     end
 
     respond_to do |format|
