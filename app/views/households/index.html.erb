@@ -14,8 +14,8 @@
 <table id="households">
   <tr>
     <th>Members</th>
-    <th class="money">Balance</th>
-    <th></th>
+    <th>Last seen</th>
+    <th colspan=2 class="money">Balance</th>
   </tr>
 
 <% @households.each do |household| %>
@@ -27,8 +27,15 @@
       <% end %>
       </ol>
     </td>
+    <td>
+      <% if household.last_transaction %>
+        <%= time_ago_in_words(household.last_transaction.created_at) %> ago
+      <% else %>
+        No financial record.
+      <% end %>
+    </td>
     <td class="money"><%= sprintf("$%.2f", household.balance) %></td>
-    <td><%= link_to 'Investment/Purchase', household %></td>
+    <td><%= link_to '+/-', household %></td>
   </tr>
 <% end %>
 </table>

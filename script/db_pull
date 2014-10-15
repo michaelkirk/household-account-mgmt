@@ -9,10 +9,11 @@ REMOTE=${1:-production}
 DATABASE_NAME=foodlobby_development
 
 DUMP_NAME=tmp/$REMOTE.dump
+MY_DIR=`dirname $0`
 
 echo dumping latest $REMOTE db into local $DATABASE_NAME
 
 heroku pgbackups:capture -e --remote $REMOTE
 curl -o $DUMP_NAME `heroku pgbackups:url --remote $REMOTE`
-dropdb $DATABASE_NAME && createdb $DATABASE_NAME
-pg_restore -d $DATABASE_NAME --no-owner $DUMP_NAME -v
+
+$MY_DIR/db_load $APP

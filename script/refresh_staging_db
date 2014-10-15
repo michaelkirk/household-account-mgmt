@@ -6,8 +6,8 @@ set -x
 
 echo dumping latest production db into staging
 
-TARGET_REMOTE=staging
 SOURCE_REMOTE=production
+TARGET_REMOTE=staging
 TARGET_DB=DATABASE_URL
 
 heroku pgbackups:capture --remote $SOURCE_REMOTE --expire

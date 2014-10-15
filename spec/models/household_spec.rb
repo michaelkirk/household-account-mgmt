@@ -37,7 +37,34 @@ describe Household do
     end
   end
 
+  describe "#last_transaction" do
+    subject { household.last_transaction }
+
+    let(:household) { FactoryGirl.create(:household) }
+    context "with a couple transactions" do
+      let!(:first_transaction) { FactoryGirl.create(:purchase, household: household) }
+      let!(:second_transaction) { FactoryGirl.create(:purchase, household: household) }
+      it { should == second_transaction }
+    end
+  end
+
   pending "should be impossible to change balance without creating a transaction"
+
+  describe ".by_recent_activity" do
+    subject { Household.by_recent_activity }
+
+    let!(:never_seen_this_household) { FactoryGirl.create(:household) }
+
+    let!(:saw_this_household_a_bit_ago) do
+      FactoryGirl.create(:purchase).household
+    end
+
+    let!(:saw_this_household_just_now) do
+      FactoryGirl.create(:purchase).household
+    end
+
+    it { should == [saw_this_household_just_now, saw_this_household_a_bit_ago] }
+  end
 
   describe ".find_by_keywords" do
     before(:all) do
