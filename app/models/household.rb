@@ -22,8 +22,8 @@ class Household < ActiveRecord::Base
 
   # All households with no members
   scope :empty, joins('left outer join members on members.household_id = households.id').select('households.*').where('members.id is null')
-
   scope :active, joins(:members).where(:members => { :active => true }).includes(:members)
+  scope :by_recent_activity, joins(:transactions).order('transactions.created_at DESC')
 
   def to_s
     if members.empty?
@@ -41,6 +41,10 @@ class Household < ActiveRecord::Base
   def debit! (amount)
     transactions.create!(:credit => false, :amount => amount)
     self.update_attribute(:balance, self.balance - amount)
+  end
+
+  def last_transaction
+    transactions.order('created_at').last
   end
 
   comma do
