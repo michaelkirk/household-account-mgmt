@@ -46,6 +46,8 @@ gem 'rails_12factor'
 # and rake tasks are available in development mode:
 group :development, :test do
   gem 'rspec-rails'
+  gem 'rspec-activemodel-mocks'
+  gem 'test-unit', '~> 3.0' # new ruby doesn't include this by default. Old ruby did.
   gem 'factory_girl_rails'
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
