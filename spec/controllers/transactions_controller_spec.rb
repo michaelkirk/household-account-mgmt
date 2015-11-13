@@ -52,19 +52,6 @@ describe TransactionsController do
     end
   end
 
-  describe "Pagination" do
-    before(:all) do
-      31.times { FactoryGirl.create(:transaction) }
-      visit '/transactions?page=2'
-    end
-
-    after(:all)  { Transaction.delete_all }
-
-    it "should assign 1st transaction to page 2" do
-      page.should have_content('Message 1')
-    end
-  end
-
   describe "POST create" do
 
     describe "with valid params" do
