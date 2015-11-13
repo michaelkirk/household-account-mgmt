@@ -24,6 +24,7 @@ gem 'comma'
 
 # send email when an exception occurs
 gem 'exception_notification'
+gem 'rails_12factor'
 
 # Use unicorn as the web server
 # gem 'unicorn'
