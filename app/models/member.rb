@@ -2,9 +2,9 @@ class Member < ActiveRecord::Base
   belongs_to :household
   has_many :household_membership_audits
 
-  scope :with_households, :include => [{:household => :members}]
+  scope :with_households, -> { includes([{:household => :members}]) }
 
-  scope :by_activity, lambda { |params|
+  scope :by_activity, ->(params) {
     include_active = params[:include_active]
     include_inactive = params[:include_inactive]
 

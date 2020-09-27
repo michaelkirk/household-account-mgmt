@@ -1,5 +1,5 @@
 class TransactionsController < ApplicationController
-  before_filter :except => :all_households do
+  before_action :except => :all_households do
      @household = Household.find(params[:household_id])
   end
 

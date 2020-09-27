@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter :authenticate_user!
-  before_filter :set_revision_url
-  before_filter :set_amount_purchased_this_week
+  before_action :authenticate_user!
+  before_action :set_revision_url
+  before_action :set_amount_purchased_this_week
 
   # Why do we have to specify this here AND in initializers/time_zone.rb?
   Time.zone="Pacific Time (US & Canada)"
