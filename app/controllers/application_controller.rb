@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
   before_action :set_revision_url
   before_action :set_amount_purchased_this_week
 
+  before_action do
+    params.permit!
+  end
+
   # Why do we have to specify this here AND in initializers/time_zone.rb?
   Time.zone="Pacific Time (US & Canada)"
 
