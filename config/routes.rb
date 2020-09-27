@@ -6,11 +6,9 @@ Rails.application.routes.draw do
 
   resources :members
 
-  match 'transactions(.:format)', :controller => :transactions, :action => :all_households, :as => :all_transactions
-
-  match 'monthly_reports', :controller => :monthly_reports, :action => :index, :as => 'monthly_reports'
-
-  match 'test_exception', :controller => :test_exception, :action => :test_exception
+  get 'transactions(.:format)', :controller => :transactions, :action => :all_households, :as => :all_transactions
+  get 'monthly_reports', :controller => :monthly_reports, :action => :index, :as => 'monthly_reports'
+  get 'test_exception', :controller => :test_exception, :action => :test_exception
 
   resources :households do
     resources :transactions
