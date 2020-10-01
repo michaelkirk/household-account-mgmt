@@ -1,8 +1,8 @@
 development:
   adapter: postgresql
   database: foodlobby_development
-  username: mkirk
-  password: 
+  username: vagrant
+  password: vagrant
   port: 5432
   pool: 5
   timeout: 5000
@@ -13,8 +13,8 @@ development:
 test: &test
   adapter: postgresql
   database: foodlobby_test
-  username: mkirk
-  password: 
+  username: vagrant
+  password: vagrant
   port: 5432
   pool: 5
   timeout: 5000
@@ -23,8 +23,8 @@ test: &test
 production:
   adapter: postgresql
   database: foodlobby_production
-  username: mkirk
-  password: 
+  username: vagrant
+  password: vagrant
   port: 5432
   pool: 5
   timeout: 5000
